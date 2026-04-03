@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /blog/admin-prasanna
+
+Sitemap: https://jpneurospine.com/sitemap.xml

@@ -1,0 +1,232 @@
+import { Link } from "react-router-dom";
+
+const FacebookIcon = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
+    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+  </svg>
+);
+
+const InstagramIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+    <circle cx="12" cy="12" r="4" />
+    <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none" />
+  </svg>
+);
+
+const TwitterIcon = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
+    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+  </svg>
+);
+
+const YoutubeIcon = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
+    <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z" />
+    <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white" />
+  </svg>
+);
+
+const LinkedInIcon = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+    <rect x="2" y="9" width="4" height="12" />
+    <circle cx="4" cy="4" r="2" />
+  </svg>
+);
+
+const quickLinks = [
+  { label: "Home", to: "/" },
+  { label: "About Us", to: "/about-us" },
+  { label: "Departments", to: "/department-services" },
+  { label: "Our Doctors", to: "/doctors" },
+  { label: "Patient Services", to: "/patient-services" },
+  { label: "Patient Education", to: "/patient-education" },
+  { label: "Contact Us", to: "/contact-us" },
+];
+
+const services = [
+  { label: "Neurology", to: "/department-services" },
+  { label: "Spine Surgery", to: "/department-services" },
+  { label: "Pain Management", to: "/department-services" },
+  { label: "Neuro Rehabilitation", to: "/department-services" },
+  { label: "Emergency Care", to: "/emergency" },
+  { label: "Book Appointment", to: "/book-appoinment" },
+];
+
+const socials = [
+  { icon: <FacebookIcon />, label: "Facebook", href: "#" },
+  { icon: <InstagramIcon />, label: "Instagram", href: "#" },
+  { icon: <TwitterIcon />, label: "Twitter / X", href: "#" },
+  { icon: <YoutubeIcon />, label: "YouTube", href: "#" },
+  { icon: <LinkedInIcon />, label: "LinkedIn", href: "#" },
+];
+
+export default function Footer() {
+  return (
+    <footer className="bg-[#0d1d6e] text-white font-inter">
+
+      {/* Main Footer */}
+      <div className="w-full px-5 sm:px-10 xl:px-20 py-12 sm:py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12">
+
+        {/* Brand Column */}
+        <div className="flex flex-col gap-6">
+          <div>
+            
+            <h2 className="text-[1.6rem] font-manrope font-bold leading-tight text-white">
+              JP Neuro-Spine
+            </h2>
+            <p className="text-xs text-white/40 mt-1 tracking-wide">
+              Hospital & Pain Management Centre
+            </p>
+          </div>
+
+          <p className="text-sm text-white/55 leading-[1.8]">
+            Providing clinical excellence with empathy and precision — a trusted centre for advanced neurological and spinal care in Tamil Nadu.
+          </p>
+
+          {/* Divider */}
+          <div className="w-10 h-px bg-[#ff9800]/60" />
+
+          {/* Social */}
+          <div>
+            <p className="text-[10px] uppercase tracking-[0.18em] text-white/40 font-semibold mb-3">
+              Follow Us
+            </p>
+            <div className="flex gap-2.5">
+              {socials.map(({ icon, label, href }) => (
+                <a
+                  key={label}
+                  href={href}
+                  aria-label={label}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-8 h-8 rounded-lg bg-white/8 border border-white/10 hover:bg-[#ff9800] hover:border-[#ff9800] flex items-center justify-center transition-all duration-200"
+                >
+                  {icon}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Quick Links */}
+        <div className="flex flex-col gap-5">
+          <div>
+            <h4 className="text-sm font-semibold text-white">
+              Quick Links
+            </h4>
+          </div>
+          <ul className="flex flex-col gap-1">
+            {quickLinks.map(({ label, to }) => (
+              <li key={to}>
+                <Link
+                  to={to}
+                  className="text-[0.82rem] text-white/50 hover:text-white py-1.5 block transition-colors duration-150 hover:translate-x-1 transform"
+                  style={{ transition: "color 0.15s, transform 0.15s" }}
+                >
+                  {label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Services */}
+        <div className="flex flex-col gap-5">
+          <div>
+            <h4 className="text-sm font-semibold text-white">
+              Our Services
+            </h4>
+          </div>
+          <ul className="flex flex-col gap-1">
+            {services.map(({ label, to }) => (
+              <li key={label}>
+                <Link
+                  to={to}
+                  className="text-[0.82rem] text-white/50 hover:text-white py-1.5 block transition-colors duration-150 hover:translate-x-1 transform"
+                  style={{ transition: "color 0.15s, transform 0.15s" }}
+                >
+                  {label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Contact */}
+        <div className="flex flex-col gap-5">
+          <div>
+            <h4 className="text-sm font-semibold text-white">
+              Contact Info
+            </h4>
+          </div>
+
+          <ul className="flex flex-col gap-4">
+            <li className="flex items-start gap-3">
+              <span className="material-symbols-outlined text-[#ff9800] shrink-0 mt-0.5" style={{ fontSize: "17px" }}>
+                location_on
+              </span>
+              <span className="text-[0.82rem] text-white/55 leading-[1.75]">
+                9/1 Colony, West Link Road (35A),<br />
+                Co-operative Colony,<br />
+                Krishnagiri – 635 001, TN
+              </span>
+            </li>
+            <li className="flex items-center gap-3">
+              <span className="material-symbols-outlined text-[#ff9800] shrink-0" style={{ fontSize: "17px" }}>
+                call
+              </span>
+              <a href="tel:04343239923" className="text-[0.82rem] text-white/55 hover:text-white transition-colors">
+                04343-239923
+              </a>
+            </li>
+            <li className="flex items-center gap-3">
+              <span className="material-symbols-outlined text-[#ff9800] shrink-0" style={{ fontSize: "17px" }}>
+                mail
+              </span>
+              <a href="mailto:contact@jpneuro.com" className="text-[0.82rem] text-white/55 hover:text-white transition-colors">
+                contact@jpneuro.com
+              </a>
+            </li>
+            <li className="flex items-center gap-3">
+              <span className="material-symbols-outlined text-[#ff9800] shrink-0" style={{ fontSize: "17px" }}>
+                schedule
+              </span>
+              <span className="text-[0.82rem] text-white/55 leading-[1.75]">
+                Mon – Sat: 9 AM – 6 PM<br />
+                Emergency: 24 / 7
+              </span>
+            </li>
+          </ul>
+
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=9%2F1+colony%2C+West+Link+Road+(35A)%2C+Co-operative+colony%2C+Krishnagiri-635001"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 text-[0.75rem] font-semibold text-[#ff9800] hover:text-orange-300 transition-colors group"
+          >
+            <span className="material-symbols-outlined" style={{ fontSize: "15px" }}>open_in_new</span>
+            View on Google Maps
+          </a>
+        </div>
+      </div>
+
+      {/* Bottom Bar */}
+      <div className="border-t border-white/[0.08] w-full px-5 sm:px-10 xl:px-20 py-4 sm:py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-[0.72rem] text-white/30 text-center sm:text-left">
+        <p>© 2026 JP Neuro-Spine Hospital & Pain Management Centre. All rights reserved.</p>
+        <div className="flex items-center gap-5 flex-wrap justify-center">
+          <span className="flex items-center gap-1.5 text-white/40">
+            <span className="material-symbols-outlined text-[#ff9800]" style={{ fontSize: "14px" }}>verified</span>
+            CEA Licensed
+          </span>
+          <span className="text-white/15">|</span>
+          <Link to="/privacy-policy" className="hover:text-white/70 transition-colors">Privacy Policy</Link>
+          <span className="text-white/15">|</span>
+          <Link to="/privacy-policy" className="hover:text-white/70 transition-colors">Terms of Use</Link>
+        </div>
+      </div>
+
+    </footer>
+  );
+}

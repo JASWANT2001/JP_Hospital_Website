@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(npm run:*)",
+      "Bash(node -e ':*)",
+      "Bash(node -e \"const {createHash}=require\\('crypto'\\); console.log\\(createHash\\('sha256'\\).update\\('HospitalBlog@2026!'\\).digest\\('hex'\\)\\)\")",
+      "Bash(find /Users/jash/Downloads/JP_Neural -type f \\\\\\( -name \"README.md\" -o -name \".gitignore\" -o -name \"index.html\" \\\\\\) ! -path \"*/node_modules/*\" -exec grep -l \".\" {} \\\\;)"
+    ]
+  }
+}
