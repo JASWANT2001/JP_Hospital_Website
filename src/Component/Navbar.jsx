@@ -1,20 +1,14 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import logoSrc from '../Images/Logo.png';
+import { useLang, navTranslations } from '../context/LanguageContext';
 
 export default function Navbar() {
   const { pathname } = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
+  const { lang, setLang } = useLang();
 
-  const navLinks = [
-    { to: '/', label: 'Home' },
-    { to: '/about-us', label: 'About Us' },
-    { to: '/department-services', label: 'Departments' },
-    { to: '/doctors', label: 'Doctors' },
-    { to: '/patient-services', label: 'Patient Services' },
-    { to: '/contact-us', label: 'Contact' },
-    { to: '/blog', label: 'Blog' },
-  ];
+  const { links: navLinks, emergency, bookAppointment } = navTranslations[lang];
 
   const isActive = (to) =>
     to === '/' ? pathname === '/' : pathname.startsWith(to);
@@ -28,28 +22,40 @@ export default function Navbar() {
 
   return (
     <>
+      {/* ── Google Fonts ── */}
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@800&family=Host+Grotesk:wght@400&display=swap');
+        .font-raleway { font-family: 'Raleway', sans-serif; font-weight: 800; }
+        .font-host    { font-family: 'Host Grotesk', sans-serif; font-weight: 400; }
+      `}</style>
+
       <nav className="fixed top-0 w-full z-50 bg-[#f7f9fc] bg-opacity-90 backdrop-blur-md shadow-sm">
-        <div className="flex justify-between items-center px-4 sm:px-6 lg:px-8 h-16 sm:h-20">
+        <div className="flex justify-between items-center px-4 sm:px-6 lg:px-8 h-20 sm:h-20">
 
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2.5 shrink-0">
+          <Link to="/" className="flex items-center gap-2 min-w-0 overflow-hidden">
             <img
               src={logoSrc}
               alt="JP Neuro-Spine logo"
-              className="h-9 w-auto sm:h-10 object-contain shrink-0"
+              className="h-10 w-auto sm:h-14 object-contain shrink-0 flex-none"
             />
-            <span className="text-lg sm:text-xl lg:text-2xl font-black text-[#142588] font-headline tracking-tight leading-tight">
-              JP Neuro-Spine
-            </span>
+            <div className="flex flex-col min-w-0 overflow-hidden">
+              <span className={`font-raleway text-[#142588] tracking-tight leading-tight font-extrabold ${lang === 'ta' ? 'text-[10px] sm:text-[13px] lg:text-base' : 'text-[17px] sm:text-sm lg:text-base'}`}>
+                JP Neuro-Spine Hospital and
+              </span>
+              <span className={`font-raleway text-[#142588] tracking-tight leading-tight font-extrabold ${lang === 'ta' ? 'text-[10px] sm:text-[13px] lg:text-base' : 'text-[17px] sm:text-sm lg:text-base'}`}>
+                Pain Management Centre
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Nav Links */}
-          <div className="hidden lg:flex items-center space-x-5 xl:space-x-8">
+          <div className={`hidden lg:flex items-center ${lang === 'ta' ? 'space-x-1 xl:space-x-2' : 'space-x-4 xl:space-x-6'}`}>
             {navLinks.map(({ to, label }) => (
               <Link
                 key={to}
                 to={to}
-                className={`font-manrope tracking-tight font-semibold text-sm xl:text-base pb-1 transition-colors whitespace-nowrap ${
+                className={`font-manrope tracking-tight font-semibold pb-1 transition-colors whitespace-nowrap ${lang === 'ta' ? 'text-xs xl:text-sm' : 'text-base'} ${
                   isActive(to)
                     ? 'text-[#142588] border-b-2 border-[#142588]'
                     : 'text-slate-600 hover:text-[#142588] border-b-2 border-transparent'
@@ -62,18 +68,34 @@ export default function Navbar() {
 
           {/* Right Side */}
           <div className="flex items-center gap-2 sm:gap-3">
+            {/* Language Toggle */}
+            {/* <div className="flex items-center bg-slate-100 rounded-lg p-0.5 text-sm font-bold">
+              <button
+                onClick={() => setLang('en')}
+                className={`px-3 py-1.5 rounded-md transition-all ${lang === 'en' ? 'bg-[#142588] text-white shadow' : 'text-slate-500 hover:text-[#142588]'}`}
+              >
+                EN
+              </button>
+              <button
+                onClick={() => setLang('ta')}
+                className={`px-3 py-1.5 rounded-md transition-all ${lang === 'ta' ? 'bg-[#142588] text-white shadow' : 'text-slate-500 hover:text-[#142588]'}`}
+              >
+                த
+              </button>
+            </div> */}
             <Link
               to="/emergency"
-className="hidden sm:inline-flex items-center bg-orange-500 text-white px-4 py-2 rounded-lg text-sm font-semibold shadow-md hover:bg-orange-600 transition"
+              title={emergency}
+              className="hidden sm:inline-flex items-center justify-center bg-orange-500 text-white w-9 h-9 rounded-lg shadow-md hover:bg-orange-600 transition shrink-0"
             >
-              Emergency 24/7
+              <span className="material-symbols-outlined text-xl">sos</span>
             </Link>
-            <Link
+            {/* <Link
               to="/book-appoinment"
-              className="hidden sm:inline-flex bg-primary text-on-primary px-4 lg:px-6 py-2 sm:py-2.5 rounded-md font-semibold text-sm hover:bg-on-primary-fixed-variant transition-all duration-200 ease-in-out whitespace-nowrap"
+              className="hidden sm:inline-flex bg-primary text-on-primary px-4 lg:px-6 py-2 sm:py-2.5 rounded-md font-semibold text-base hover:bg-on-primary-fixed-variant transition-all duration-200 ease-in-out whitespace-nowrap"
             >
               Book Appointment
-            </Link>
+            </Link> */}
 
             {/* Hamburger */}
             <button
@@ -106,12 +128,9 @@ className="hidden sm:inline-flex items-center bg-orange-500 text-white px-4 py-2
           {/* Drawer Header */}
           <div className="flex items-center justify-between px-6 h-16 sm:h-20 border-b border-slate-100 shrink-0">
             <div className="flex items-center gap-2">
-              <img
-                src="/logo.png"
-                alt="JP Neuro-Spine logo"
-                className="h-8 w-auto object-contain shrink-0"
-              />
-              <span className="text-lg font-black text-[#142588] font-headline tracking-tight">
+              <img src="/logo.png" alt="JP Neuro-Spine logo" className="h-8 w-auto object-contain shrink-0" />
+              {/* Main heading only — Raleway ExtraBold */}
+              <span className="font-raleway text-xl text-[#142588] tracking-tight leading-tight">
                 JP Neuro-Spine
               </span>
             </div>
@@ -130,15 +149,13 @@ className="hidden sm:inline-flex items-center bg-orange-500 text-white px-4 py-2
               <Link
                 key={to}
                 to={to}
-                className={`flex items-center gap-3 px-4 py-3.5 rounded-lg font-manrope font-semibold text-[15px] transition-colors mb-1 ${
+                className={`flex items-center gap-3 px-4 py-3.5 rounded-lg font-manrope font-semibold text-base transition-colors mb-1 ${
                   isActive(to)
                     ? 'bg-[#142588]/10 text-[#142588]'
                     : 'text-slate-600 hover:bg-slate-100 hover:text-[#142588]'
                 }`}
               >
-                {isActive(to) && (
-                  <span className="w-1 h-5 bg-[#142588] rounded-full shrink-0" />
-                )}
+                {isActive(to) && <span className="w-1 h-5 bg-[#142588] rounded-full shrink-0" />}
                 {label}
               </Link>
             ))}
@@ -146,18 +163,18 @@ className="hidden sm:inline-flex items-center bg-orange-500 text-white px-4 py-2
 
           {/* Drawer Footer CTAs */}
           <div className="px-6 py-6 border-t border-slate-100 flex flex-col gap-3 shrink-0">
-            <Link
+            {/* <Link
               to="/book-appoinment"
-              className="bg-primary text-on-primary px-6 py-3 rounded-md font-semibold text-sm text-center hover:bg-on-primary-fixed-variant transition-all duration-200"
+              className="bg-primary text-on-primary px-6 py-3 rounded-md font-semibold text-base text-center hover:bg-on-primary-fixed-variant transition-all duration-200"
             >
-              Book Appointment
-            </Link>
+              {bookAppointment}
+            </Link> */}
             <Link
               to="/emergency"
-              className="flex items-center justify-center gap-2 bg-orange-500 text-white px-6 py-3 rounded-lg text-sm font-semibold hover:bg-orange-600 transition"
+              className="flex items-center justify-center gap-2 bg-orange-500 text-white px-6 py-3 rounded-lg text-base font-semibold hover:bg-orange-600 transition"
             >
               <span className="material-symbols-outlined text-base">call</span>
-              Emergency 24/7
+              {emergency}
             </Link>
           </div>
         </div>

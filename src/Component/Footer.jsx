@@ -51,7 +51,7 @@ const services = [
   { label: "Pain Management", to: "/department-services" },
   { label: "Neuro Rehabilitation", to: "/department-services" },
   { label: "Emergency Care", to: "/emergency" },
-  { label: "Book Appointment", to: "/book-appoinment" },
+  // { label: "Book Appointment", to: "/book-appoinment" },
 ];
 
 const socials = [
@@ -73,12 +73,12 @@ export default function Footer() {
         <div className="flex flex-col gap-6">
           <div>
             
-            <h2 className="text-[1.6rem] font-manrope font-bold leading-tight text-white">
-              JP Neuro-Spine
-            </h2>
-            <p className="text-xs text-white/40 mt-1 tracking-wide">
-              Hospital & Pain Management Centre
-            </p>
+            <span className="font-raleway text-lg text-white tracking-tight leading-tight font-extrabold block">
+              JP Neuro-Spine Hospital and
+            </span>
+                <span className="font-raleway text-lg text-white tracking-tight leading-tight font-extrabold block">
+              Pain Management Centre
+            </span>
           </div>
 
           <p className="text-sm text-white/55 leading-[1.8]">

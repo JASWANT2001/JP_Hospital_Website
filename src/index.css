@@ -6,6 +6,11 @@
 @tailwind utilities;
 
 @layer base {
+  html,
+  body {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
   body {
     @apply antialiased bg-surface text-on-surface;
     font-family: 'Inter', sans-serif;

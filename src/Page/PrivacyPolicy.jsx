@@ -1,5 +1,13 @@
 import { Link } from "react-router-dom";
 
+const fontScale = {
+  label: "text-xs sm:text-sm",
+  body: "text-base sm:text-lg",
+  subheading: "text-2xl sm:text-3xl",
+  heading: "text-4xl sm:text-5xl lg:text-6xl",
+  hero: "text-5xl sm:text-6xl lg:text-8xl",
+};
+
 const sections = [
   {
     id: "information-collected",
@@ -154,28 +162,28 @@ export default function PrivacyPolicy() {
       <div className="bg-[#0d1d6e] w-full px-10 xl:px-20 py-16 sm:py-20">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
           <div>
-            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#ff9800] mb-3">
+            <p className={`${fontScale.label} font-semibold uppercase tracking-[0.2em] text-[#ff9800] mb-3`}>
               Legal · Compliance
             </p>
-            <h1 className="text-3xl sm:text-5xl font-manrope font-bold text-white leading-tight mb-4">
+            <h1 className={`${fontScale.heading} font-manrope font-bold text-white leading-tight mb-4`}>
               Privacy Policy
             </h1>
-            <p className="text-white/50 text-sm leading-relaxed max-w-2xl">
+            <p className={`text-white/50 ${fontScale.body} leading-relaxed max-w-2xl`}>
               JP Neuro-Spine Hospital & Pain Management Centre is committed to protecting the privacy and confidentiality of all patients, visitors, and website users.
             </p>
           </div>
           <div className="shrink-0 text-right">
-            <p className="text-[10px] text-white/30 uppercase tracking-widest mb-1">Effective Date</p>
-            <p className="text-white/60 text-sm font-medium">1 January 2026</p>
-            <p className="text-[10px] text-white/30 uppercase tracking-widest mt-2 mb-1">Last Updated</p>
-            <p className="text-white/60 text-sm font-medium">1 April 2026</p>
+            <p className={`${fontScale.label} text-white/30 uppercase tracking-widest mb-1`}>Effective Date</p>
+            <p className={`text-white/60 ${fontScale.label} font-medium`}>1 January 2026</p>
+            <p className={`${fontScale.label} text-white/30 uppercase tracking-widest mt-2 mb-1`}>Last Updated</p>
+            <p className={`text-white/60 ${fontScale.label} font-medium`}>1 April 2026</p>
           </div>
         </div>
       </div>
 
       {/* Breadcrumb */}
       <div className="border-b border-gray-100 w-full px-10 xl:px-20 py-3">
-        <div className="flex items-center gap-2 text-xs text-gray-400">
+        <div className={`flex items-center gap-2 ${fontScale.label} text-gray-400`}>
           <Link to="/" className="hover:text-[#0d1d6e] transition-colors">Home</Link>
           <span className="material-symbols-outlined text-gray-300" style={{ fontSize: "14px" }}>chevron_right</span>
           <span className="text-gray-600">Privacy Policy</span>
@@ -190,21 +198,21 @@ export default function PrivacyPolicy() {
           {/* Notice card */}
           <div className="bg-[#0d1d6e]/[0.04] border border-[#0d1d6e]/10 rounded-xl p-5 flex gap-3 items-start">
             <span className="material-symbols-outlined text-[#0d1d6e] shrink-0 mt-0.5" style={{ fontSize: "18px" }}>info</span>
-            <p className="text-[0.75rem] text-[#0d1d6e]/70 leading-relaxed">
+            <p className={`${fontScale.label} text-[#0d1d6e]/70 leading-relaxed`}>
               By using our services you agree to the practices described in this policy.
             </p>
           </div>
 
           {/* TOC */}
           <div className="flex flex-col gap-1">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-gray-400 mb-2 px-1">
+            <p className={`${fontScale.label} font-semibold uppercase tracking-[0.18em] text-gray-400 mb-2 px-1`}>
               Contents
             </p>
             {sections.map((s) => (
               <a
                 key={s.id}
                 href={`#${s.id}`}
-                className="text-[0.78rem] text-gray-400 hover:text-[#0d1d6e] py-1.5 px-2 rounded-lg hover:bg-gray-50 transition-colors leading-snug"
+                className={`${fontScale.label} text-gray-400 hover:text-[#0d1d6e] py-1.5 px-2 rounded-lg hover:bg-gray-50 transition-colors leading-snug`}
               >
                 {s.title}
               </a>
@@ -213,20 +221,20 @@ export default function PrivacyPolicy() {
 
           {/* Quick contact */}
           <div className="border border-gray-100 rounded-xl p-5 flex flex-col gap-3 mt-2">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-gray-400">
+            <p className={`${fontScale.label} font-semibold uppercase tracking-[0.18em] text-gray-400`}>
               Quick Contact
             </p>
-            <a href="tel:04343239923" className="flex items-center gap-2.5 text-[0.78rem] text-gray-500 hover:text-[#0d1d6e] transition-colors">
+            <a href="tel:04343239923" className={`flex items-center gap-2.5 ${fontScale.label} text-gray-500 hover:text-[#0d1d6e] transition-colors`}>
               <span className="material-symbols-outlined text-[#ff9800]" style={{ fontSize: "16px" }}>call</span>
               04343-239923
             </a>
-            <a href="mailto:contact@jpneuro.com" className="flex items-center gap-2.5 text-[0.78rem] text-gray-500 hover:text-[#0d1d6e] transition-colors">
+            <a href="mailto:contact@jpneuro.com" className={`flex items-center gap-2.5 ${fontScale.label} text-gray-500 hover:text-[#0d1d6e] transition-colors`}>
               <span className="material-symbols-outlined text-[#ff9800]" style={{ fontSize: "16px" }}>mail</span>
               contact@jpneuro.com
             </a>
             <Link
               to="/contact-us"
-              className="mt-1 text-center text-[0.72rem] font-semibold text-white bg-[#0d1d6e] hover:bg-[#142588] rounded-lg py-2 px-3 transition-colors"
+              className={`mt-1 text-center ${fontScale.label} font-semibold text-white bg-[#0d1d6e] hover:bg-[#142588] rounded-lg py-2 px-3 transition-colors`}
             >
               Contact Us →
             </Link>
@@ -239,7 +247,7 @@ export default function PrivacyPolicy() {
           {/* Mobile notice */}
           <div className="lg:hidden bg-[#0d1d6e]/[0.04] border border-[#0d1d6e]/10 rounded-xl p-4 flex gap-3 items-start">
             <span className="material-symbols-outlined text-[#0d1d6e] shrink-0 mt-0.5" style={{ fontSize: "18px" }}>info</span>
-            <p className="text-sm text-[#0d1d6e]/70 leading-relaxed">
+            <p className={`${fontScale.body} text-[#0d1d6e]/70 leading-relaxed`}>
               By using our services you agree to the practices described in this policy.
             </p>
           </div>
@@ -248,7 +256,7 @@ export default function PrivacyPolicy() {
           {sections.map((section) => (
             <div key={section.id} id={section.id} className="flex flex-col gap-5 scroll-mt-6">
               <div className="flex items-center gap-4">
-                <h2 className="text-xl font-manrope font-bold text-[#0d1d6e] whitespace-nowrap">
+                <h2 className={`${fontScale.subheading} font-manrope font-bold text-[#0d1d6e]`}>
                   {section.title}
                 </h2>
                 <div className="flex-1 h-px bg-gray-100" />
@@ -260,10 +268,10 @@ export default function PrivacyPolicy() {
                     key={item.subtitle}
                     className="bg-gray-50 rounded-xl p-5 flex flex-col gap-2"
                   >
-                    <h3 className="text-sm font-semibold text-gray-800">
+                    <h3 className={`${fontScale.body} font-semibold text-gray-800`}>
                       {item.subtitle}
                     </h3>
-                    <p className="text-[0.82rem] text-gray-500 leading-[1.85]">
+                    <p className={`${fontScale.label} text-gray-500 leading-[1.85]`}>
                       {item.text}
                     </p>
                   </div>
@@ -275,7 +283,7 @@ export default function PrivacyPolicy() {
                 <div className="bg-[#0d1d6e] rounded-xl p-6 grid grid-cols-1 sm:grid-cols-3 gap-5 mt-2">
                   <div className="flex items-start gap-3">
                     <span className="material-symbols-outlined text-[#ff9800] shrink-0 mt-0.5" style={{ fontSize: "18px" }}>location_on</span>
-                    <p className="text-[0.8rem] text-white/70 leading-relaxed">
+                    <p className={`${fontScale.label} text-white/70 leading-relaxed`}>
                       9/1 Colony, West Link Road (35A),<br />
                       Co-operative Colony,<br />
                       Krishnagiri – 635 001, TN
@@ -283,13 +291,13 @@ export default function PrivacyPolicy() {
                   </div>
                   <div className="flex items-center gap-3">
                     <span className="material-symbols-outlined text-[#ff9800] shrink-0" style={{ fontSize: "18px" }}>call</span>
-                    <a href="tel:04343239923" className="text-[0.8rem] text-white/70 hover:text-white transition-colors">
+                    <a href="tel:04343239923" className={`${fontScale.label} text-white/70 hover:text-white transition-colors`}>
                       04343-239923
                     </a>
                   </div>
                   <div className="flex items-center gap-3">
                     <span className="material-symbols-outlined text-[#ff9800] shrink-0" style={{ fontSize: "18px" }}>mail</span>
-                    <a href="mailto:contact@jpneuro.com" className="text-[0.8rem] text-white/70 hover:text-white transition-colors">
+                    <a href="mailto:contact@jpneuro.com" className={`${fontScale.label} text-white/70 hover:text-white transition-colors`}>
                       contact@jpneuro.com
                     </a>
                   </div>
@@ -302,7 +310,7 @@ export default function PrivacyPolicy() {
           <div className="pt-4 border-t border-gray-100">
             <Link
               to="/"
-              className="inline-flex items-center gap-2 text-sm font-medium text-[#0d1d6e] hover:text-[#ff9800] transition-colors"
+              className={`inline-flex items-center gap-2 ${fontScale.body} font-medium text-[#0d1d6e] hover:text-[#ff9800] transition-colors`}
             >
               <span className="material-symbols-outlined" style={{ fontSize: "16px" }}>arrow_back</span>
               Back to Home

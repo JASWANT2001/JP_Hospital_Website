@@ -1,5 +1,13 @@
 import { useState } from 'react';
 
+const fontScale = {
+  label: "text-xs",
+  body: "text-sm sm:text-base",
+  subheading: "text-xl sm:text-2xl",
+  heading: "text-3xl sm:text-4xl lg:text-5xl",
+  hero: "text-4xl sm:text-5xl lg:text-7xl",
+};
+
 // OPD schedule: day index (0=Sun … 6=Sat) → available slots with exact times
 const DOCTOR_SCHEDULE = {
   'Dr. Jayakumar P': {
@@ -141,16 +149,25 @@ ${formData.reason || 'Not provided'}
 
   return (
     <div className="bg-surface text-on-surface font-body min-h-screen flex flex-col mt-16 sm:mt-20">
+
+      {/* ── Google Fonts ── */}
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@800&family=Host+Grotesk:wght@400&display=swap');
+        .font-raleway { font-family: 'Raleway', sans-serif; font-weight: 800; }
+        .font-host    { font-family: 'Host Grotesk', sans-serif; font-weight: 400; }
+      `}</style>
+
       {/* Main Content */}
       <main className="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start pt-8 sm:pt-12 pb-6">
 
         {/* Left: Form Section */}
         <section className="lg:col-span-8">
           <header className="mb-7 sm:mb-10">
-            <h1 className="font-headline text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-primary mb-2 sm:mb-3">
+            {/* heading — Raleway ExtraBold */}
+            <h1 className={`font-raleway ${fontScale.heading} tracking-tight text-primary mb-2 sm:mb-3`}>
               Book Your Consultation
             </h1>
-            <p className="text-on-surface-variant text-base sm:text-lg max-w-2xl">
+            <p className={`text-on-surface-variant ${fontScale.body} max-w-2xl`}>
               Secure your appointment with our leading specialists in
               neurosurgery and pain management. Our team is committed to your
               recovery journey.
@@ -162,7 +179,7 @@ ${formData.reason || 'Not provided'}
               {/* Patient Identity */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
                 <div className="flex flex-col space-y-2">
-                  <label className="font-headline text-xs sm:text-sm font-bold text-primary tracking-wide uppercase">
+                  <label className={`font-headline ${fontScale.label} font-bold text-primary tracking-wide uppercase`}>
                     Patient Name *
                   </label>
                   <input
@@ -171,12 +188,12 @@ ${formData.reason || 'Not provided'}
                     value={formData.patientName}
                     onChange={handleInputChange}
                     placeholder="Enter Full Name"
-                    className="bg-surface-container-high border-b-2 border-outline-variant focus:border-primary focus:bg-surface-container outline-none p-3 sm:p-4 rounded-t-lg font-medium text-on-surface transition-all duration-200 text-sm sm:text-base"
+                    className={`bg-surface-container-high border-b-2 border-outline-variant focus:border-primary focus:bg-surface-container outline-none p-3 sm:p-4 rounded-t-lg font-medium text-on-surface transition-all duration-200 ${fontScale.body}`}
                     required
                   />
                 </div>
                 <div className="flex flex-col space-y-2">
-                  <label className="font-headline text-xs sm:text-sm font-bold text-primary tracking-wide uppercase">
+                  <label className={`font-headline ${fontScale.label} font-bold text-primary tracking-wide uppercase`}>
                     Phone Number *
                   </label>
                   <div className="flex">
@@ -184,7 +201,7 @@ ${formData.reason || 'Not provided'}
                       name="countryCode"
                       value={formData.countryCode}
                       onChange={handleInputChange}
-                      className="bg-surface-container-high border-b-2 border-r-2 border-outline-variant/20 focus:border-primary outline-none w-20 sm:w-24 p-3 sm:p-4 rounded-tl-lg font-medium transition-all duration-200 text-sm"
+                      className={`bg-surface-container-high border-b-2 border-r-2 border-outline-variant/20 focus:border-primary outline-none w-20 sm:w-24 p-3 sm:p-4 rounded-tl-lg font-medium transition-all duration-200 ${fontScale.label}`}
                     >
                       <option>+91</option>
                       <option>+1</option>
@@ -196,7 +213,7 @@ ${formData.reason || 'Not provided'}
                       value={formData.phoneNumber}
                       onChange={handleInputChange}
                       placeholder="Mobile Number"
-                      className="bg-surface-container-high border-b-2 border-outline-variant focus:border-primary focus:bg-surface-container outline-none flex-grow p-3 sm:p-4 rounded-tr-lg font-medium transition-all duration-200 text-sm sm:text-base"
+                      className={`bg-surface-container-high border-b-2 border-outline-variant focus:border-primary focus:bg-surface-container outline-none flex-grow p-3 sm:p-4 rounded-tr-lg font-medium transition-all duration-200 ${fontScale.body}`}
                       required
                     />
                   </div>
@@ -206,7 +223,7 @@ ${formData.reason || 'Not provided'}
               {/* Department & Specialist */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
                 <div className="flex flex-col space-y-2">
-                  <label className="font-headline text-xs sm:text-sm font-bold text-primary tracking-wide uppercase">
+                  <label className={`font-headline ${fontScale.label} font-bold text-primary tracking-wide uppercase`}>
                     Department *
                   </label>
                   <div className="relative">
@@ -214,7 +231,7 @@ ${formData.reason || 'Not provided'}
                       name="department"
                       value={formData.department}
                       onChange={handleInputChange}
-                      className="w-full bg-surface-container-high border-b-2 border-outline-variant focus:border-primary outline-none p-3 sm:p-4 pr-10 rounded-t-lg font-medium transition-all duration-200 appearance-none cursor-pointer text-sm sm:text-base"
+                      className={`w-full bg-surface-container-high border-b-2 border-outline-variant focus:border-primary outline-none p-3 sm:p-4 pr-10 rounded-t-lg font-medium transition-all duration-200 appearance-none cursor-pointer ${fontScale.body}`}
                       required
                     >
                       <option disabled value="">Select Department</option>
@@ -225,12 +242,12 @@ ${formData.reason || 'Not provided'}
                   </div>
                 </div>
                 <div className="flex flex-col space-y-2">
-                  <label className="font-headline text-xs sm:text-sm font-bold text-primary tracking-wide uppercase">
+                  <label className={`font-headline ${fontScale.label} font-bold text-primary tracking-wide uppercase`}>
                     Specialist
                   </label>
                   <div className={`flex items-center gap-3 p-3 sm:p-4 rounded-t-lg border-b-2 transition-all duration-200 ${formData.specialist ? 'bg-primary/5 border-primary' : 'bg-surface-container-high border-outline-variant/30'}`}>
                     <span className="material-symbols-outlined text-base text-primary" style={{ fontVariationSettings: "'FILL' 1" }}>person</span>
-                    <span className={`font-medium text-xs sm:text-sm ${formData.specialist ? 'text-primary font-bold' : 'text-on-surface-variant/50'}`}>
+                    <span className={`font-medium ${fontScale.body} ${formData.specialist ? 'text-primary font-bold' : 'text-on-surface-variant/50'}`}>
                       {formData.specialist || 'Auto-assigned on department selection'}
                     </span>
                   </div>
@@ -240,7 +257,7 @@ ${formData.reason || 'Not provided'}
               {/* Scheduling */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
                 <div className="flex flex-col space-y-2">
-                  <label className="font-headline text-xs sm:text-sm font-bold text-primary tracking-wide uppercase">
+                  <label className={`font-headline ${fontScale.label} font-bold text-primary tracking-wide uppercase`}>
                     Preferred Date
                   </label>
                   <input
@@ -248,16 +265,16 @@ ${formData.reason || 'Not provided'}
                     name="preferredDate"
                     value={formData.preferredDate}
                     onChange={handleInputChange}
-                    className="bg-surface-container-high border-b-2 border-outline-variant focus:border-primary focus:bg-surface-container outline-none p-3 sm:p-4 rounded-t-lg font-medium transition-all duration-200 text-sm sm:text-base"
+                    className={`bg-surface-container-high border-b-2 border-outline-variant focus:border-primary focus:bg-surface-container outline-none p-3 sm:p-4 rounded-t-lg font-medium transition-all duration-200 ${fontScale.body}`}
                   />
                   {dateLabel && (
-                    <span className={`text-xs font-bold px-2 py-0.5 rounded-full w-fit ${dateLabel.isWeekend ? 'bg-tertiary-fixed/40 text-tertiary' : 'bg-primary-fixed/40 text-primary'}`}>
+                    <span className={`${fontScale.label} font-bold px-2 py-0.5 rounded-full w-fit ${dateLabel.isWeekend ? 'bg-tertiary-fixed/40 text-tertiary' : 'bg-primary-fixed/40 text-primary'}`}>
                       {dateLabel.isWeekend ? '☀ Weekend' : '◈ Weekday'} — {dateLabel.dayName}
                     </span>
                   )}
                 </div>
                 <div className="flex flex-col space-y-2">
-                  <label className="font-headline text-xs sm:text-sm font-bold text-primary tracking-wide uppercase">
+                  <label className={`font-headline ${fontScale.label} font-bold text-primary tracking-wide uppercase`}>
                     Preferred Time *
                   </label>
                   <div className="grid grid-cols-2 gap-2 sm:gap-3">
@@ -278,7 +295,7 @@ ${formData.reason || 'Not provided'}
                             : 'border-outline-variant/30 peer-checked:border-primary peer-checked:text-primary peer-checked:bg-primary/5'
                           }`}
                         >
-                          <p className={`text-xs sm:text-sm font-bold ${!available ? 'text-on-surface-variant/40' : 'text-on-surface-variant peer-checked:text-primary'}`}>
+                          <p className={`${fontScale.label} font-bold ${!available ? 'text-on-surface-variant/40' : 'text-on-surface-variant peer-checked:text-primary'}`}>
                             {slot}
                           </p>
                           <p className={`text-[9px] sm:text-[10px] font-semibold mt-0.5 ${!available ? 'text-on-surface-variant/30' : 'text-primary/70'}`}>
@@ -293,7 +310,7 @@ ${formData.reason || 'Not provided'}
 
               {/* Reason */}
               <div className="flex flex-col space-y-2">
-                <label className="font-headline text-xs sm:text-sm font-bold text-primary tracking-wide uppercase">
+                <label className={`font-headline ${fontScale.label} font-bold text-primary tracking-wide uppercase`}>
                   Brief Reason for Consultation
                 </label>
                 <textarea
@@ -302,7 +319,7 @@ ${formData.reason || 'Not provided'}
                   onChange={handleInputChange}
                   rows={4}
                   placeholder="Describe your symptoms or reason for visit..."
-                  className="bg-surface-container-high border-b-2 border-outline-variant focus:border-primary focus:bg-surface-container outline-none p-3 sm:p-4 rounded-t-lg font-medium resize-none transition-all duration-200 text-sm sm:text-base"
+                  className={`bg-surface-container-high border-b-2 border-outline-variant focus:border-primary focus:bg-surface-container outline-none p-3 sm:p-4 rounded-t-lg font-medium resize-none transition-all duration-200 ${fontScale.body}`}
                 />
               </div>
 
@@ -310,7 +327,7 @@ ${formData.reason || 'Not provided'}
               <div className="pt-2 sm:pt-4">
                 <button
                   type="submit"
-                  className="w-full text-white py-4 sm:py-5 rounded-lg font-headline font-bold text-base sm:text-lg tracking-wide uppercase hover:opacity-90 active:scale-[0.98] transition-all shadow-[0_10px_20px_rgba(20,37,136,0.15)] flex items-center justify-center gap-3"
+                  className={`w-full text-white py-4 sm:py-5 rounded-lg font-headline font-bold ${fontScale.body} tracking-wide uppercase hover:opacity-90 active:scale-[0.98] transition-all shadow-[0_10px_20px_rgba(20,37,136,0.15)] flex items-center justify-center gap-3`}
                   style={{
                     background: "linear-gradient(135deg, #142588 0%, #303f9f 100%)",
                   }}
@@ -320,11 +337,8 @@ ${formData.reason || 'Not provided'}
                   </span>
                   Book Appointment
                 </button>
-                <p className="text-center mt-3 sm:mt-4 text-xs text-on-surface-variant font-medium flex items-center justify-center gap-2">
-                  <span
-                    className="material-symbols-outlined text-sm"
-                    style={{ fontVariationSettings: "'FILL' 1" }}
-                  >
+                <p className={`text-center mt-3 sm:mt-4 ${fontScale.label} text-on-surface-variant font-medium flex items-center justify-center gap-2`}>
+                  <span className="material-symbols-outlined text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>
                     lock
                   </span>
                   Secure &amp; Confidential Patient Portal
@@ -334,28 +348,21 @@ ${formData.reason || 'Not provided'}
           </div>
         </section>
 
-        {/* Right: Sidebar — appears after form on mobile, beside on lg+ */}
+        {/* Right: Sidebar */}
         <aside className="lg:col-span-4 space-y-5 sm:space-y-6 lg:mt-32">
           {/* Emergency Support */}
           <div className="bg-tertiary-fixed p-6 sm:p-8 rounded-xl relative overflow-hidden group">
             <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:scale-110 transition-transform">
-              <span
-                className="material-symbols-outlined text-5xl sm:text-6xl text-tertiary-container"
-                style={{ fontVariationSettings: "'FILL' 1" }}
-              >
+              <span className="material-symbols-outlined text-5xl sm:text-6xl text-tertiary-container" style={{ fontVariationSettings: "'FILL' 1" }}>
                 medical_services
               </span>
             </div>
-            <h3 className="font-headline font-extrabold text-tertiary-container text-lg sm:text-xl mb-2 flex items-center gap-2">
-              <span
-                className="material-symbols-outlined"
-                style={{ fontVariationSettings: "'FILL' 1" }}
-              >
-                emergency
-              </span>
+            {/* subheading — Host Grotesk Regular */}
+            <h3 className={`font-host text-tertiary-container ${fontScale.subheading} mb-2 flex items-center gap-2`}>
+              <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>emergency</span>
               Emergency Helpline
             </h3>
-            <p className="text-on-tertiary-fixed-variant text-xs sm:text-sm font-medium mb-3 sm:mb-4">
+            <p className={`text-on-tertiary-fixed-variant ${fontScale.body} font-medium mb-3 sm:mb-4`}>
               Available 24/7 for critical trauma and neuro emergencies.
             </p>
             <div className="text-2xl sm:text-3xl font-black text-tertiary-container tracking-tighter">
@@ -365,31 +372,32 @@ ${formData.reason || 'Not provided'}
 
           {/* OPD Hours */}
           <div className="bg-surface-container-low p-6 sm:p-8 rounded-xl">
-            <h3 className="font-headline font-bold text-primary text-base sm:text-lg mb-5 sm:mb-6 flex items-center gap-2">
+            {/* subheading — Host Grotesk Regular */}
+            <h3 className={`font-host text-primary ${fontScale.subheading} mb-5 sm:mb-6 flex items-center gap-2`}>
               <span className="material-symbols-outlined">schedule</span>
               OPD Consulting Hours
             </h3>
             <div className="space-y-5 sm:space-y-6">
               <div className="border-l-4 border-secondary pl-4 py-1">
-                <div className="font-bold text-on-surface text-sm sm:text-base">Dr. Jayakumar P</div>
-                <div className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-secondary mt-1">
+                <div className={`font-bold text-on-surface ${fontScale.body}`}>Dr. Jayakumar P</div>
+                <div className={`${fontScale.label} font-bold uppercase tracking-wider text-secondary mt-1`}>
                   Neurosurgery
                 </div>
-                <div className="text-xs sm:text-sm text-on-surface-variant mt-2 flex justify-between">
+                <div className={`${fontScale.label} text-on-surface-variant mt-2 flex justify-between`}>
                   <span>Mon - Sat</span>
                   <span className="font-semibold">4:00 PM - 9:00 PM</span>
                 </div>
-                <div className="text-xs sm:text-sm text-on-surface-variant mt-1 flex justify-between">
+                <div className={`${fontScale.label} text-on-surface-variant mt-1 flex justify-between`}>
                   <span>Sunday</span>
                   <span className="font-semibold">9:00 AM - 1:00 PM</span>
                 </div>
               </div>
               <div className="border-l-4 border-primary-container pl-4 py-1">
-                <div className="font-bold text-on-surface text-sm sm:text-base">Dr. Prasanna Vani V</div>
-                <div className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-primary-container mt-1">
+                <div className={`font-bold text-on-surface ${fontScale.body}`}>Dr. Prasanna Vani V</div>
+                <div className={`${fontScale.label} font-bold uppercase tracking-wider text-primary-container mt-1`}>
                   Pain Medicine
                 </div>
-                <div className="text-xs sm:text-sm text-on-surface-variant mt-2 flex justify-between">
+                <div className={`${fontScale.label} text-on-surface-variant mt-2 flex justify-between`}>
                   <span>Mon - Fri</span>
                   <span className="font-semibold">10:00 AM - 1:00 PM</span>
                 </div>
@@ -400,34 +408,19 @@ ${formData.reason || 'Not provided'}
           {/* Trust Indicators */}
           <div className="p-4 sm:p-6 space-y-3 sm:space-y-4">
             {[
-              {
-                icon: "verified_user",
-                title: "Secure & Confidential",
-                desc: "Your health data is encrypted and safe.",
-              },
-              {
-                icon: "workspace_premium",
-                title: "Clinical Excellence",
-                desc: "Led by world-class neuro specialists.",
-              },
-              {
-                icon: "privacy_tip",
-                title: "Patient Privacy Guaranteed",
-                desc: "We strictly follow HIPAA compliance.",
-              },
+              { icon: "verified_user",   title: "Secure & Confidential",       desc: "Your health data is encrypted and safe." },
+              { icon: "workspace_premium", title: "Clinical Excellence",        desc: "Led by world-class neuro specialists."   },
+              { icon: "privacy_tip",     title: "Patient Privacy Guaranteed",   desc: "We strictly follow HIPAA compliance."   },
             ].map(({ icon, title, desc }) => (
               <div key={title} className="flex items-center gap-3 sm:gap-4 group">
                 <div className="bg-secondary-container/30 p-2.5 sm:p-3 rounded-full group-hover:bg-secondary-container transition-colors flex-shrink-0">
-                  <span
-                    className="material-symbols-outlined text-secondary text-base sm:text-xl"
-                    style={{ fontVariationSettings: "'FILL' 1" }}
-                  >
+                  <span className="material-symbols-outlined text-secondary text-base sm:text-xl" style={{ fontVariationSettings: "'FILL' 1" }}>
                     {icon}
                   </span>
                 </div>
                 <div>
-                  <div className="font-bold text-xs sm:text-sm text-on-surface">{title}</div>
-                  <p className="text-xs text-on-surface-variant">{desc}</p>
+                  <div className={`font-bold ${fontScale.label} text-on-surface`}>{title}</div>
+                  <p className={`${fontScale.label} text-on-surface-variant`}>{desc}</p>
                 </div>
               </div>
             ))}

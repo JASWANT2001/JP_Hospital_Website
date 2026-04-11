@@ -4,6 +4,21 @@ import DOMPurify from 'dompurify';
 import { useBlogBySlug } from '../hooks/useBlogs';
 import ShareButtons from '../components/blog/ShareButtons';
 
+// ─── Font Scale (matches Home exactly) ───────────────────────────────────────
+// label    → text-xs                           (12px) — badges, eyebrow, meta
+// body     → text-sm sm:text-base              (14→16px) — paragraphs, descriptions
+// subhead  → text-xl sm:text-2xl               (20→24px) — card titles            → font-subheading
+// heading  → text-3xl sm:text-4xl lg:text-5xl  (36→40→48px) — section headings    → font-heading
+// hero     → text-4xl sm:text-5xl lg:text-7xl  (36→48→72px) — hero H1             → font-heading
+
+const FontStyle = () => (
+  <style>{`
+    @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@800&family=Host+Grotesk:wght@400&display=swap');
+    .font-heading    { font-family: 'Raleway', sans-serif;      font-weight: 800; }
+    .font-subheading { font-family: 'Host Grotesk', sans-serif; font-weight: 400; }
+  `}</style>
+);
+
 function formatDate(d) {
   return new Intl.DateTimeFormat('en-IN', { year: 'numeric', month: 'long', day: 'numeric' }).format(new Date(d));
 }
@@ -65,9 +80,12 @@ function NotFound() {
         <div className="w-24 h-24 bg-primary/8 rounded-3xl flex items-center justify-center mx-auto mb-6">
           <span className="material-symbols-outlined text-primary text-5xl">article</span>
         </div>
-        <h1 className="font-headline font-black text-primary text-3xl mb-3">Article Not Found</h1>
-        <p className="text-on-surface-variant mb-8 leading-relaxed">This article may have been moved or does not exist.</p>
-        <Link to="/blog" className="inline-flex items-center gap-2 bg-primary text-on-primary px-6 py-3 rounded-md font-bold text-sm hover:bg-on-primary-fixed-variant transition-all shadow-lg shadow-primary/20">
+        {/* heading → Raleway ExtraBold */}
+        <h1 className="font-heading text-3xl sm:text-4xl text-primary mb-3">Article Not Found</h1>
+        {/* body */}
+        <p className="text-on-surface-variant text-sm sm:text-base mb-8 leading-relaxed">This article may have been moved or does not exist.</p>
+        {/* label-style button */}
+        <Link to="/blog" className="inline-flex items-center gap-2 bg-primary text-on-primary px-6 py-3 rounded-md font-bold text-sm sm:text-base hover:bg-on-primary-fixed-variant transition-all shadow-lg shadow-primary/20">
           <span className="material-symbols-outlined text-base">arrow_back</span>
           Back to all articles
         </Link>
@@ -91,8 +109,9 @@ export default function BlogDetail() {
   if (error) return (
     <main className="bg-surface min-h-screen flex items-center justify-center px-4 pt-20">
       <div className="text-center">
-        <p className="text-sm text-error mb-4">Failed to load article. Please try again.</p>
-        <Link to="/blog" className="text-sm text-primary hover:underline font-semibold">Back to all articles</Link>
+        {/* body */}
+        <p className="text-sm sm:text-base text-error mb-4">Failed to load article. Please try again.</p>
+        <Link to="/blog" className="text-sm sm:text-base text-primary hover:underline font-semibold">Back to all articles</Link>
       </div>
     </main>
   );
@@ -106,6 +125,7 @@ export default function BlogDetail() {
 
   return (
     <>
+      <FontStyle />
       <ReadingProgress />
       <main className="bg-surface text-on-surface font-body min-h-screen">
 
@@ -118,7 +138,8 @@ export default function BlogDetail() {
 
             {/* Back */}
             <div className="absolute top-20 sm:top-24 left-4 sm:left-8 z-10">
-              <Link to="/blog" className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white/15 backdrop-blur-md text-on-primary text-sm font-semibold rounded-md border border-white/25 hover:bg-white/25 transition-all">
+              {/* label */}
+              <Link to="/blog" className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white/15 backdrop-blur-md text-on-primary text-xs font-semibold rounded-md border border-white/25 hover:bg-white/25 transition-all">
                 <span className="material-symbols-outlined text-base">arrow_back</span>
                 All articles
               </Link>
@@ -127,23 +148,25 @@ export default function BlogDetail() {
             {/* Hero text */}
             <div className="absolute bottom-0 left-0 right-0 px-4 sm:px-6 lg:px-12 pb-10 sm:pb-14 z-10">
               <div className="max-w-7xl mx-auto">
+                {/* label row */}
                 <div className="flex flex-wrap items-center gap-2 mb-4">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-on-tertiary-container text-tertiary text-[11px] font-black uppercase tracking-wider rounded-full">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-on-tertiary-container text-tertiary text-xs font-black uppercase tracking-wider rounded-full">
                     <span className="material-symbols-outlined text-sm">local_hospital</span>
                     Health Article
                   </span>
                   <span className="text-white/50 text-xs">•</span>
-                  <span className="text-white/75 text-sm font-medium">{blog.author || 'JP Neuro-Spine'}</span>
+                  <span className="text-white/75 text-xs font-medium">{blog.author || 'JP Neuro-Spine'}</span>
                   <span className="text-white/40 text-xs">•</span>
-                  <span className="text-white/60 text-sm">{formatDate(blog.created_at)}</span>
+                  <span className="text-white/60 text-xs">{formatDate(blog.created_at)}</span>
                   {mins && <>
                     <span className="text-white/40 text-xs">•</span>
-                    <span className="inline-flex items-center gap-1 text-white/60 text-sm">
+                    <span className="inline-flex items-center gap-1 text-white/60 text-xs">
                       <span className="material-symbols-outlined text-sm">schedule</span>{mins}
                     </span>
                   </>}
                 </div>
-                <h1 className="font-headline font-black text-on-primary text-2xl sm:text-4xl lg:text-5xl leading-tight tracking-tight max-w-4xl">
+                {/* hero heading → Raleway ExtraBold */}
+                <h1 className="font-heading text-4xl sm:text-5xl lg:text-7xl text-on-primary leading-tight tracking-tight max-w-4xl">
                   {blog.title}
                 </h1>
               </div>
@@ -154,25 +177,28 @@ export default function BlogDetail() {
             <div className="absolute inset-0 pointer-events-none opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '28px 28px' }} />
             <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2" />
             <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 pt-10 pb-16">
-              <Link to="/blog" className="inline-flex items-center gap-1.5 text-primary-fixed/60 hover:text-primary-fixed text-sm font-medium transition-colors mb-8">
+              {/* label */}
+              <Link to="/blog" className="inline-flex items-center gap-1.5 text-primary-fixed/60 hover:text-primary-fixed text-xs font-medium transition-colors mb-8">
                 <span className="material-symbols-outlined text-base">arrow_back</span>All articles
               </Link>
+              {/* label row */}
               <div className="flex flex-wrap items-center gap-2 mb-5">
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-on-tertiary-container text-tertiary text-[11px] font-black uppercase tracking-wider rounded-full">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-on-tertiary-container text-tertiary text-xs font-black uppercase tracking-wider rounded-full">
                   <span className="material-symbols-outlined text-sm">local_hospital</span>Health Article
                 </span>
                 <span className="text-primary-fixed/50 text-xs">•</span>
-                <span className="text-primary-fixed/80 text-sm font-medium">{blog.author || 'JP Neuro-Spine'}</span>
+                <span className="text-primary-fixed/80 text-xs font-medium">{blog.author || 'JP Neuro-Spine'}</span>
                 <span className="text-primary-fixed/40 text-xs">•</span>
-                <span className="text-primary-fixed/60 text-sm">{formatDate(blog.created_at)}</span>
+                <span className="text-primary-fixed/60 text-xs">{formatDate(blog.created_at)}</span>
                 {mins && <>
                   <span className="text-primary-fixed/40 text-xs">•</span>
-                  <span className="inline-flex items-center gap-1 text-primary-fixed/60 text-sm">
+                  <span className="inline-flex items-center gap-1 text-primary-fixed/60 text-xs">
                     <span className="material-symbols-outlined text-sm">schedule</span>{mins}
                   </span>
                 </>}
               </div>
-              <h1 className="font-headline font-black text-on-primary text-3xl sm:text-5xl leading-tight tracking-tight max-w-4xl">
+              {/* hero heading → Raleway ExtraBold */}
+              <h1 className="font-heading text-4xl sm:text-5xl lg:text-7xl text-on-primary leading-tight tracking-tight max-w-4xl">
                 {blog.title}
               </h1>
             </div>
@@ -193,7 +219,7 @@ export default function BlogDetail() {
 
               {/* Back link (when cover image present) */}
               {blog.cover_image_url && (
-                <Link to="/blog" className="inline-flex items-center gap-1.5 text-sm text-on-surface-variant hover:text-primary transition-colors group font-medium mb-6">
+                <Link to="/blog" className="inline-flex items-center gap-1.5 text-xs text-on-surface-variant hover:text-primary transition-colors group font-medium mb-6">
                   <span className="material-symbols-outlined text-base group-hover:-translate-x-0.5 transition-transform">arrow_back</span>
                   All articles
                 </Link>
@@ -202,15 +228,17 @@ export default function BlogDetail() {
               {/* Title + meta (cover image path) */}
               {blog.cover_image_url && (
                 <header className="mb-6">
-                  <h1 className="font-headline font-black text-primary text-2xl sm:text-3xl lg:text-4xl leading-tight tracking-tight mb-4">
+                  {/* heading → Raleway ExtraBold */}
+                  <h1 className="font-heading text-3xl sm:text-4xl lg:text-5xl text-primary leading-tight tracking-tight mb-4">
                     {blog.title}
                   </h1>
-                  <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-on-surface-variant">
+                  {/* label row */}
+                  <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-on-surface-variant">
                     <div className="flex items-center gap-2">
                       <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                         <span className="material-symbols-outlined text-primary text-sm">person</span>
                       </div>
-                      <span className="font-semibold text-on-surface">{blog.author || 'JP Neuro-Spine'}</span>
+                      <span className="font-semibold text-on-surface text-xs">{blog.author || 'JP Neuro-Spine'}</span>
                     </div>
                     <span className="w-1 h-1 rounded-full bg-outline-variant inline-block" />
                     <time dateTime={blog.created_at}>{formatDate(blog.created_at)}</time>
@@ -224,10 +252,10 @@ export default function BlogDetail() {
                 </header>
               )}
 
-              {/* Excerpt */}
+              {/* Excerpt — body */}
               {blog.excerpt && (
                 <div className="mb-8 pl-5 pr-5 py-4 bg-primary/5 border-l-[3px] border-primary rounded-r-2xl">
-                  <p className="text-base sm:text-lg text-on-surface font-medium leading-relaxed italic">{blog.excerpt}</p>
+                  <p className="text-sm sm:text-base text-on-surface font-medium leading-relaxed italic">{blog.excerpt}</p>
                 </div>
               )}
 
@@ -238,14 +266,14 @@ export default function BlogDetail() {
                 <div className="flex-1 h-px bg-outline-variant/40" />
               </div>
 
-              {/* Body */}
+              {/* Body — prose uses heading/subhead/body scale internally */}
               <article
                 className="
-                  prose prose-lg max-w-none font-body
-                  prose-headings:font-headline prose-headings:font-bold prose-headings:text-primary prose-headings:tracking-tight
+                  prose prose-base max-w-none font-body
+                  prose-headings:font-heading prose-headings:text-primary prose-headings:tracking-tight
                   prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4 prose-h2:pb-2 prose-h2:border-b prose-h2:border-outline-variant/30
                   prose-h3:text-xl prose-h3:mt-8 prose-h3:text-primary-container
-                  prose-p:text-on-surface-variant prose-p:leading-[1.9] prose-p:text-[1.0625rem]
+                  prose-p:text-on-surface-variant prose-p:leading-[1.9] prose-p:text-base
                   prose-a:text-primary prose-a:no-underline hover:prose-a:underline prose-a:font-semibold
                   prose-blockquote:border-l-[3px] prose-blockquote:border-on-tertiary-container
                   prose-blockquote:bg-tertiary-fixed/30 prose-blockquote:py-3 prose-blockquote:pl-5 prose-blockquote:pr-5
@@ -270,13 +298,13 @@ export default function BlogDetail() {
               {/* Share row */}
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4">
                 <ShareButtons url={blogUrl} title={blog.title} />
-                <Link
-                  to="/book-appoinment"
-                  className="inline-flex items-center justify-center gap-2 bg-primary text-on-primary px-6 py-3 rounded-md font-bold text-sm hover:bg-on-primary-fixed-variant transition-all shadow-lg shadow-primary/20"
+                <a
+                  href="tel:04343239923"
+                  className="inline-flex items-center justify-center gap-2 bg-primary text-on-primary px-6 py-3 rounded-md font-bold text-sm sm:text-base hover:bg-on-primary-fixed-variant transition-all shadow-lg shadow-primary/20"
                 >
+                  <span className="material-symbols-outlined text-base">call</span>
                   Book a Consultation
-                  <span className="material-symbols-outlined text-base">calendar_today</span>
-                </Link>
+                </a>
               </div>
             </div>
 
@@ -288,17 +316,21 @@ export default function BlogDetail() {
                 <div className="relative overflow-hidden bg-gradient-to-br from-primary to-primary-container rounded-2xl p-6">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none" />
                   <div className="relative">
-                    <p className="text-[10px] font-black text-on-tertiary-container uppercase tracking-[0.18em] mb-3">Written by</p>
+                    {/* label */}
+                    <p className="text-xs font-black text-on-tertiary-container uppercase tracking-[0.18em] mb-3">Written by</p>
                     <div className="flex items-center gap-3 mb-3">
                       <div className="w-12 h-12 rounded-2xl bg-white/15 border border-white/20 flex items-center justify-center flex-shrink-0">
                         <span className="material-symbols-outlined text-on-primary text-2xl">person</span>
                       </div>
                       <div>
-                        <p className="font-headline font-black text-on-primary text-base">{blog.author || 'JP Neuro-Spine'}</p>
+                        {/* subhead → Host Grotesk */}
+                        <p className="font-subheading text-xl sm:text-2xl text-on-primary">{blog.author || 'JP Neuro-Spine'}</p>
+                        {/* label */}
                         {mins && <p className="text-primary-fixed/60 text-xs mt-0.5">{mins} read</p>}
                       </div>
                     </div>
-                    <p className="text-primary-fixed/60 text-sm leading-relaxed">
+                    {/* body */}
+                    <p className="text-primary-fixed/60 text-sm sm:text-base leading-relaxed">
                       JP Neuro-Spine Hospital — Expert healthcare for neurology &amp; spine conditions.
                     </p>
                   </div>
@@ -308,20 +340,22 @@ export default function BlogDetail() {
                 <div className="bg-white border border-outline-variant/20 rounded-2xl p-6 shadow-[0_2px_16px_rgba(20,37,136,0.05)]">
                   <div className="flex items-center gap-3 mb-4">
                     <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <span className="material-symbols-outlined text-primary text-xl">calendar_today</span>
+                      <span className="material-symbols-outlined text-primary text-xl">call</span>
                     </div>
-                    <p className="font-headline font-bold text-primary text-sm">Need a Consultation?</p>
+                    {/* subhead → Host Grotesk */}
+                    <p className="font-subheading text-xl sm:text-2xl text-primary">Need a Consultation?</p>
                   </div>
-                  <p className="text-on-surface-variant text-sm leading-relaxed mb-5">
+                  {/* body */}
+                  <p className="text-on-surface-variant text-sm sm:text-base leading-relaxed mb-5">
                     Our specialists are available for expert guidance on neurology and spine conditions.
                   </p>
-                  <Link
-                    to="/book-appoinment"
-                    className="flex items-center justify-center gap-2 w-full bg-primary text-on-primary px-5 py-3 rounded-md font-bold text-sm hover:bg-on-primary-fixed-variant transition-all"
+                  <a
+                    href="tel:04343239923"
+                    className="flex items-center justify-center gap-2 w-full bg-primary text-on-primary px-5 py-3 rounded-md font-bold text-sm sm:text-base hover:bg-on-primary-fixed-variant transition-all"
                   >
-                    Book Appointment
-                    <span className="material-symbols-outlined text-base">arrow_forward</span>
-                  </Link>
+                    <span className="material-symbols-outlined text-base">call</span>
+                    Call Now
+                  </a>
                 </div>
 
                 {/* Emergency */}
@@ -330,14 +364,16 @@ export default function BlogDetail() {
                     <div className="w-8 h-8 rounded-xl bg-error/10 flex items-center justify-center flex-shrink-0">
                       <span className="material-symbols-outlined text-error text-lg">emergency</span>
                     </div>
-                    <p className="font-bold text-on-surface text-sm">Emergency Care</p>
+                    {/* body */}
+                    <p className="font-bold text-on-surface text-sm sm:text-base">Emergency Care</p>
                   </div>
-                  <p className="text-on-surface-variant text-xs leading-relaxed mb-4">
+                  {/* body */}
+                  <p className="text-on-surface-variant text-sm sm:text-base leading-relaxed mb-4">
                     24/7 emergency neurosurgical support available at JP Neuro-Spine Hospital.
                   </p>
                   <Link
                     to="/emergency"
-                    className="flex items-center justify-center gap-2 w-full bg-error/10 text-error border border-error/20 px-4 py-2.5 rounded-md font-bold text-sm hover:bg-error/15 transition-all"
+                    className="flex items-center justify-center gap-2 w-full bg-error/10 text-error border border-error/20 px-4 py-2.5 rounded-md font-bold text-sm sm:text-base hover:bg-error/15 transition-all"
                   >
                     <span className="material-symbols-outlined text-base">call</span>
                     Emergency 24/7
@@ -347,7 +383,7 @@ export default function BlogDetail() {
                 {/* Back to blog */}
                 <Link
                   to="/blog"
-                  className="flex items-center justify-center gap-2 w-full bg-surface-container-high text-primary border border-outline-variant/20 px-5 py-3 rounded-md font-bold text-sm hover:bg-surface-container-highest transition-all"
+                  className="flex items-center justify-center gap-2 w-full bg-surface-container-high text-primary border border-outline-variant/20 px-5 py-3 rounded-md font-bold text-sm sm:text-base hover:bg-surface-container-highest transition-all"
                 >
                   <span className="material-symbols-outlined text-base">arrow_back</span>
                   All Articles
@@ -373,24 +409,24 @@ export default function BlogDetail() {
                     <span className="w-1.5 h-1.5 rounded-full bg-on-tertiary-container animate-pulse" />
                     Specialist Care Available
                   </div>
-                  <h2 className="font-headline font-black text-on-primary text-2xl sm:text-3xl mb-3 leading-tight">
+                  <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl text-on-primary mb-3 leading-tight">
                     Need expert medical guidance?
                   </h2>
-                  <p className="text-primary-fixed/70 leading-relaxed max-w-md">
+                  <p className="text-primary-fixed/70 text-sm sm:text-base leading-relaxed max-w-md">
                     Our neurology &amp; spine specialists are ready to help. Get expert care tailored to your needs.
                   </p>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0">
                   <Link
                     to="/book-appoinment"
-                    className="inline-flex items-center justify-center gap-2 bg-on-primary text-primary px-7 py-3.5 rounded-md font-bold text-sm hover:bg-primary-fixed transition-all shadow-xl"
+                    className="inline-flex items-center justify-center gap-2 bg-on-primary text-primary px-7 py-3.5 rounded-md font-bold text-sm sm:text-base hover:bg-primary-fixed transition-all shadow-xl"
                   >
                     Book Appointment
                     <span className="material-symbols-outlined text-xl">calendar_today</span>
                   </Link>
                   <Link
                     to="/blog"
-                    className="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm text-on-primary px-7 py-3.5 rounded-md font-bold text-sm border border-white/25 hover:bg-white/20 transition-all"
+                    className="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm text-on-primary px-7 py-3.5 rounded-md font-bold text-sm sm:text-base border border-white/25 hover:bg-white/20 transition-all"
                   >
                     More Articles
                     <span className="material-symbols-outlined text-xl">arrow_forward</span>

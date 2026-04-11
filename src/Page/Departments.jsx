@@ -458,12 +458,12 @@ export default function Departments() {
 
             {/* Buttons */}
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 flex-shrink-0 w-full md:w-auto">
-              <Link
+              {/* <Link
                 to="/book-appoinment"
                 className="bg-white text-primary px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold text-sm sm:text-base hover:bg-white/90 transition-all shadow-lg text-center"
               >
                 Book Appointment
-              </Link>
+              </Link> */}
               <a
                 href="tel:04343239923"
                 className="border-2 border-white/40 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold text-sm sm:text-base hover:bg-white/10 transition-all flex items-center justify-center gap-2"
