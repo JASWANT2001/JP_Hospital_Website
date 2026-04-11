@@ -24,7 +24,7 @@ const Docters = () => {
             <div className="w-full max-w-sm mx-auto lg:max-w-none lg:max-h-64 overflow-hidden rounded-2xl">
               <div className="h-[280px] sm:h-[320px] lg:h-[360px] rounded-2xl overflow-hidden shadow-2xl border border-outline-variant/20">
                 <img
-                  src="src/Images/dr. jayakumar.jpeg"
+                  src="https://ik.imagekit.io/glvwzrukg/JP%20Webiste/dr.%20jayakumar.jpeg"
                   alt="Dr. Jayakumar P"
                   className="w-full h-full object-cover"
                 />
@@ -120,7 +120,7 @@ const Docters = () => {
             <div className="w-full max-w-sm mx-auto lg:max-w-none lg:max-h-64 overflow-hidden rounded-2xl">
               <div className="h-[280px] sm:h-[320px] lg:h-[360px] rounded-2xl overflow-hidden shadow-2xl border border-outline-variant/20">
                 <img
-                  src="src/Images/dr.prasanna vani .jpeg"
+                  src="https://ik.imagekit.io/glvwzrukg/JP%20Webiste/dr.prasanna%20vani%20.jpeg"
                   alt="Dr. Prasanna Vani V"
                   className="w-full h-full object-cover"
                 />
