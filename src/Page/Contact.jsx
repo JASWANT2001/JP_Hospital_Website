@@ -76,16 +76,15 @@ Requesting confirmation within 2 business hours.
         {/* ══════════════════════════════════════════════════════════════
             HERO — full viewport, left text + right image
         ══════════════════════════════════════════════════════════════ */}
-        <section className="lg:min-h-screen lg:grid lg:grid-cols-2 lg:pt-0">
+        <section className="lg:min-h-screen lg:grid lg:grid-cols-[42%_58%] lg:pt-0">
 
           {/* ── Mobile image banner (hidden on lg+) ── */}
-          <div className="relative block lg:hidden w-full h-64 sm:h-80 -mt-0">
+          <div className="block lg:hidden w-full h-[100vw] sm:h-[80vw]">
             <img
-              className="w-full h-full object-cover"
-              alt="Modern clinical hospital hallway"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXFyeKdJAFSbTDLK58flO_a3fotMauKQ0uIgeFBLX4fJkKgOv8lPqFSVEIlPyKRzbjkpR4KnZC2k6GEcREmBtSzw2xmuP5qn2ZyY57HV9Bse2u4QUXS75tWR2u31h_OxFMAd7PZnvIkgTnbJxBSeil3mORqhef5tSFEFYEGPVEMRHgEVIrtGzQhbTWIbD4J71iXpBJsi6NMzPJG4fK6P5DqZHySrepeZm5cftewj7-VXnyExZrfBBJDmSscO-pD8miadbHfbqMyNg"
+              className="w-full h-full object-contain object-center"
+              alt="JP Neuro Spine Hospital team"
+              src="https://ik.imagekit.io/glvwzrukg/JP%20Webiste/contact%20us%20page.jpg"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-surface via-surface/20 to-transparent" />
           </div>
 
           {/* Left: text content */}
@@ -122,14 +121,13 @@ Requesting confirmation within 2 business hours.
           </div>
 
           {/* Right: hospital image (desktop only) */}
-          <div className="relative hidden lg:block bg-surface-container-highest overflow-hidden">
-            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-secondary to-tertiary z-10" />
+          <div className="relative hidden lg:block overflow-hidden">
             <img
-              className="absolute inset-0 w-full h-full object-cover opacity-80 mix-blend-multiply"
-              alt="Modern clinical hospital hallway"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXFyeKdJAFSbTDLK58flO_a3fotMauKQ0uIgeFBLX4fJkKgOv8lPqFSVEIlPyKRzbjkpR4KnZC2k6GEcREmBtSzw2xmuP5qn2ZyY57HV9Bse2u4QUXS75tWR2u31h_OxFMAd7PZnvIkgTnbJxBSeil3mORqhef5tSFEFYEGPVEMRHgEVIrtGzQhbTWIbD4J71iXpBJsi6NMzPJG4fK6P5DqZHySrepeZm5cftewj7-VXnyExZrfBBJDmSscO-pD8miadbHfbqMyNg"
+              className="absolute inset-0 w-full h-full object-contain object-center"
+              style={{ objectPosition: 'center' }}
+              alt="JP Neuro Spine Hospital team"
+              src="https://ik.imagekit.io/glvwzrukg/JP%20Webiste/contact%20us%20page.jpg"
             />
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-primary/10 to-transparent" />
           </div>
         </section>
 
@@ -264,7 +262,7 @@ Requesting confirmation within 2 business hours.
                           >
                             <option value="" disabled>Select a department</option>
                             <option>Neuro Surgery</option>
-                            <option>Spine Management</option>
+                            <option>Spine Surgery</option>
                             <option>Chronic Pain Treatment</option>
                             <option>Physiotherapy</option>
                           </select>
@@ -327,7 +325,7 @@ Requesting confirmation within 2 business hours.
           allowFullScreen=""
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
-          title="JP Neuro Spine Hospital Location"
+          title="JP Neuro Spine Hospital and Pain Management Centre Hospital Location"
         />
       </div>
 
@@ -352,6 +350,30 @@ Requesting confirmation within 2 business hours.
         </div>
 
         <div className="bg-surface-container-lowest divide-y divide-outline-variant/10">
+
+          {/* Department OPD slots */}
+          {t.hours.depts.map((dept) => (
+            <div key={dept.name} className="px-5 py-4">
+              <div className="flex items-center gap-2 mb-3">
+                <div className="w-7 h-7 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                  <span className="material-symbols-outlined text-primary text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>
+                    {dept.icon}
+                  </span>
+                </div>
+                <p className="text-sm font-bold text-on-surface">{dept.name}</p>
+              </div>
+              <div className="flex flex-col gap-1.5 pl-9">
+                {dept.slots.map((slot, i) => (
+                  <div key={i} className="flex items-center justify-between">
+                    <span className="text-xs text-on-surface-variant">{slot.days}</span>
+                    <span className="text-xs font-bold text-primary tabular-nums">{slot.time}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+
+          {/* Emergency & Surgery rows */}
           {t.hours.rows.map((row) => (
             <div
               key={row.label}
@@ -376,6 +398,7 @@ Requesting confirmation within 2 business hours.
               </span>
             </div>
           ))}
+
         </div>
       </div>
 

@@ -62,7 +62,8 @@ export default async function handler(req, res) {
   <meta property="og:description" content="${description}" />
   <meta property="og:image" content="${image}" />
   <meta property="og:url" content="${blogUrl}" />
-  <meta property="og:site_name" content="JP Neuro-Spine Hospital" />
+  <meta property="og:site_name" content="JP Neuro Spine Hospital and
+Pain Management Centre Hospital" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />

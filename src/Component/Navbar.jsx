@@ -36,21 +36,21 @@ export default function Navbar() {
           <Link to="/" className="flex items-center gap-2 min-w-0 overflow-hidden">
             <img
               src={logoSrc}
-              alt="JP Neuro-Spine logo"
+              alt="JP Neuro Spine logo"
               className="h-10 w-auto sm:h-14 object-contain shrink-0 flex-none"
             />
             <div className="flex flex-col min-w-0 overflow-hidden">
-              <span className={`font-raleway text-[#142588] tracking-tight leading-tight font-extrabold ${lang === 'ta' ? 'text-[10px] sm:text-[13px] lg:text-base' : 'text-[17px] sm:text-sm lg:text-base'}`}>
-                JP Neuro-Spine Hospital and
+              <span className={`font-raleway text-[#142588] tracking-tight leading-tight font-extrabold text-[11px] lg:text-base ${lang === 'ta' ? 'sm:text-[13px]' : 'sm:text-sm'}`}>
+                JP Neuro Spine Hospital and
               </span>
-              <span className={`font-raleway text-[#142588] tracking-tight leading-tight font-extrabold ${lang === 'ta' ? 'text-[10px] sm:text-[13px] lg:text-base' : 'text-[17px] sm:text-sm lg:text-base'}`}>
+              <span className={`font-raleway text-[#142588] tracking-tight leading-tight font-extrabold text-[11px] lg:text-base ${lang === 'ta' ? 'sm:text-[13px]' : 'sm:text-sm'}`}>
                 Pain Management Centre
               </span>
             </div>
           </Link>
 
           {/* Desktop Nav Links */}
-          <div className={`hidden lg:flex items-center ${lang === 'ta' ? 'space-x-1 xl:space-x-2' : 'space-x-4 xl:space-x-6'}`}>
+          <div className={`hidden lg:flex items-center ${lang === 'ta' ? 'space-x-3 xl:space-x-4' : 'space-x-4 xl:space-x-6'}`}>
             {navLinks.map(({ to, label }) => (
               <Link
                 key={to}
@@ -69,7 +69,7 @@ export default function Navbar() {
           {/* Right Side */}
           <div className="flex items-center gap-2 sm:gap-3">
             {/* Language Toggle */}
-            {/* <div className="flex items-center bg-slate-100 rounded-lg p-0.5 text-sm font-bold">
+            <div className="flex items-center bg-slate-100 rounded-lg p-0.5 text-sm font-bold">
               <button
                 onClick={() => setLang('en')}
                 className={`px-3 py-1.5 rounded-md transition-all ${lang === 'en' ? 'bg-[#142588] text-white shadow' : 'text-slate-500 hover:text-[#142588]'}`}
@@ -82,7 +82,7 @@ export default function Navbar() {
               >
                 த
               </button>
-            </div> */}
+            </div>
             <Link
               to="/emergency"
               title={emergency}
@@ -128,11 +128,16 @@ export default function Navbar() {
           {/* Drawer Header */}
           <div className="flex items-center justify-between px-6 h-16 sm:h-20 border-b border-slate-100 shrink-0">
             <div className="flex items-center gap-2">
-              <img src="/logo.png" alt="JP Neuro-Spine logo" className="h-8 w-auto object-contain shrink-0" />
-              {/* Main heading only — Raleway ExtraBold */}
-              <span className="font-raleway text-xl text-[#142588] tracking-tight leading-tight">
-                JP Neuro-Spine
-              </span>
+              <img src="/logo.png" alt="JP Neuro Spine logo" className="h-8 w-auto object-contain shrink-0" />
+              {/* Main heading — Raleway ExtraBold */}
+              <div className="flex flex-col">
+                <span className="font-raleway text-sm text-[#142588] tracking-tight leading-tight font-extrabold">
+                  JP Neuro Spine Hospital and
+                </span>
+                <span className="font-raleway text-sm text-[#142588] tracking-tight leading-tight font-extrabold">
+                  Pain Management Centre
+                </span>
+              </div>
             </div>
             <button
               onClick={() => setMenuOpen(false)}

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useLang, footerTranslations } from "../context/LanguageContext";
 
 const FacebookIcon = () => (
   <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
@@ -35,25 +36,6 @@ const LinkedInIcon = () => (
   </svg>
 );
 
-const quickLinks = [
-  { label: "Home", to: "/" },
-  { label: "About Us", to: "/about-us" },
-  { label: "Departments", to: "/department-services" },
-  { label: "Our Doctors", to: "/doctors" },
-  { label: "Patient Services", to: "/patient-services" },
-  { label: "Patient Education", to: "/patient-education" },
-  { label: "Contact Us", to: "/contact-us" },
-];
-
-const services = [
-  { label: "Neurology", to: "/department-services" },
-  { label: "Spine Surgery", to: "/department-services" },
-  { label: "Pain Management", to: "/department-services" },
-  { label: "Neuro Rehabilitation", to: "/department-services" },
-  { label: "Emergency Care", to: "/emergency" },
-  // { label: "Book Appointment", to: "/book-appoinment" },
-];
-
 const socials = [
   { icon: <FacebookIcon />, label: "Facebook", href: "#" },
   { icon: <InstagramIcon />, label: "Instagram", href: "#" },
@@ -63,67 +45,43 @@ const socials = [
 ];
 
 export default function Footer() {
+  const { lang } = useLang();
+  const t = footerTranslations[lang];
+
   return (
     <footer className="bg-[#0d1d6e] text-white font-inter">
 
       {/* Main Footer */}
-      <div className="w-full px-5 sm:px-10 xl:px-20 py-12 sm:py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12">
+      <div className="w-full px-5 sm:px-10 xl:px-20 py-12 sm:py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-12">
 
         {/* Brand Column */}
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-5">
           <div>
-            
-            <span className="font-raleway text-lg text-white tracking-tight leading-tight font-extrabold block">
-              JP Neuro-Spine Hospital and
+            <span className="font-raleway text-base text-white tracking-tight leading-snug font-extrabold block">
+              JP Neuro Spine Hospital and
             </span>
-                <span className="font-raleway text-lg text-white tracking-tight leading-tight font-extrabold block">
+            <span className="font-raleway text-base text-white tracking-tight leading-snug font-extrabold block">
               Pain Management Centre
             </span>
           </div>
-
-          <p className="text-sm text-white/55 leading-[1.8]">
-            Providing clinical excellence with empathy and precision — a trusted centre for advanced neurological and spinal care in Tamil Nadu.
+          <div className="w-8 h-0.5 bg-[#ff9800]/60" />
+          <p className="text-[0.82rem] text-white/50 leading-[1.8]">
+            {t.tagline}
           </p>
-
-          {/* Divider */}
-          <div className="w-10 h-px bg-[#ff9800]/60" />
-
-          {/* Social */}
-          <div>
-            <p className="text-[10px] uppercase tracking-[0.18em] text-white/40 font-semibold mb-3">
-              Follow Us
-            </p>
-            <div className="flex gap-2.5">
-              {socials.map(({ icon, label, href }) => (
-                <a
-                  key={label}
-                  href={href}
-                  aria-label={label}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-8 h-8 rounded-lg bg-white/8 border border-white/10 hover:bg-[#ff9800] hover:border-[#ff9800] flex items-center justify-center transition-all duration-200"
-                >
-                  {icon}
-                </a>
-              ))}
-            </div>
-          </div>
         </div>
 
         {/* Quick Links */}
         <div className="flex flex-col gap-5">
-          <div>
-            <h4 className="text-sm font-semibold text-white">
-              Quick Links
-            </h4>
-          </div>
-          <ul className="flex flex-col gap-1">
-            {quickLinks.map(({ label, to }) => (
+          <h4 className="text-xs font-bold uppercase tracking-widest text-white/70">
+            {t.quickLinks.heading}
+          </h4>
+          <div className="w-8 h-0.5 bg-[#ff9800]/60" />
+          <ul className="flex flex-col gap-0.5">
+            {t.quickLinks.links.map(({ label, to }) => (
               <li key={to}>
                 <Link
                   to={to}
-                  className="text-[0.82rem] text-white/50 hover:text-white py-1.5 block transition-colors duration-150 hover:translate-x-1 transform"
-                  style={{ transition: "color 0.15s, transform 0.15s" }}
+                  className="text-[0.82rem] text-white/50 hover:text-white py-1.5 block transition-all duration-150 hover:translate-x-1"
                 >
                   {label}
                 </Link>
@@ -134,18 +92,16 @@ export default function Footer() {
 
         {/* Services */}
         <div className="flex flex-col gap-5">
-          <div>
-            <h4 className="text-sm font-semibold text-white">
-              Our Services
-            </h4>
-          </div>
-          <ul className="flex flex-col gap-1">
-            {services.map(({ label, to }) => (
+          <h4 className="text-xs font-bold uppercase tracking-widest text-white/70">
+            {t.services.heading}
+          </h4>
+          <div className="w-8 h-0.5 bg-[#ff9800]/60" />
+          <ul className="flex flex-col gap-0.5">
+            {t.services.links.map(({ label, to }) => (
               <li key={label}>
                 <Link
                   to={to}
-                  className="text-[0.82rem] text-white/50 hover:text-white py-1.5 block transition-colors duration-150 hover:translate-x-1 transform"
-                  style={{ transition: "color 0.15s, transform 0.15s" }}
+                  className="text-[0.82rem] text-white/50 hover:text-white py-1.5 block transition-all duration-150 hover:translate-x-1"
                 >
                   {label}
                 </Link>
@@ -156,74 +112,60 @@ export default function Footer() {
 
         {/* Contact */}
         <div className="flex flex-col gap-5">
-          <div>
-            <h4 className="text-sm font-semibold text-white">
-              Contact Info
-            </h4>
-          </div>
-
+          <h4 className="text-xs font-bold uppercase tracking-widest text-white/70">
+            {t.contact.heading}
+          </h4>
+          <div className="w-8 h-0.5 bg-[#ff9800]/60" />
           <ul className="flex flex-col gap-4">
             <li className="flex items-start gap-3">
-              <span className="material-symbols-outlined text-[#ff9800] shrink-0 mt-0.5" style={{ fontSize: "17px" }}>
-                location_on
-              </span>
-              <span className="text-[0.82rem] text-white/55 leading-[1.75]">
+              <span className="material-symbols-outlined text-[#ff9800] shrink-0 mt-0.5" style={{ fontSize: "16px" }}>location_on</span>
+              <span className="text-[0.82rem] text-white/50 leading-[1.75]">
                 9/1 Colony, West Link Road (35A),<br />
                 Co-operative Colony,<br />
                 Krishnagiri – 635 001, TN
               </span>
             </li>
             <li className="flex items-center gap-3">
-              <span className="material-symbols-outlined text-[#ff9800] shrink-0" style={{ fontSize: "17px" }}>
-                call
-              </span>
-              <a href="tel:04343239923" className="text-[0.82rem] text-white/55 hover:text-white transition-colors">
+              <span className="material-symbols-outlined text-[#ff9800] shrink-0" style={{ fontSize: "16px" }}>call</span>
+              <a href="tel:04343239923" className="text-[0.82rem] text-white/50 hover:text-white transition-colors">
                 04343-239923
               </a>
             </li>
             <li className="flex items-center gap-3">
-              <span className="material-symbols-outlined text-[#ff9800] shrink-0" style={{ fontSize: "17px" }}>
-                mail
-              </span>
-              <a href="mailto:contact@jpneuro.com" className="text-[0.82rem] text-white/55 hover:text-white transition-colors">
+              <span className="material-symbols-outlined text-[#ff9800] shrink-0" style={{ fontSize: "16px" }}>mail</span>
+              <a href="mailto:contact@jpneuro.com" className="text-[0.82rem] text-white/50 hover:text-white transition-colors">
                 contact@jpneuro.com
               </a>
             </li>
             <li className="flex items-center gap-3">
-              <span className="material-symbols-outlined text-[#ff9800] shrink-0" style={{ fontSize: "17px" }}>
-                schedule
-              </span>
-              <span className="text-[0.82rem] text-white/55 leading-[1.75]">
-                Mon – Sat: 9 AM – 6 PM<br />
-                Emergency: 24 / 7
-              </span>
+              <span className="material-symbols-outlined text-[#ff9800] shrink-0" style={{ fontSize: "16px" }}>schedule</span>
+              <span className="text-[0.82rem] text-white/50">{t.contact.emergency}</span>
             </li>
           </ul>
-
           <a
             href="https://www.google.com/maps/search/?api=1&query=9%2F1+colony%2C+West+Link+Road+(35A)%2C+Co-operative+colony%2C+Krishnagiri-635001"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-[0.75rem] font-semibold text-[#ff9800] hover:text-orange-300 transition-colors group"
+            className="inline-flex items-center gap-1.5 text-[0.75rem] font-semibold text-[#ff9800] hover:text-orange-300 transition-colors"
           >
-            <span className="material-symbols-outlined" style={{ fontSize: "15px" }}>open_in_new</span>
-            View on Google Maps
+            <span className="material-symbols-outlined" style={{ fontSize: "14px" }}>open_in_new</span>
+            {t.contact.viewMap}
           </a>
         </div>
       </div>
 
       {/* Bottom Bar */}
       <div className="border-t border-white/[0.08] w-full px-5 sm:px-10 xl:px-20 py-4 sm:py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-[0.72rem] text-white/30 text-center sm:text-left">
-        <p>© 2026 JP Neuro-Spine Hospital & Pain Management Centre. All rights reserved.</p>
+        <p>{t.bottom.copyright}</p>
         <div className="flex items-center gap-5 flex-wrap justify-center">
           <span className="flex items-center gap-1.5 text-white/40">
             <span className="material-symbols-outlined text-[#ff9800]" style={{ fontSize: "14px" }}>verified</span>
-            CEA Licensed
+            {t.bottom.cea}
           </span>
           <span className="text-white/15">|</span>
-          <Link to="/privacy-policy" className="hover:text-white/70 transition-colors">Privacy Policy</Link>
+          <Link to="/privacy-policy" className="hover:text-white/70 transition-colors">{t.bottom.privacy}</Link>
           <span className="text-white/15">|</span>
-          <Link to="/privacy-policy" className="hover:text-white/70 transition-colors">Terms of Use</Link>
+          <Link to="/privacy-policy" className="hover:text-white/70 transition-colors">{t.bottom.terms}</Link>
         </div>
       </div>
 

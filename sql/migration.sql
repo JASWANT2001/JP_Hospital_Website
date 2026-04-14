@@ -1,5 +1,6 @@
 -- ============================================================
--- JP Neuro-Spine Hospital Blog System — Supabase Migration
+-- JP Neuro Spine Hospital and
+Pain Management Centre Hospital Blog System — Supabase Migration
 -- Run this in the Supabase SQL Editor
 -- ============================================================
 

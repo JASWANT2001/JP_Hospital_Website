@@ -53,13 +53,14 @@ export default function Neurosurgery() {
       <header className="relative pt-28 sm:pt-32 pb-14 sm:pb-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            alt="Neurosurgery operating room"
-            className="w-full h-full object-cover opacity-10"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjI2lK9CSZ32P4kaMMPJwjGq7s5RuZgkhRPS6vF4DfBF5resaApwwo_WhDcV2wgaJwKII15yVOUwU5VQxE9qv1s5ZO_-ZNBMS-n-FEp1nj_atpr-5R-ijdBtDFbsouSMht_aMXyKSIEU5Rw3tfXnwozz_E63pt4T180Sb3NSyg-OVXmD7TevC_L3CeXgcLMMVrtDextjq4ZF-PkMAzR3SMxSCF8g8dkVVvMIIegqm3nRSEETcu2bx13HCrtzc2-XcSXcyvCR3soHU"
+            alt="Neurosurgery department"
+            className="w-full h-full object-cover object-right"
+            src="https://ik.imagekit.io/glvwzrukg/JP%20Webiste/neurosurgery%20dept%20page.jpg"
           />
+          <div className="absolute inset-0 bg-white/60 backdrop-blur-[2px]" />
         </div>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-3xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex justify-start lg:justify-end">
+          <div className="w-full lg:max-w-xl">
             <span className="text-secondary font-bold tracking-widest uppercase text-xs">
               {t.hero.eyebrow}
             </span>

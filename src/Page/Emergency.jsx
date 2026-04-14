@@ -205,25 +205,28 @@ export default function Emergency() {
               </a>
             </div>
 
-            {/* Diagnostic Lab */}
-            <div className="sm:col-span-2 md:col-span-8 group rounded-2xl bg-white p-6 sm:p-8 flex flex-col justify-between border border-outline-variant/10 hover:border-secondary/20 hover:shadow-lg transition-all">
-              <div className="flex justify-between items-start gap-4">
-                <div>
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-secondary/10 flex items-center justify-center mb-4 sm:mb-5">
-                    <span className="material-symbols-outlined text-xl sm:text-2xl text-secondary" style={{ fontVariationSettings: "'FILL' 1" }}>biotech</span>
-                  </div>
-                  {/* subheading — Host Grotesk Regular */}
-                  <h3 className="font-host text-xl sm:text-2xl text-on-surface mb-2">Advanced Diagnostic Lab</h3>
-                  <p className="text-on-surface-variant max-w-md text-sm sm:text-base leading-relaxed">
-                    On-site MRI, CT, and rapid neuro-fluid analysis with 20-minute turnaround for critical results.
-                  </p>
+            {/* Specialized Neuro ICU */}
+            <div className="sm:col-span-2 md:col-span-8 group rounded-2xl bg-white p-6 sm:p-8 flex flex-col justify-between border border-outline-variant/10 hover:border-primary/20 hover:shadow-lg transition-all">
+              <div>
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 sm:mb-5">
+                  <span className="material-symbols-outlined text-xl sm:text-2xl text-primary" style={{ fontVariationSettings: "'FILL' 1" }}>monitor_heart</span>
                 </div>
+                <h3 className="font-host text-xl sm:text-2xl text-on-surface mb-2">Specialized Neuro ICU</h3>
+                <p className="text-on-surface-variant text-sm sm:text-base leading-relaxed w-full">
+                  Our dedicated 3-bed Neuro ICU provides continuous round-the-clock monitoring for critical neurological and post-operative cases — with specialists always present and a response time under 5 minutes.
+                </p>
               </div>
-              <div className="mt-5 sm:mt-6 flex flex-wrap gap-4 sm:gap-6">
-                {["3.0T MRI", "128-Slice CT", "Rapid CSF Analysis"].map((label) => (
-                  <div key={label} className="flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-secondary" />
-                    <span className="text-xs font-bold text-outline uppercase tracking-wider">{label}</span>
+              <div className="mt-5 sm:mt-6 grid grid-cols-2 sm:grid-cols-4 gap-3">
+                {[
+                  { icon: "schedule",       label: "Availability",        value: "24 / 7 / 365" },
+                  { icon: "bed",            label: "ICU Beds",            value: "3 Beds"        },
+                  { icon: "group",          label: "Specialists",         value: "Always On-Call"},
+                  { icon: "local_hospital", label: "Response Time",       value: "< 5 Minutes"  },
+                ].map(({ icon, label, value }) => (
+                  <div key={label} className="flex flex-col items-center text-center bg-primary/5 border border-primary/10 rounded-xl px-3 py-3 gap-1">
+                    <span className="material-symbols-outlined text-primary text-lg" style={{ fontVariationSettings: "'FILL' 1" }}>{icon}</span>
+                    <span className="text-xs font-black text-primary">{value}</span>
+                    <span className="text-[10px] text-on-surface-variant uppercase tracking-wide">{label}</span>
                   </div>
                 ))}
               </div>
@@ -279,48 +282,19 @@ export default function Emergency() {
               </div>
             </div>
 
-            {/* Direction Steps */}
-            <div className="lg:col-span-2 bg-surface-container-low rounded-2xl border border-outline-variant/10 shadow-sm overflow-hidden">
-              <div className="px-5 sm:px-7 py-4 sm:py-5 border-b border-outline-variant/10 flex items-center gap-3" style={{ background: "linear-gradient(135deg, #06155F 0%, #142588 100%)" }}>
-                <span className="material-symbols-outlined text-white text-base sm:text-lg" style={{ fontVariationSettings: "'FILL' 1" }}>near_me</span>
-                {/* subheading — Host Grotesk Regular */}
-                <h3 className="font-host text-white text-sm sm:text-base">Directions Guide</h3>
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-outline-variant/10">
-                {[
-                  { step: "01", title: "From Bus Stand",     desc: "Head west on NH 44, take Co-operative Colony turn. Hospital is 0.8 km on West Link Road (35A).", icon: "directions_bus" },
-                  { step: "02", title: "Emergency Entrance", desc: "Use the dedicated Emergency Gate on the north side — open 24/7 with ramp access.",               icon: "emergency_home" },
-                  { step: "03", title: "Parking",            desc: "Free emergency parking outside the Emergency wing. Valet service active after 6 PM.",              icon: "local_parking"  },
-                  { step: "04", title: "Ambulance Bay",      desc: "Enter via rear gate off West Link Road. Trauma team meets you at the bay.",                        icon: "ambulance"      },
-                ].map(({ step, title, desc, icon }) => (
-                  <div key={step} className="flex gap-3 sm:gap-4 p-4 sm:p-6 items-start">
-                    <div className="flex-shrink-0 w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-primary-fixed/40 flex items-center justify-center">
-                      <span className="material-symbols-outlined text-primary text-xs sm:text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>{icon}</span>
-                    </div>
-                    <div>
-                      <p className="text-xs font-black text-primary/50 uppercase tracking-widest mb-0.5">Step {step}</p>
-                      {/* subheading — Host Grotesk Regular */}
-                      <p className="font-host text-on-surface text-sm sm:text-base">{title}</p>
-                      <p className="text-sm sm:text-base text-on-surface-variant mt-1 leading-relaxed">{desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
+            {/* Map */}
+            <div className="lg:col-span-2 rounded-2xl overflow-hidden border-2 border-primary/20 shadow-xl h-64 sm:h-full min-h-[280px]">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13164.262211032852!2d78.20611548466795!3d12.517063073760358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bac35c0e9566689%3A0x7b40cb9bac1a085f!2sJP%20NEURO%20SPINE%20HOSPITAL%20AND%20PAIN%20MANAGEMENT%20CENTRE!5e0!3m2!1sen!2sin!4v1775148501831!5m2!1sen!2sin"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="JP Neuro Spine Hospital and Pain Management Centre Hospital Location"
+              />
             </div>
-          </div>
-
-          {/* Full-width Map */}
-          <div className="rounded-2xl overflow-hidden border-2 border-primary/20 shadow-xl h-60 sm:h-80 w-full">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13164.262211032852!2d78.20611548466795!3d12.517063073760358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bac35c0e9566689%3A0x7b40cb9bac1a085f!2sJP%20NEURO%20SPINE%20HOSPITAL%20AND%20PAIN%20MANAGEMENT%20CENTRE!5e0!3m2!1sen!2sin!4v1775148501831!5m2!1sen!2sin"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="JP Neuro Spine Hospital Location"
-            />
           </div>
 
         </div>

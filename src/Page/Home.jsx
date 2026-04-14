@@ -45,7 +45,7 @@ function HeroSection({ t }) {
             <div>
               <div className="flex items-center gap-3 mb-4">
                 {/* <div className="h-px w-6 bg-on-tertiary-container shrink-0" /> */}
-                <span className="text-[11px] font-bold tracking-[0.2em] text-on-tertiary-container uppercase">
+                <span className="text-base sm:text-lg font-bold tracking-normal text-on-tertiary-container uppercase">
                   {t.visionLabel}
                 </span>
               </div>
@@ -58,7 +58,7 @@ function HeroSection({ t }) {
             <div>
               <div className="flex items-center gap-3 mb-3">
                 {/* <div className="h-px w-6 bg-on-tertiary-container shrink-0" /> */}
-                <span className="text-[11px] font-bold tracking-[0.2em] text-on-tertiary-container uppercase">
+                <span className="text-base sm:text-lg font-bold tracking-normal text-on-tertiary-container uppercase">
                   {t.missionLabel}
                 </span>
               </div>

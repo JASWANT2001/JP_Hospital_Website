@@ -5,7 +5,14 @@
       "Bash(npm run:*)",
       "Bash(node -e ':*)",
       "Bash(node -e \"const {createHash}=require\\('crypto'\\); console.log\\(createHash\\('sha256'\\).update\\('HospitalBlog@2026!'\\).digest\\('hex'\\)\\)\")",
-      "Bash(find /Users/jash/Downloads/JP_Neural -type f \\\\\\( -name \"README.md\" -o -name \".gitignore\" -o -name \"index.html\" \\\\\\) ! -path \"*/node_modules/*\" -exec grep -l \".\" {} \\\\;)"
+      "Bash(find /Users/jash/Downloads/JP_Neural -type f \\\\\\( -name \"README.md\" -o -name \".gitignore\" -o -name \"index.html\" \\\\\\) ! -path \"*/node_modules/*\" -exec grep -l \".\" {} \\\\;)",
+      "Bash(grep -rn \"Hospital and$\\\\|Centre$\\\\|Management Centre$\" src/ --include=\"*.jsx\" --include=\"*.js\")",
+      "Bash(grep -n \"Hospital and$\\\\|Centre$\\\\|Management$\" /Users/jash/Downloads/Jp_Website_live/src/context/LanguageContext.jsx)",
+      "Bash(node --input-type=module)",
+      "Bash(npx --yes acorn --ecma2020 --module src/context/LanguageContext.jsx)",
+      "Bash(npx --yes @babel/parser --plugins=jsx src/context/LanguageContext.jsx)",
+      "Bash(python3 -c ':*)",
+      "Bash(grep -rn \"Hospital and$\\\\|Management Centre$\" src/ --include=\"*.jsx\" --include=\"*.js\")"
     ]
   }
 }

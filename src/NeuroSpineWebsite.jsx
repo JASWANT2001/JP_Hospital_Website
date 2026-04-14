@@ -10,7 +10,7 @@ export default function NeuroSpineWebsite() {
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
               <Activity className="w-8 h-8 text-blue-900" />
-              <span className="text-2xl font-bold text-blue-900">JF Neuro-Spine</span>
+              <span className="text-2xl font-bold text-blue-900">JF Neuro Spine</span>
             </div>
             
             <div className="hidden md:flex items-center space-x-8">
@@ -46,7 +46,7 @@ export default function NeuroSpineWebsite() {
               </div>
               
               <div className="text-sm text-gray-600 uppercase tracking-wider font-semibold">
-                NEURO-SPINE NEUROSURGERY & PAIN MANAGEMENT CENTRE
+                NEURO SPINE NEUROSURGERY & PAIN MANAGEMENT CENTRE
               </div>
               
               <h1 className="text-5xl md:text-6xl font-bold text-blue-900 leading-tight">
@@ -55,7 +55,7 @@ export default function NeuroSpineWebsite() {
               </h1>
               
               <p className="text-gray-600 text-lg leading-relaxed max-w-xl">
-                Combining neurosurgical excellence with compassionate pain management, JF Neuro-Spine isn't just treat symptoms—we restore quality of life to every advanced surgical intervention to specialized pain recovery.
+                Combining neurosurgical excellence with compassionate pain management, JF Neuro Spine isn't just treat symptoms—we restore quality of life to every advanced surgical intervention to specialized pain recovery.
               </p>
               
               <div className="flex items-center space-x-4 pt-4">
@@ -240,7 +240,7 @@ export default function NeuroSpineWebsite() {
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all">
               <div className="text-orange-400 text-4xl mb-4">"</div>
               <p className="text-white leading-relaxed mb-6 italic">
-                "After years of debilitating back pain, I've been at JP Neuro-Spine gave me my life back. The precision of the surgery and the compassion of the team were second to none."
+                "After years of debilitating back pain, I've been at JP Neuro Spine Hospital and Pain Management Centre gave me my life back. The precision of the surgery and the compassion of the team were second to none."
               </p>
               <div className="flex items-center space-x-3">
                 <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">
@@ -310,7 +310,7 @@ export default function NeuroSpineWebsite() {
             
             <div className="text-center md:text-left max-w-2xl">
               <p className="text-gray-700 leading-relaxed">
-                JF Neuro-Spine is certified by the Clinical Establishment Act (CEA) and licensed hospital. This license is our commitment to maintaining the highest standards of medical ethics, safety protocols, and patient care infrastructure.
+                JF Neuro Spine is certified by the Clinical Establishment Act (CEA) and licensed hospital. This license is our commitment to maintaining the highest standards of medical ethics, safety protocols, and patient care infrastructure.
               </p>
             </div>
           </div>
@@ -346,10 +346,10 @@ export default function NeuroSpineWebsite() {
             <div>
               <div className="flex items-center space-x-2 mb-4">
                 <Activity className="w-6 h-6" />
-                <span className="text-xl font-bold">JF Neuro-Spine</span>
+                <span className="text-xl font-bold">JF Neuro Spine</span>
               </div>
               <p className="text-blue-200 text-sm leading-relaxed">
-                JF Neuro-Spine Neurosurgery and Pain Management Centre, Thiagarar Salai, Madurai - 625001
+                JF Neuro Spine Neurosurgery and Pain Management Centre, Thiagarar Salai, Madurai - 625001
               </p>
             </div>
             
@@ -388,14 +388,14 @@ export default function NeuroSpineWebsite() {
             <div>
               <h3 className="font-bold text-lg mb-4">ACCREDITATION</h3>
               <p className="text-blue-200 text-sm leading-relaxed mb-4">
-                © 2025 JF Neuro-Spine Hospital, GSA Licensed
+                © 2025 JF Neuro Spine Hospital, GSA Licensed
               </p>
             </div>
           </div>
           
           <div className="pt-8 border-t border-blue-900 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-sm text-blue-300">
-              © 2025 JF Neuro-Spine. All rights reserved.
+              © 2025 JF Neuro Spine. All rights reserved.
             </div>
             <div className="flex space-x-6">
               <a href="#" className="text-blue-300 hover:text-white transition-colors">

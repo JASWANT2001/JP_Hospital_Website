@@ -157,20 +157,15 @@ function LeadershipSection({ t }) {
 // ─── Accreditations Section ───────────────────────────────────────────────────
 function AccreditationsSection({ t }) {
   return (
-    <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-surface-container-low">
-      <div className="container mx-auto">
-        <div className="bg-surface-container-lowest rounded-xl p-8 sm:p-10 lg:p-12 flex flex-col md:flex-row items-center gap-8 md:gap-12">
-          <div className="flex-1 text-center md:text-left">
-            <span className="text-secondary font-bold tracking-widest text-xs uppercase mb-4 block">
-              {t.eyebrow}
-            </span>
-            <h2 className="font-subheading text-xl sm:text-2xl text-primary mb-4 lg:mb-6">{t.heading}</h2>
-            <p className="text-on-surface-variant text-sm sm:text-base mb-6 lg:mb-8">{t.body}</p>
-            {/* <div className="flex items-center justify-center md:justify-start gap-4 text-primary font-semibold flex-wrap">
-              <span className="material-symbols-outlined shrink-0">verified_user</span>
-              <span className="text-sm sm:text-base">{t.license}</span>
-            </div> */}
+    <section className="py-10 sm:py-12 px-4 sm:px-6 lg:px-8 bg-surface-container-low">
+      <div className="max-w-2xl mx-auto">
+        <div className="bg-surface rounded-2xl shadow-md border border-outline-variant/20 px-8 py-8 sm:px-12 sm:py-10 text-center">
+          <div className="flex justify-center mb-4">
+            {/* <span className="material-symbols-outlined text-4xl text-secondary">verified_user</span> */}
           </div>
+          <h2 className="font-subheading text-2xl sm:text-3xl text-primary mb-3">{t.eyebrow}</h2>
+          <div className="w-10 h-0.5 bg-secondary/40 mx-auto mb-4" />
+          <p className="text-on-surface-variant text-sm sm:text-base leading-relaxed">{t.body}</p>
         </div>
       </div>
     </section>

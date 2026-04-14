@@ -27,7 +27,7 @@ export const navTranslations = {
       { to: '/departments/physiotherapy', label: 'Physiotherapy' },
       { to: '/patient-services', label: 'Patient Services' },
       { to: '/doctors', label: 'Doctors' },
-      { to: '/blog', label: 'Blog' },
+      // { to: '/blog', label: 'Blog' },
       { to: '/contact-us', label: 'Contact' },
     ],
     emergency: 'Emergency',
@@ -43,11 +43,91 @@ export const navTranslations = {
       { to: '/departments/physiotherapy', label: 'இயற்பியல் சிகிச்சை' },
       { to: '/patient-services', label: 'நோயாளர் சேவை' },
       { to: '/doctors', label: 'மருத்துவர்கள்' },
-      { to: '/blog', label: 'கட்டுரைகள்' },
+      // { to: '/blog', label: 'கட்டுரைகள்' },
       { to: '/contact-us', label: 'தொடர்பு' },
     ],
     emergency: 'அவசரநிலை',
     bookAppointment: 'சந்திப்பு பதிவு செய்க',
+  },
+};
+
+// ─── Footer translations ──────────────────────────────────────────────────────
+export const footerTranslations = {
+  en: {
+    tagline: 'Providing clinical excellence with empathy and precision — a trusted centre for advanced neurological and spinal care in Tamil Nadu.',
+    followUs: 'Follow Us',
+    quickLinks: {
+      heading: 'Quick Links',
+      links: [
+        { label: 'Home', to: '/' },
+        { label: 'About Us', to: '/about-us' },
+        { label: 'Departments', to: '/department-services' },
+        { label: 'Our Doctors', to: '/doctors' },
+        { label: 'Patient Services', to: '/patient-services' },
+        { label: 'Patient Education', to: '/patient-education' },
+        { label: 'Contact Us', to: '/contact-us' },
+      ],
+    },
+    services: {
+      heading: 'Our Services',
+      links: [
+        { label: 'Neurology', to: '/department-services' },
+        { label: 'Spine Surgery', to: '/department-services' },
+        { label: 'Pain Management', to: '/department-services' },
+        { label: 'Neuro Rehabilitation', to: '/department-services' },
+        { label: 'Emergency Care', to: '/emergency' },
+      ],
+    },
+    contact: {
+      heading: 'Contact Info',
+      // hours: 'Mon – Sat: 9 AM – 6 PM',
+      emergency: 'Emergency: 24 / 7',
+      viewMap: 'View on Google Maps',
+    },
+    bottom: {
+      copyright: '© 2026 JP Neuro Spine Hospital & Pain Management Centre. All rights reserved.',
+      cea: 'CEA Licensed',
+      privacy: 'Privacy Policy',
+      terms: 'Terms of Use',
+    },
+  },
+  ta: {
+    tagline: 'அனுதாபமும் துல்லியமும் கொண்ட மருத்துவச் சிறப்பு — தமிழ்நாட்டில் மேம்பட்ட நரம்பியல் மற்றும் முதுகெலும்பு சிகிச்சைக்கான நம்பகமான மையம்.',
+    followUs: 'எங்களை பின்தொடரவும்',
+    quickLinks: {
+      heading: 'விரைவு இணைப்புகள்',
+      links: [
+        { label: 'முகப்பு', to: '/' },
+        { label: 'எங்களை பற்றி', to: '/about-us' },
+        { label: 'துறைகள்', to: '/department-services' },
+        { label: 'எங்கள் மருத்துவர்கள்', to: '/doctors' },
+        { label: 'நோயாளர் சேவைகள்', to: '/patient-services' },
+        { label: 'நோயாளர் கல்வி', to: '/patient-education' },
+        { label: 'தொடர்பு கொள்ளுங்கள்', to: '/contact-us' },
+      ],
+    },
+    services: {
+      heading: 'எங்கள் சேவைகள்',
+      links: [
+        { label: 'நரம்பியல்', to: '/department-services' },
+        { label: 'முதுகெலும்பு அறுவை சிகிச்சை', to: '/department-services' },
+        { label: 'வலி மேலாண்மை', to: '/department-services' },
+        { label: 'நரம்பியல் மறுவாழ்வு', to: '/department-services' },
+        { label: 'அவசர சிகிச்சை', to: '/emergency' },
+      ],
+    },
+    contact: {
+      heading: 'தொடர்பு தகவல்',
+      hours: 'திங்கள் – சனி: காலை 9 – மாலை 6',
+      emergency: 'அவசரநிலை: 24 / 7',
+      viewMap: 'கூகுள் வரைபடத்தில் காண்க',
+    },
+    bottom: {
+      copyright: '© 2026 JP Neuro Spine Hospital and Pain Management Centre. அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.',
+      cea: 'CEA உரிமம் பெற்றது',
+      privacy: 'தனியுரிமைக் கொள்கை',
+      terms: 'பயன்பாட்டு விதிமுறைகள்',
+    },
   },
 };
 
@@ -71,7 +151,7 @@ export const criticalCareTranslations = {
       glanceTitle: 'Unit at a Glance',
       stats: [
         { icon: 'schedule',        label: 'Availability',        value: '24 / 7 / 365' },
-        { icon: 'bed',             label: 'ICU Beds',            value: '12 Beds' },
+        { icon: 'bed',             label: 'ICU Beds',            value: '3 Beds' },
         { icon: 'group',           label: 'Specialists On-Call', value: 'Always Present' },
         { icon: 'local_hospital',  label: 'Response Time',       value: '< 5 Minutes' },
       ],
@@ -79,9 +159,9 @@ export const criticalCareTranslations = {
       emergencyBody: 'For life-threatening neurological emergencies, call our dedicated ICU hotline immediately.',
       whyTitle: 'Why Our ICU',
       whyPoints: [
-        'Board-certified neurointensivists',
-        'State-of-the-art ventilator support',
-        'Dedicated neuro-monitoring lab',
+        'Continous monitoring.',
+        'Care focussed on early recovery.',
+        'State-of-the-art ventilator support.',
         'Family counselling & support',
       ],
     },
@@ -104,7 +184,7 @@ export const criticalCareTranslations = {
       glanceTitle: 'பிரிவின் சுருக்கம்',
       stats: [
         { icon: 'schedule',       label: 'கிடைக்கும் நேரம்',   value: '24 / 7 / 365' },
-        { icon: 'bed',            label: 'ICU படுக்கைகள்',     value: '12 படுக்கைகள்' },
+        { icon: 'bed',            label: 'ICU படுக்கைகள்',     value: '3 படுக்கைகள்' },
         { icon: 'group',          label: 'அழைப்பில் நிபுணர்கள்', value: 'எப்போதும் உள்ளனர்' },
         { icon: 'local_hospital', label: 'மறுமொழி நேரம்',      value: '< 5 நிமிடங்கள்' },
       ],
@@ -112,9 +192,9 @@ export const criticalCareTranslations = {
       emergencyBody: 'உயிர் அச்சுறுத்தும் நரம்பியல் அவசரநிலைகளுக்கு, எங்கள் ICU நேரடி தொலைபேசியில் உடனே அழையுங்கள்.',
       whyTitle: 'எங்கள் ICU ஏன்?',
       whyPoints: [
-        'சான்றிதழ் பெற்ற நரம்பியல் தீவிர சிகிச்சை நிபுணர்கள்',
-        'நவீன சுவாச கருவி ஆதரவு',
-        'அர்ப்பணிக்கப்பட்ட நரம்பு கண்காணிப்பு ஆய்வகம்',
+        'தொடர்ச்சியான கண்காணிப்பு.',
+        'முன்கூட்டிய மீட்புக்கு கவனம் செலுத்திய சிகிச்சை.',
+        'நவீன சுவாச கருவி ஆதரவு.',
         'குடும்ப ஆலோசனை & உதவி',
       ],
     },
@@ -351,7 +431,7 @@ export const aboutTranslations = {
     hero: {
       eyebrow: 'OUR JOURNEY',
       heading: 'Bringing state-of-the-art care closer.',
-      body1: 'JP Neuro-Spine Hospital was founded with a clear purpose to make advanced neurological and spine care accessible to every individual who needs it. We believe that expertise and innovation should not be limited by geography, and that every patient deserves access to world-class treatment.',
+      body1: 'JP Neuro Spine Hospital and Pain Management Centre was founded with a clear purpose to make advanced neurological and spine care accessible to every individual who needs it. We believe that expertise and innovation should not be limited by geography, and that every patient deserves access to world-class treatment.',
       body2: 'Our approach combines cutting-edge technology with a team of highly skilled specialists who are dedicated to precision, safety, and long-term recovery. From diagnosis to rehabilitation, every step is designed to ensure confidence, clarity, and comfort for our patients and their families.',
       quote: '"Precision in surgery, compassion in care."',
       quoteCaption: 'Guiding every patient interaction.',
@@ -359,7 +439,7 @@ export const aboutTranslations = {
     visionMission: {
       statsLabel: 'Years of Clinical Excellence',
       visionTitle: 'Our Vision',
-      visionBody: 'Restoring lives through excellence in neuro-spine and pain care.',
+      visionBody: 'Restoring lives through excellence in Neuro Spine and pain care.',
       missionTitle: 'Our Mission',
       missionItems: [
         { icon: 'clinical_notes',      title: 'Clinical Excellence',  desc: 'We uphold the highest standards of medical practice through evidence-based treatment, continuous learning, and outcome-driven care.' },
@@ -388,8 +468,8 @@ export const aboutTranslations = {
     accreditation: {
       eyebrow: 'TRUST & COMPLIANCE',
       heading: 'Fully Licensed & Accredited',
-      body: 'JP Neuro-Spine Hospital operates under strict compliance with medical standards. We are proud to be a CEA Licensed facility, ensuring the highest level of safety and operational integrity for our patients.',
-      license: 'CEA License No: CEA-HOSP-2024-0012',
+      body: 'Evidence-based treatment, advanced equipment, and standard protocols—delivering safe, precise care.',
+      // license: 'CEA License No: CEA-HOSP-2024-0012',
     },
     cta: {
       heading: 'Experience Care Without Compromise',
@@ -402,7 +482,7 @@ export const aboutTranslations = {
     hero: {
       eyebrow: 'எங்கள் பயணம்',
       heading: 'நவீன சிகிச்சையை உங்கள் அருகில் கொண்டு வருகிறோம்.',
-      body1: 'JP Neuro-Spine மருத்துவமனை, நரம்பியல் மற்றும் முதுகெலும்பு சிகிச்சையை தேவைப்படும் ஒவ்வொருவருக்கும் எட்டும் தூரத்தில் கொண்டு வர வேண்டும் என்ற தெளிவான நோக்கத்துடன் நிறுவப்பட்டது. நிபுணத்துவமும் கண்டுபிடிப்பும் புவியியல் வரம்புகளால் கட்டுப்படுத்தப்படக்கூடாது என்று நம்புகிறோம்.',
+      body1: 'JP Neuro Spine Hospital and Pain Management Centre, நரம்பியல் மற்றும் முதுகெலும்பு சிகிச்சையை தேவைப்படும் ஒவ்வொருவருக்கும் எட்டும் தூரத்தில் கொண்டு வர வேண்டும் என்ற தெளிவான நோக்கத்துடன் நிறுவப்பட்டது. நிபுணத்துவமும் கண்டுபிடிப்பும் புவியியல் வரம்புகளால் கட்டுப்படுத்தப்படக்கூடாது என்று நம்புகிறோம்.',
       body2: 'எங்கள் அணுகுமுறை அதி நவீன தொழில்நுட்பத்தை துல்லியம், பாதுகாப்பு மற்றும் நீண்டகால மீட்புக்கு அர்ப்பணிக்கப்பட்ட நிபுணர் குழுவுடன் இணைக்கிறது. நோயறிதல் முதல் மறுவாழ்வு வரை, ஒவ்வொரு படியும் நோயாளிகளுக்கும் அவர்கள் குடும்பத்தினருக்கும் நம்பிக்கை, தெளிவு மற்றும் நலன் உறுதி செய்யும் வகையில் வடிவமைக்கப்பட்டுள்ளது.',
       quote: '"அறுவை சிகிச்சையில் துல்லியம், சிகிச்சையில் இரக்கம்."',
       quoteCaption: 'ஒவ்வொரு நோயாளி தொடர்பையும் வழிநடத்துகிறது.',
@@ -438,8 +518,8 @@ export const aboutTranslations = {
     },
     accreditation: {
       eyebrow: 'நம்பகத்தன்மை & இணக்கம்',
-      heading: 'முழுமையாக உரிமம் பெற்றது & அங்கீகரிக்கப்பட்டது',
-      body: 'JP Neuro-Spine மருத்துவமனை மருத்துவ தரங்களுக்கு கண்டிப்பான இணக்கத்துடன் செயல்படுகிறது. CEA உரிமம் பெற்ற நிறுவனமாக, நோயாளிகளுக்கு உயர்ந்த பாதுகாப்பு மற்றும் செயல்பாட்டு ஒழுங்கமைப்பை உறுதி செய்கிறோம்.',
+      heading: 'முழுமையாக உரிமம் பெற்றது, அங்கீகரிக்கப்பட்டது & உங்கள் பாதுகாப்பில் அர்ப்பணிக்கப்பட்டது',
+      body: 'JP Neuro Spine Hospital and Pain Management Centre, Clinical Establishment Act நிர்ணயித்த மருத்துவ தரங்களுக்கு கண்டிப்பான இணக்கத்துடன் செயல்படுகிறது. ஒவ்வொரு சிகிச்சை முடிவும் சான்றிதழ் பெற்ற நிபுணர்கள், நவீன கண்டறியும் கருவிகள் மற்றும் நிரூபிக்கப்பட்ட நெறிமுறைகளால் ஆதரிக்கப்படுகிறது — நோயறிதல் முதல் மீட்பு வரை ஒவ்வொரு நோயாளியும் பாதுகாப்பான, துல்லியமான மற்றும் வெளிப்படையான சிகிச்சையை பெறுவதை உறுதி செய்கிறோம்.',
       license: 'CEA உரிம எண்: CEA-HOSP-2024-0012',
     },
     cta: {
@@ -456,7 +536,7 @@ export const patientServicesTranslations = {
     hero: {
       heading1: 'Comprehensive Patient',
       heading2: 'Services & Facilities',
-      body: 'At JP Neuro-Spine, we blend surgical precision with compassionate care, providing a holistic healing environment for complex neurological and spine conditions.',
+      body: 'JP Neuro Spine Hospital and Pain Management Centre blends surgical precision with compassionate care, providing a holistic healing environment for complex neurological and spine conditions.',
     },
     opd: {
       eyebrow: 'Out-Patient Department',
@@ -469,7 +549,10 @@ export const patientServicesTranslations = {
       sunday: 'Sunday',
       monFriMorning: 'Mon – Fri (Morning)',
       monFriEvening: 'Mon – Fri (Evening)',
-      dailySession: 'Daily Session',
+      dailySession: 'Mon – Sat',
+      dailySessionEvening: 'Mon – Sat (Evening)',
+      neuroDesc: 'Expert consultation for brain, spine, and nerve conditions by our senior neurosurgeon.',
+      painDesc: 'Specialised pain evaluation and intervention for chronic and acute pain conditions.',
       physioDesc: 'Advanced neuro-rehabilitation and physical therapy protocols tailored for spinal recovery.',
     },
     emergency: {
@@ -485,7 +568,7 @@ export const patientServicesTranslations = {
       heading: 'Advanced In-Patient Care',
       items: [
         { title: 'Ward Options',          desc: 'Sharing Room, Private Non-AC, and Private AC Suite available for varied patient preferences.' },
-        { title: 'Specialized ICU',       desc: '3-bed specialized intensive care unit equipped for critical neuro-spine recovery and post-operative monitoring.' },
+        { title: 'Specialized ICU',       desc: '3-bed specialized intensive care unit equipped for critical Neuro Spine recovery and post-operative monitoring.' },
         { title: 'Day Care Procedures',   desc: 'Dedicated room for quick-turnaround pain management procedures and minimally invasive interventions.' },
       ],
     },
@@ -508,7 +591,7 @@ export const patientServicesTranslations = {
     hero: {
       heading1: 'விரிவான நோயாளர்',
       heading2: 'சேவைகள் & வசதிகள்',
-      body: 'JP Neuro-Spine-ல், நாங்கள் அறுவை சிகிச்சை துல்லியத்தை இரக்கமான சிகிச்சையுடன் இணைத்து, சிக்கலான நரம்பியல் மற்றும் முதுகெலும்பு நிலைமைகளுக்கு முழுமையான குணமடையும் சூழலை வழங்குகிறோம்.',
+      body: 'JP Neuro Spine Hospital and Pain Management Centre, அறுவை சிகிச்சை துல்லியத்தை இரக்கமான சிகிச்சையுடன் இணைத்து, சிக்கலான நரம்பியல் மற்றும் முதுகெலும்பு நிலைமைகளுக்கு முழுமையான குணமடையும் சூழலை வழங்குகிறோம்.',
     },
     opd: {
       eyebrow: 'வெளி நோயாளர் பிரிவு',
@@ -522,6 +605,8 @@ export const patientServicesTranslations = {
       monFriMorning: 'திங்கள் – வெள்ளி (காலை)',
       monFriEvening: 'திங்கள் – வெள்ளி (மாலை)',
       dailySession: 'தினசரி அமர்வு',
+      neuroDesc: 'எங்கள் மூத்த நரம்பியல் அறுவை சிகிச்சை நிபுணரால் மூளை, முதுகெலும்பு மற்றும் நரம்பு நிலைமைகளுக்கான நிபுணர் ஆலோசனை.',
+      painDesc: 'நாள்பட்ட மற்றும் கடுமையான வலி நிலைமைகளுக்கான சிறப்பு வலி மதிப்பீடு மற்றும் தலையீடு.',
       physioDesc: 'முதுகெலும்பு மீட்புக்காக வடிவமைக்கப்பட்ட மேம்பட்ட நரம்பியல் மறுவாழ்வு மற்றும் உடல் சிகிச்சை நெறிமுறைகள்.',
     },
     emergency: {
@@ -575,7 +660,7 @@ export const doctorsTranslations = {
       expertiseTitle: 'Areas of Expertise',
       expertise: ['Brain Tumour Surgery', 'Spine Surgery', 'Endoscopic Neurosurgery', 'Trauma Surgery', 'Peripheral Nerve Surgery'],
       opdLabel: 'OPD Availability',
-      opdTimes: ['Mon – Sat · 4 PM – 9 PM', 'Sun · 9 AM – 1 PM'],
+      opdTimes: ['Mon – Sat · 10 AM – 1 PM', 'Mon – Sat · 4 PM – 9 PM'],
       bookBtn: 'Book Consultation',
     },
     prasanna: {
@@ -634,7 +719,7 @@ export const doctorsTranslations = {
       expertiseTitle: 'நிபுணத்துவ துறைகள்',
       expertise: ['மூளை கட்டி அறுவை', 'முதுகெலும்பு அறுவை', 'எண்டோஸ்கோபிக் நரம்பியல் அறுவை', 'காயம் அறுவை', 'புற நரம்பு அறுவை'],
       opdLabel: 'OPD கிடைக்கும் நேரம்',
-      opdTimes: ['திங்கள் – சனி · மாலை 4 – 9 மணி', 'ஞாயிறு · காலை 9 – பகல் 1 மணி'],
+      opdTimes: ['திங்கள் – சனி · காலை 10 – பகல் 1 மணி', 'திங்கள் – சனி · மாலை 4 – 9 மணி'],
       bookBtn: 'ஆலோசனை பதிவு',
     },
     prasanna: {
@@ -686,9 +771,9 @@ export const contactTranslations = {
     hero: {
       eyebrow: 'Direct Access',
       heading: 'Get in Touch',
-      body: 'Expert neuro-spine care and advanced pain management. Reach out to our clinical team for consultations or emergency assistance.',
+      body: 'Expert Neuro Spine care and advanced pain management. Reach out to our clinical team for consultations or emergency assistance.',
       specialtiesLabel: 'Our Specialties',
-      specialties: ['Neuro Surgery', 'Spine Management', 'Chronic Pain', 'Physiotherapy', 'Emergency Care'],
+      specialties: ['Neuro Surgery', 'Spine Surgery', 'Chronic Pain', 'Physiotherapy', 'Emergency Care'],
       accreditationsLabel: 'Accreditations',
       accreditations: [
         { icon: 'verified',          label: 'NABH Accredited' },
@@ -704,12 +789,28 @@ export const contactTranslations = {
       digitalTitle: 'Digital Support',
     },
     hours: {
-      heading: 'Hospital Hours',
-      sub: 'Operational timings',
+      heading: 'OPD Timings',
+      sub: 'Consultation hours by department',
+      depts: [
+        {
+          name: 'Neurosurgery', icon: 'neurology',
+          slots: [
+            { days: 'Mon – Sat', time: '10 AM – 1 PM' },
+            { days: 'Mon – Sat', time: '4 PM – 9 PM'  },
+            { days: 'Sunday',    time: '9 AM – 1 PM'  },
+          ],
+        },
+        {
+          name: 'Pain Medicine', icon: 'medication',
+          slots: [
+            { days: 'Mon – Fri', time: '10 AM – 1 PM'  },
+            { days: 'Mon – Fri', time: '6:30 PM – 8 PM' },
+          ],
+        },
+      ],
       rows: [
-        { label: 'Outpatient (OPD)', time: '9 AM – 8 PM',      icon: 'local_hospital', sub: 'Mon – Sat',       highlight: false },
-        { label: 'Emergency',        time: '24 Hrs / 7 Days',  icon: 'emergency',      sub: 'Always open',     highlight: true  },
-        { label: 'Surgery',          time: 'By Appointment',   icon: 'calendar_month', sub: 'Pre-booked only', highlight: false },
+        { label: 'Emergency', time: '24 Hrs / 7 Days', icon: 'emergency',      sub: 'Always open',     highlight: true  },
+        { label: 'Surgery',   time: 'By Appointment',  icon: 'calendar_month', sub: 'Pre-booked only', highlight: false },
       ],
     },
   },
@@ -735,12 +836,28 @@ export const contactTranslations = {
       digitalTitle: 'டிஜிட்டல் ஆதரவு',
     },
     hours: {
-      heading: 'மருத்துவமனை நேரங்கள்',
-      sub: 'செயல்பாட்டு நேரங்கள்',
+      heading: 'OPD நேரங்கள்',
+      sub: 'துறை வாரியான ஆலோசனை நேரங்கள்',
+      depts: [
+        {
+          name: 'நரம்பியல் அறுவை', icon: 'neurology',
+          slots: [
+            { days: 'திங்கள் – சனி', time: 'காலை 10 – பகல் 1'  },
+            { days: 'திங்கள் – சனி', time: 'மாலை 4 – இரவு 9'   },
+            { days: 'ஞாயிறு',        time: 'காலை 9 – பகல் 1'   },
+          ],
+        },
+        {
+          name: 'வலி மருத்துவம்', icon: 'medication',
+          slots: [
+            { days: 'திங்கள் – வெள்ளி', time: 'காலை 10 – பகல் 1'    },
+            { days: 'திங்கள் – வெள்ளி', time: 'மாலை 6:30 – இரவு 8'  },
+          ],
+        },
+      ],
       rows: [
-        { label: 'வெளி நோயாளர் (OPD)', time: 'காலை 9 – இரவு 8',  icon: 'local_hospital', sub: 'திங்கள் – சனி',      highlight: false },
-        { label: 'அவசர சிகிச்சை',      time: '24 மணி / 7 நாள்',  icon: 'emergency',      sub: 'எப்போதும் திறந்தது', highlight: true  },
-        { label: 'அறுவை சிகிச்சை',     time: 'முன்பதிவு மட்டும்', icon: 'calendar_month', sub: 'முன்பதிவு அவசியம்',  highlight: false },
+        { label: 'அவசர சிகிச்சை', time: '24 மணி / 7 நாள்',  icon: 'emergency',      sub: 'எப்போதும் திறந்தது', highlight: true  },
+        { label: 'அறுவை சிகிச்சை', time: 'முன்பதிவு மட்டும்', icon: 'calendar_month', sub: 'முன்பதிவு அவசியம்',  highlight: false },
       ],
     },
   },
@@ -750,18 +867,18 @@ export const contactTranslations = {
 export const homeTranslations = {
   en: {
     hero: {
-      eyebrow: 'JP Neuro-Spine Hospital & Pain Management Centre',
+      eyebrow: 'JP Neuro Spine Hospital & Pain Management Centre',
       visionLabel: 'Our Vision',
-      vision: 'Restoring lives through excellence in neuro-spine and pain care',
+      vision: 'Restoring lives through excellence in Neuro Spine and pain care',
       missionLabel: 'Our Mission',
-      mission: 'To deliver ethical, evidence-based, and patient-centric neuro-spine and pain management services through clinical excellence, advanced technology, and compassionate care.',
+      mission: 'To deliver ethical, evidence-based, and patient-centric Neuro Spine and pain management services through clinical excellence, advanced technology, and compassionate care.',
       cta: 'Call to Book Appointment',
       cta2: 'Our Services',
       quote: '"Excellence in every incision, compassion in every interaction."',
       facilities: [
+         { icon: 'neurology',        label: 'Brain & Spine Surgery' },
+         { icon: 'medical_services', label: 'Pain Management' },
         { icon: 'emergency',        label: 'Critical Care' },
-        { icon: 'neurology',        label: 'Brain & Spine Surgery' },
-        { icon: 'medical_services', label: 'Pain Management' },
         { icon: 'self_improvement', label: 'Physiotherapy' },
       ],
       valuesLabel: 'Core Values',
@@ -816,7 +933,7 @@ export const homeTranslations = {
           initials: 'P',
           name: 'Prabha',
           role: 'Spinal Surgery Patient',
-          quote: 'After years of debilitating back pain, the team at JP Neuro-Spine gave me my life back. The precision of the surgery and the care during recovery was world-class.',
+          quote: 'After years of debilitating back pain, the team at JP Neuro Spine Hospital and Pain Management Centre gave me my life back. The precision of the surgery and the care during recovery was world-class.',
         },
         {
           initials: 'S',
@@ -836,14 +953,14 @@ export const homeTranslations = {
       badge: 'CEA LICENSED',
       badgeSub: 'HOSPITAL REGISTRATION',
       heading: 'Recognized Clinical Excellence',
-      body: 'JP Neuro-Spine Hospital and Pain Management Centre is a Clinical Establishment Act (CEA) licensed hospital. This license is our commitment to maintaining the highest standards of medical ethics, safety protocols, and patient care infrastructure.',
+      body: 'JP Neuro Spine Hospital and Pain Management Centre is a Clinical Establishment Act (CEA) licensed hospital. This license is our commitment to maintaining the highest standards of medical ethics, safety protocols, and patient care infrastructure.',
       badges: ['NABH Standards', 'Surgical Safety Protocol', 'Infection Control Excellence'],
     },
   },
 
   ta: {
     hero: {
-      eyebrow: 'JP நரம்பு-முதுகெலும்பு மருத்துவமனை & வலி மேலாண்மை மையம்',
+      eyebrow: 'JP Neuro Spine Hospital and Pain Management Centre',
       visionLabel: 'எங்கள் நோக்கு',
       vision: 'நரம்பு-முதுகெலும்பு மற்றும் வலி சிகிச்சையில் சிறப்பின் மூலம் வாழ்க்கையை மீட்டெடுத்தல்',
       missionLabel: 'எங்கள் நோக்கம்',
@@ -909,7 +1026,7 @@ export const homeTranslations = {
           initials: 'P',
           name: 'பிரபா',
           role: 'முதுகெலும்பு அறுவை சிகிச்சை நோயாளி',
-          quote: 'பல வருட கொடுமையான முதுகுவலிக்குப் பிறகு, JP Neuro-Spine குழு என் வாழ்க்கையை திரும்பி தந்தது. அறுவை சிகிச்சையின் துல்லியம் மற்றும் மீட்பு காலத்தில் கிடைத்த சிகிச்சை உலகத்தரமானது.',
+          quote: 'பல வருட கொடுமையான முதுகுவலிக்குப் பிறகு, JP Neuro Spine Hospital and Pain Management Centre குழு என் வாழ்க்கையை திரும்பி தந்தது. அறுவை சிகிச்சையின் துல்லியம் மற்றும் மீட்பு காலத்தில் கிடைத்த சிகிச்சை உலகத்தரமானது.',
         },
         {
           initials: 'S',
@@ -929,8 +1046,306 @@ export const homeTranslations = {
       badge: 'CEA உரிமம்',
       badgeSub: 'மருத்துவமனை பதிவு',
       heading: 'அங்கீகரிக்கப்பட்ட மருத்துவ சிறப்பு',
-      body: 'JP Neuro-Spine மருத்துவமனை மற்றும் வலி மேலாண்மை மையம் Clinical Establishment Act (CEA) உரிமம் பெற்ற மருத்துவமனை. இந்த உரிமம் மருத்துவ நெறிமுறைகள், பாதுகாப்பு நெறிமுறைகள் மற்றும் நோயாளி சிகிச்சை உள்கட்டமைப்பில் உயர்ந்த தரத்தை பராமரிப்பதற்கான எங்கள் அர்ப்பணிப்பு ஆகும்.',
+      body: 'JP Neuro Spine Hospital and Pain Management Centre Clinical Establishment Act (CEA) உரிமம் பெற்ற மருத்துவமனை. இந்த உரிமம் மருத்துவ நெறிமுறைகள், பாதுகாப்பு நெறிமுறைகள் மற்றும் நோயாளி சிகிச்சை உள்கட்டமைப்பில் உயர்ந்த தரத்தை பராமரிப்பதற்கான எங்கள் அர்ப்பணிப்பு ஆகும்.',
       badges: ['NABH தரநிலைகள்', 'அறுவை சிகிச்சை பாதுகாப்பு நெறிமுறை', 'தொற்று கட்டுப்பாடு சிறப்பு'],
     },
+  },
+};
+
+// ─── Blog Listing page translations ──────────────────────────────────────────
+export const blogListingTranslations = {
+  en: {
+    breadcrumbHome: 'Home',
+    breadcrumbCurrent: 'Health Articles',
+    heroBadge: 'Expert Medical Insights',
+    heroHeading1: 'Health & Wellness',
+    heroHeading2: 'Knowledge Centre',
+    heroBody: 'Trusted insights on neurology, spine care, and pain management — written by our specialists to help you make informed health decisions.',
+    articleSingular: 'article',
+    articlePlural: 'articles',
+    published: 'published',
+    updatedRegularly: 'Updated regularly',
+    fromSpecialists: 'From Our Specialists',
+    latestArticles: 'Latest Articles',
+    allArticlesLabel: 'All Articles',
+    featuredBadge: 'Featured',
+    healthArticleBadge: 'Health Article',
+    readFullArticle: 'Read full article',
+    readLink: 'Read',
+    noArticlesHeading: 'No articles yet',
+    noArticlesBody: 'Our first article is on its way. Check back soon!',
+    errorMsg: 'Failed to load articles. Please refresh the page.',
+    ctaBadge: 'Specialist Care Available',
+    ctaHeading: 'Have a health concern?',
+    ctaBody: 'Our specialists are here to help. Book a consultation and get expert guidance tailored to your needs.',
+    ctaContact: 'Contact Us',
+    minRead: 'min read',
+  },
+  ta: {
+    breadcrumbHome: 'முகப்பு',
+    breadcrumbCurrent: 'சுகாதார கட்டுரைகள்',
+    heroBadge: 'நிபுணர் மருத்துவ அறிவு',
+    heroHeading1: 'சுகாதாரம் & நலன்',
+    heroHeading2: 'அறிவு மையம்',
+    heroBody: 'நரம்பியல், முதுகெலும்பு சிகிச்சை மற்றும் வலி மேலாண்மை பற்றிய நம்பகமான தகவல்கள் — நீங்கள் சரியான சுகாதார முடிவுகள் எடுக்க உதவ எங்கள் நிபுணர்களால் எழுதப்பட்டது.',
+    articleSingular: 'கட்டுரை',
+    articlePlural: 'கட்டுரைகள்',
+    published: 'வெளியிடப்பட்டது',
+    updatedRegularly: 'தொடர்ந்து புதுப்பிக்கப்படுகிறது',
+    fromSpecialists: 'எங்கள் நிபுணர்களிடமிருந்து',
+    latestArticles: 'சமீபத்திய கட்டுரைகள்',
+    allArticlesLabel: 'அனைத்து கட்டுரைகள்',
+    featuredBadge: 'சிறப்பு',
+    healthArticleBadge: 'சுகாதார கட்டுரை',
+    readFullArticle: 'முழு கட்டுரையை படியுங்கள்',
+    readLink: 'படியுங்கள்',
+    noArticlesHeading: 'இன்னும் கட்டுரைகள் இல்லை',
+    noArticlesBody: 'எங்கள் முதல் கட்டுரை வரும் வழியில் உள்ளது. விரைவில் சரிபாருங்கள்!',
+    errorMsg: 'கட்டுரைகளை ஏற்றுவதில் தோல்வி. பக்கத்தை புதுப்பிக்கவும்.',
+    ctaBadge: 'நிபுணர் சிகிச்சை கிடைக்கிறது',
+    ctaHeading: 'உடல் நல கவலை உள்ளதா?',
+    ctaBody: 'எங்கள் நிபுணர்கள் உதவ இங்கே இருக்கிறார்கள். ஒரு ஆலோசனை பதிவு செய்து உங்கள் தேவைகளுக்கு ஏற்ற நிபுணர் வழிகாட்டலைப் பெறுங்கள்.',
+    ctaContact: 'தொடர்பு கொள்ளுங்கள்',
+    minRead: 'நிமிட வாசிப்பு',
+  },
+};
+
+// ─── Blog Detail page translations ───────────────────────────────────────────
+export const blogDetailTranslations = {
+  en: {
+    allArticles: 'All articles',
+    healthArticleBadge: 'Health Article',
+    notFoundHeading: 'Article Not Found',
+    notFoundBody: 'This article may have been moved or does not exist.',
+    backToAllArticles: 'Back to all articles',
+    errorMsg: 'Failed to load article. Please try again.',
+    bookConsultation: 'Book a Consultation',
+    writtenBy: 'Written by',
+    minRead: 'min read',
+    hospitalBio: 'JP Neuro Spine Hospital and Pain Management Centre — Expert healthcare for neurology & spine conditions.',
+    needConsultation: 'Need a Consultation?',
+    consultationBody: 'Our specialists are available for expert guidance on neurology and spine conditions.',
+    callNow: 'Call Now',
+    emergencyCare: 'Emergency Care',
+    emergencyBody: '24/7 emergency neurosurgical support available at JP Neuro Spine Hospital and Pain Management Centre.',
+    emergency247: 'Emergency 24/7',
+    allArticlesBtn: 'All Articles',
+  },
+  ta: {
+    allArticles: 'அனைத்து கட்டுரைகள்',
+    healthArticleBadge: 'சுகாதார கட்டுரை',
+    notFoundHeading: 'கட்டுரை கிடைக்கவில்லை',
+    notFoundBody: 'இந்த கட்டுரை நகர்த்தப்பட்டிருக்கலாம் அல்லது இல்லாமல் இருக்கலாம்.',
+    backToAllArticles: 'அனைத்து கட்டுரைகளுக்கு திரும்பு',
+    errorMsg: 'கட்டுரையை ஏற்றுவதில் தோல்வி. மீண்டும் முயற்சிக்கவும்.',
+    bookConsultation: 'ஆலோசனை பதிவு',
+    writtenBy: 'எழுதியவர்',
+    minRead: 'நிமிட வாசிப்பு',
+    hospitalBio: 'JP Neuro Spine Hospital and Pain Management Centre — நரம்பியல் & முதுகெலும்பு நிலைமைகளுக்கான நிபுணர் சுகாதாரம்.',
+    needConsultation: 'ஆலோசனை தேவையா?',
+    consultationBody: 'நரம்பியல் மற்றும் முதுகெலும்பு நிலைமைகளில் நிபுணர் வழிகாட்டலுக்கு எங்கள் நிபுணர்கள் கிடைக்கிறார்கள்.',
+    callNow: 'இப்போது அழையுங்கள்',
+    emergencyCare: 'அவசர சிகிச்சை',
+    emergencyBody: 'JP Neuro Spine Hospital and Pain Management Centre-இல் 24/7 அவசர நரம்பியல் அறுவை சிகிச்சை ஆதரவு கிடைக்கிறது.',
+    emergency247: 'அவசரநிலை 24/7',
+    allArticlesBtn: 'அனைத்து கட்டுரைகள்',
+  },
+};
+
+// ─── Privacy Policy page translations ────────────────────────────────────────
+export const privacyPolicyTranslations = {
+  en: {
+    hero: {
+      eyebrow: 'Legal · Compliance',
+      heading: 'Privacy Policy',
+      body: 'JP Neuro Spine Hospital & Pain Management Centre is committed to protecting the privacy and confidentiality of all patients, visitors, and website users.',
+      effectiveLabel: 'Effective Date',
+      effectiveDate: '1 January 2026',
+      updatedLabel: 'Last Updated',
+      updatedDate: '1 April 2026',
+    },
+    breadcrumbHome: 'Home',
+    breadcrumbCurrent: 'Privacy Policy',
+    sidebarNotice: 'By using our services you agree to the practices described in this policy.',
+    tocLabel: 'Contents',
+    quickContact: 'Quick Contact',
+    contactUsBtn: 'Contact Us →',
+    backHome: 'Back to Home',
+    sections: [
+      {
+        id: 'information-collected',
+        title: '1. Information We Collect',
+        content: [
+          { subtitle: 'Personal Identification Information', text: 'We may collect personal information such as your full name, date of birth, gender, address, phone number, and email address when you register as a patient, book an appointment, or contact us through our website or in person.' },
+          { subtitle: 'Medical & Health Information', text: 'In the course of providing medical services, we collect health-related information including medical history, diagnoses, treatment records, prescriptions, lab results, imaging reports, and any other clinical data necessary for your care.' },
+          { subtitle: 'Technical & Usage Data', text: 'When you visit our website, we may automatically collect information such as your IP address, browser type, pages visited, time spent on pages, and referring URLs for the purpose of improving our online services.' },
+        ],
+      },
+      {
+        id: 'how-we-use',
+        title: '2. How We Use Your Information',
+        content: [
+          { subtitle: 'Providing Medical Care', text: 'Your personal and medical information is primarily used to deliver healthcare services, coordinate treatment, manage appointments, issue prescriptions, and communicate test results or follow-up instructions.' },
+          { subtitle: 'Administrative Purposes', text: 'We use your information for billing, insurance processing, appointment scheduling, and maintaining accurate medical records as required under applicable Indian healthcare regulations.' },
+          { subtitle: 'Communication', text: 'We may contact you via phone, SMS, or email to confirm appointments, share health advisories, or provide important updates related to your care at JP Neuro Spine Hospital and Pain Management Centre.' },
+          { subtitle: 'Legal & Regulatory Compliance', text: 'We retain and process data as required by the Clinical Establishments Act (CEA), the Information Technology Act, 2000, and any applicable guidelines issued by the Indian Medical Council or relevant state authorities.' },
+        ],
+      },
+      {
+        id: 'sharing',
+        title: '3. Sharing of Information',
+        content: [
+          { subtitle: 'Within the Hospital', text: 'Your information is accessible only to authorised medical and administrative staff directly involved in your care. Access is role-based and strictly limited to what is necessary.' },
+          { subtitle: 'Referrals & External Providers', text: 'With your consent, we may share relevant medical records with referred specialists, diagnostic laboratories, or other healthcare facilities to ensure continuity of care.' },
+          { subtitle: 'Legal Obligations', text: 'We may disclose your information when required by law, court order, or regulatory authority, or when necessary to protect the safety of patients, staff, or the public.' },
+          { subtitle: 'No Sale of Data', text: 'We do not sell, rent, or trade your personal or medical information to any third party for commercial or marketing purposes.' },
+        ],
+      },
+      {
+        id: 'data-security',
+        title: '4. Data Security',
+        content: [
+          { subtitle: 'Safeguards in Place', text: 'JP Neuro Spine Hospital and Pain Management Centre employs reasonable physical, electronic, and administrative safeguards to protect your personal and health information from unauthorised access, disclosure, alteration, or destruction.' },
+          { subtitle: 'Limitations', text: 'While we take reasonable steps to secure your data, no method of electronic storage or internet transmission is completely secure. We encourage patients to contact us promptly if they suspect any unauthorised use of their information.' },
+        ],
+      },
+      {
+        id: 'retention',
+        title: '5. Retention of Records',
+        content: [
+          { subtitle: 'Medical Records', text: 'Patient medical records are retained for a minimum period as prescribed by applicable Indian law and medical regulations. After this period, records may be securely disposed of or archived in accordance with regulatory guidelines.' },
+          { subtitle: 'Website Data', text: 'Technical data collected through our website is retained only for as long as necessary to fulfil the purposes for which it was collected.' },
+        ],
+      },
+      {
+        id: 'your-rights',
+        title: '6. Your Rights',
+        content: [
+          { subtitle: 'Access & Correction', text: 'You have the right to access your medical records and request corrections to any inaccurate or incomplete information. Requests can be made at our administrative office or via the contact details below.' },
+          { subtitle: 'Consent Withdrawal', text: 'Where processing is based on your consent, you may withdraw that consent at any time. Please note this will not affect the legality of any processing carried out prior to withdrawal.' },
+          { subtitle: 'Complaints', text: 'If you believe your privacy rights have been violated, you may raise a concern with our Patient Relations Officer or the relevant regulatory authority in Tamil Nadu.' },
+        ],
+      },
+      {
+        id: 'cookies',
+        title: '7. Cookies & Analytics',
+        content: [
+          { subtitle: 'Use of Cookies', text: 'Our website may use cookies to enhance your browsing experience. These are small text files stored on your device. You may configure your browser to decline cookies, although this may affect certain website functionality.' },
+          { subtitle: 'Analytics', text: 'We may use anonymised analytics tools to understand how visitors interact with our website. No personally identifiable information is collected through these tools without your explicit consent.' },
+        ],
+      },
+      {
+        id: 'policy-changes',
+        title: '8. Changes to This Policy',
+        content: [
+          { subtitle: 'Policy Updates', text: 'JP Neuro Spine Hospital and Pain Management Centre reserves the right to update this Privacy Policy at any time to reflect changes in law, regulation, or our practices. The revised policy will be published on this page with an updated effective date. We encourage you to review this page periodically.' },
+        ],
+      },
+      {
+        id: 'contact',
+        title: '9. Contact Us',
+        content: [
+          { subtitle: 'Privacy & Data Queries', text: 'For any questions, concerns, or requests relating to this Privacy Policy or the handling of your personal information, please contact us:' },
+        ],
+        contact: true,
+      },
+    ],
+  },
+  ta: {
+    hero: {
+      eyebrow: 'சட்டம் · இணக்கம்',
+      heading: 'தனியுரிமைக் கொள்கை',
+      body: 'JP Neuro Spine Hospital and Pain Management Centre அனைத்து நோயாளிகள், பார்வையாளர்கள் மற்றும் இணையதள பயனர்களின் தனியுரிமை மற்றும் இரகசியத்தன்மையை பாதுகாக்க உறுதிபூண்டுள்ளது.',
+      effectiveLabel: 'நடைமுறை தேதி',
+      effectiveDate: '1 ஜனவரி 2026',
+      updatedLabel: 'கடைசியாக புதுப்பிக்கப்பட்டது',
+      updatedDate: '1 ஏப்ரல் 2026',
+    },
+    breadcrumbHome: 'முகப்பு',
+    breadcrumbCurrent: 'தனியுரிமைக் கொள்கை',
+    sidebarNotice: 'எங்கள் சேவைகளை பயன்படுத்துவதன் மூலம் இந்தக் கொள்கையில் விவரிக்கப்பட்ட நடைமுறைகளுக்கு நீங்கள் ஒப்புக்கொள்கிறீர்கள்.',
+    tocLabel: 'உள்ளடக்கம்',
+    quickContact: 'விரைவு தொடர்பு',
+    contactUsBtn: 'தொடர்பு கொள்ளுங்கள் →',
+    backHome: 'முகப்புக்கு திரும்பு',
+    sections: [
+      {
+        id: 'information-collected',
+        title: '1. நாங்கள் சேகரிக்கும் தகவல்கள்',
+        content: [
+          { subtitle: 'தனிப்பட்ட அடையாள தகவல்', text: 'நோயாளியாக பதிவு செய்யும்போது, சந்திப்பு பதிவு செய்யும்போது அல்லது எங்கள் இணையதளம் மூலமாகவோ நேரிலோ தொடர்பு கொள்ளும்போது உங்கள் முழு பெயர், பிறந்த தேதி, பாலினம், முகவரி, தொலைபேசி எண் மற்றும் மின்னஞ்சல் முகவரி போன்ற தனிப்பட்ட தகவல்களை நாங்கள் சேகரிக்கலாம்.' },
+          { subtitle: 'மருத்துவ & சுகாதார தகவல்', text: 'மருத்துவ சேவைகளை வழங்கும் போது, உங்கள் சிகிச்சைக்கு தேவையான மருத்துவ வரலாறு, நோயறிதல்கள், சிகிச்சை பதிவுகள், மருந்துச் சீட்டுகள், ஆய்வக முடிவுகள், படிமக் கண்டறிதல் அறிக்கைகள் மற்றும் பிற மருத்துவ தரவுகளை நாங்கள் சேகரிக்கிறோம்.' },
+          { subtitle: 'தொழில்நுட்ப & பயன்பாட்டு தரவு', text: 'நீங்கள் எங்கள் இணையதளத்தை பார்வையிடும்போது, எங்கள் ஆன்லைன் சேவைகளை மேம்படுத்தும் நோக்கத்திற்காக உங்கள் IP முகவரி, உலாவி வகை, பார்வையிட்ட பக்கங்கள், பக்கங்களில் செலவழித்த நேரம் மற்றும் திசைதிருப்பல் URL கள் போன்ற தகவல்களை தானாகவே சேகரிக்கலாம்.' },
+        ],
+      },
+      {
+        id: 'how-we-use',
+        title: '2. உங்கள் தகவலை நாங்கள் எவ்வாறு பயன்படுத்துகிறோம்',
+        content: [
+          { subtitle: 'மருத்துவ சிகிச்சை வழங்குதல்', text: 'உங்கள் தனிப்பட்ட மற்றும் மருத்துவ தகவல் முதன்மையாக சுகாதார சேவைகளை வழங்க, சிகிச்சையை ஒருங்கிணைக்க, சந்திப்புகளை நிர்வகிக்க, மருந்துச் சீட்டுகளை வழங்க மற்றும் சோதனை முடிவுகள் அல்லது தொடர்ச்சியான அறிவுறுத்தல்களை தெரிவிக்க பயன்படுகிறது.' },
+          { subtitle: 'நிர்வாக நோக்கங்கள்', text: 'பொருந்தக்கூடிய இந்திய சுகாதார விதிமுறைகளின் கீழ் தேவைப்படும் பட்டியலிடல், காப்பீட்டு செயலாக்கம், சந்திப்பு திட்டமிடல் மற்றும் துல்லியமான மருத்துவ பதிவுகளை பராமரிக்க உங்கள் தகவலை பயன்படுத்துகிறோம்.' },
+          { subtitle: 'தொடர்பு', text: 'சந்திப்புகளை உறுதிப்படுத்த, சுகாதார ஆலோசனைகளை பகிர்வதற்கு அல்லது JP Neuro Spine Hospital and Pain Management Centre-இல் உங்கள் சிகிச்சை தொடர்பான முக்கியமான புதுப்பிப்புகளை வழங்க தொலைபேசி, SMS அல்லது மின்னஞ்சல் மூலம் தொடர்பு கொள்ளலாம்.' },
+          { subtitle: 'சட்ட & ஒழுங்குமுறை இணக்கம்', text: 'Clinical Establishments Act (CEA), Information Technology Act, 2000 மற்றும் Indian Medical Council அல்லது பொருந்தக்கூடிய மாநில அதிகாரிகளால் வழங்கப்பட்ட வழிகாட்டுதல்களின் படி தரவை நாங்கள் பாதுகாத்து செயலாக்குகிறோம்.' },
+        ],
+      },
+      {
+        id: 'sharing',
+        title: '3. தகவல் பகிர்வு',
+        content: [
+          { subtitle: 'மருத்துவமனைக்குள்', text: 'உங்கள் தகவல் உங்கள் சிகிச்சையில் நேரடியாக ஈடுபட்டுள்ள அங்கீகாரம் பெற்ற மருத்துவ மற்றும் நிர்வாக பணியாளர்களுக்கு மட்டுமே அணுகல் இருக்கும். அணுகல் பங்கு-அடிப்படையிலானது மற்றும் தேவையானதற்கு மட்டுமே கட்டுப்படுத்தப்பட்டுள்ளது.' },
+          { subtitle: 'பரிந்துரைகள் & வெளி வழங்குனர்கள்', text: 'உங்கள் சம்மதத்துடன், சிகிச்சையின் தொடர்ச்சியை உறுதி செய்ய பரிந்துரைக்கப்பட்ட நிபுணர்கள், நோயறிதல் ஆய்வகங்கள் அல்லது பிற சுகாதார நிறுவனங்களுடன் தொடர்புடைய மருத்துவ பதிவுகளை பகிரலாம்.' },
+          { subtitle: 'சட்ட கடமைகள்', text: 'சட்டம், நீதிமன்ற உத்தரவு அல்லது ஒழுங்குமுறை ஆணையம் தேவைப்படும்போது, அல்லது நோயாளிகள், பணியாளர்கள் அல்லது பொதுமக்களின் பாதுகாப்பை காப்பாற்ற தேவையான போது உங்கள் தகவலை வெளியிடலாம்.' },
+          { subtitle: 'தரவு விற்பனை இல்லை', text: 'வணிக அல்லது சந்தைப்படுத்தல் நோக்கங்களுக்காக எந்த மூன்றாம் தரப்பிடமும் உங்கள் தனிப்பட்ட அல்லது மருத்துவ தகவலை விற்கவோ, வாடகைக்கு விடவோ அல்லது வர்த்தகம் செய்யவோ மாட்டோம்.' },
+        ],
+      },
+      {
+        id: 'data-security',
+        title: '4. தரவு பாதுகாப்பு',
+        content: [
+          { subtitle: 'பாதுகாப்பு நடவடிக்கைகள்', text: 'JP Neuro Spine Hospital and Pain Management Centre உங்கள் தனிப்பட்ட மற்றும் சுகாதார தகவலை அங்கீகரிக்கப்படாத அணுகல், வெளியீடு, மாற்றம் அல்லது அழிவிலிருந்து பாதுகாக்க நியாயமான உடல், மின்னணு மற்றும் நிர்வாக பாதுகாப்பு நடவடிக்கைகளை பயன்படுத்துகிறது.' },
+          { subtitle: 'வரம்புகள்', text: 'உங்கள் தரவை பாதுகாக்க நாங்கள் நியாயமான நடவடிக்கைகள் எடுக்கும் அதே வேளையில், எந்த மின்னணு சேமிப்பு அல்லது இணைய கடத்தல் முறையும் முழுமையாக பாதுகாப்பானதல்ல. தங்கள் தகவலின் அங்கீகரிக்கப்படாத பயன்பாட்டை சந்தேகித்தால் உடனடியாக தொடர்பு கொள்ள நோயாளிகளை ஊக்குவிக்கிறோம்.' },
+        ],
+      },
+      {
+        id: 'retention',
+        title: '5. பதிவுகளை பாதுகாத்தல்',
+        content: [
+          { subtitle: 'மருத்துவ பதிவுகள்', text: 'நோயாளி மருத்துவ பதிவுகள் பொருந்தக்கூடிய இந்திய சட்டம் மற்றும் மருத்துவ விதிமுறைகளால் பரிந்துரைக்கப்பட்ட குறைந்தபட்ச காலத்திற்கு பாதுகாக்கப்படுகின்றன. இந்த காலத்திற்கு பிறகு, ஒழுங்குமுறை வழிகாட்டுதல்களின் படி பதிவுகள் பாதுகாப்பாக அகற்றப்படலாம் அல்லது காப்பகப்படுத்தப்படலாம்.' },
+          { subtitle: 'இணையதளத் தரவு', text: 'எங்கள் இணையதளம் மூலம் சேகரிக்கப்பட்ட தொழில்நுட்ப தரவு அது சேகரிக்கப்பட்ட நோக்கங்களை நிறைவேற்றுவதற்கு தேவையான காலம் மட்டுமே பாதுகாக்கப்படும்.' },
+        ],
+      },
+      {
+        id: 'your-rights',
+        title: '6. உங்கள் உரிமைகள்',
+        content: [
+          { subtitle: 'அணுகல் & திருத்தம்', text: 'உங்கள் மருத்துவ பதிவுகளை அணுகவும் தவறான அல்லது முழுமையற்ற தகவல்களை திருத்தும்படி கோரவும் உங்களுக்கு உரிமை உண்டு. கோரிக்கைகளை எங்கள் நிர்வாக அலுவலகத்தில் அல்லது கீழே உள்ள தொடர்பு விவரங்கள் மூலம் செய்யலாம்.' },
+          { subtitle: 'சம்மதம் திரும்பப் பெறுதல்', text: 'செயலாக்கம் உங்கள் சம்மதத்தின் அடிப்படையில் இருக்கும்போது, எந்த நேரத்திலும் அந்த சம்மதத்தை திரும்பப் பெறலாம். திரும்பப் பெறுவதற்கு முன் மேற்கொள்ளப்பட்ட செயலாக்கத்தின் சட்டப்பூர்வத்தன்மையை இது பாதிக்காது என்பதை கவனிக்கவும்.' },
+          { subtitle: 'புகார்கள்', text: 'உங்கள் தனியுரிமை உரிமைகள் மீறப்பட்டிருப்பதாக நம்பினால், எங்கள் நோயாளர் உறவு அதிகாரியிடம் அல்லது தமிழ்நாட்டில் பொருந்தக்கூடிய ஒழுங்குமுறை அதிகாரத்திடம் கவலையை தெரிவிக்கலாம்.' },
+        ],
+      },
+      {
+        id: 'cookies',
+        title: '7. குக்கீகள் & பகுப்பாய்வு',
+        content: [
+          { subtitle: 'குக்கீகளின் பயன்பாடு', text: 'உங்கள் உலாவல் அனுபவத்தை மேம்படுத்த எங்கள் இணையதளம் குக்கீகளை பயன்படுத்தலாம். இவை உங்கள் சாதனத்தில் சேமிக்கப்படும் சிறிய உரை கோப்புகள். குக்கீகளை நிராகரிக்க உங்கள் உலாவியை கட்டமைக்கலாம், இருப்பினும் இது சில இணையதள செயல்பாட்டை பாதிக்கலாம்.' },
+          { subtitle: 'பகுப்பாய்வு', text: 'பார்வையாளர்கள் எங்கள் இணையதளத்துடன் எவ்வாறு தொடர்பு கொள்கிறார்கள் என்பதை புரிந்துகொள்ள பெயர் தெரியாத பகுப்பாய்வு கருவிகளை பயன்படுத்தலாம். இந்தக் கருவிகள் மூலம் உங்கள் வெளிப்படையான சம்மதமின்றி தனிப்பட்ட தகவல் சேகரிக்கப்படவில்லை.' },
+        ],
+      },
+      {
+        id: 'policy-changes',
+        title: '8. இந்தக் கொள்கையில் மாற்றங்கள்',
+        content: [
+          { subtitle: 'கொள்கை புதுப்பிப்புகள்', text: 'சட்டம், ஒழுங்குமுறை அல்லது எங்கள் நடைமுறைகளில் மாற்றங்களை பிரதிபலிக்க JP Neuro Spine Hospital and Pain Management Centre எந்த நேரத்திலும் இந்த தனியுரிமைக் கொள்கையை புதுப்பிக்கும் உரிமையை கொண்டுள்ளது. திருத்தப்பட்ட கொள்கை புதுப்பிக்கப்பட்ட நடைமுறை தேதியுடன் இந்தப் பக்கத்தில் வெளியிடப்படும். இந்தப் பக்கத்தை அவ்வப்போது பரிசீலிக்க ஊக்குவிக்கிறோம்.' },
+        ],
+      },
+      {
+        id: 'contact',
+        title: '9. தொடர்பு கொள்ளுங்கள்',
+        content: [
+          { subtitle: 'தனியுரிமை & தரவு கேள்விகள்', text: 'இந்த தனியுரிமைக் கொள்கை அல்லது உங்கள் தனிப்பட்ட தகவலை கையாளுவது தொடர்பான கேள்விகள், கவலைகள் அல்லது கோரிக்கைகளுக்கு, தயவுசெய்து எங்களை தொடர்பு கொள்ளுங்கள்:' },
+        ],
+        contact: true,
+      },
+    ],
   },
 };

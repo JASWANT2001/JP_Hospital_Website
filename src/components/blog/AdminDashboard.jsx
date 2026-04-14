@@ -545,14 +545,14 @@ export default function AdminDashboard({ token, onLogout }) {
                   <span className="material-symbols-outlined text-[#ffa361] text-sm">shield_person</span>
                 </div>
                 <span className="text-white/60 text-xs font-semibold uppercase tracking-widest font-inter">
-                  JP Neuro-Spine · Admin Portal
+                  JP Neuro Spine Hospital and Pain Management Centre · Admin Portal
                 </span>
               </div>
               <h1 className="text-3xl sm:text-4xl font-black text-white font-manrope tracking-tight leading-tight">
                 Blog Dashboard
               </h1>
               <p className="text-white/60 text-sm font-inter mt-1.5">
-                Manage and publish content for the JP Neuro-Spine website.
+                Manage and publish content for the JP Neuro Spine Hospital and Pain Management Centre website.
               </p>
             </div>
 

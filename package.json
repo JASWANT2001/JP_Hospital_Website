@@ -1,7 +1,7 @@
 {
-  "name": "neuro-spine-website",
+  "name": "neuro spine-website",
   "version": "1.0.0",
-  "description": "JF Neuro-Spine Medical Website - React with Tailwind CSS",
+  "description": "JF Neuro Spine Medical Website - React with Tailwind CSS",
   "main": "index.js",
   "scripts": {
     "dev": "vite",

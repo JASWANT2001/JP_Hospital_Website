@@ -1,8 +1,9 @@
 import { useParams, Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import DOMPurify from 'dompurify';
-import { useBlogBySlug } from '../hooks/useBlogs';
 import ShareButtons from '../components/blog/ShareButtons';
+import { useLang, blogDetailTranslations } from '../context/LanguageContext';
+import { getBlogBySlug } from '../data/staticBlogs';
 
 // ─── Font Scale (matches Home exactly) ───────────────────────────────────────
 // label    → text-xs                           (12px) — badges, eyebrow, meta
@@ -23,10 +24,10 @@ function formatDate(d) {
   return new Intl.DateTimeFormat('en-IN', { year: 'numeric', month: 'long', day: 'numeric' }).format(new Date(d));
 }
 
-function readTime(content) {
+function readTime(content, minReadLabel) {
   if (!content) return null;
   const words = content.replace(/<[^>]+>/g, '').split(/\s+/).filter(Boolean).length;
-  return `${Math.max(1, Math.round(words / 200))} min read`;
+  return `${Math.max(1, Math.round(words / 200))} ${minReadLabel}`;
 }
 
 /* ── Reading progress bar ── */
@@ -47,33 +48,8 @@ function ReadingProgress() {
   );
 }
 
-/* ── Skeleton ── */
-function Skeleton() {
-  return (
-    <div className="animate-pulse pt-16 sm:pt-20">
-      <div className="w-full bg-surface-container-high" style={{ height: '60vh' }} />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-12">
-        <div className="grid lg:grid-cols-[1fr_320px] gap-12">
-          <div className="space-y-5">
-            <div className="h-9 bg-surface-container-high rounded-lg w-5/6" />
-            <div className="h-9 bg-surface-container-high rounded-lg w-3/5" />
-            <div className="h-px bg-surface-container-high my-6" />
-            {[100, 90, 95, 80, 100, 85, 70].map((w, i) => (
-              <div key={i} className="h-4 bg-surface-container rounded" style={{ width: `${w}%` }} />
-            ))}
-          </div>
-          <div className="space-y-4">
-            <div className="h-40 bg-surface-container-high rounded-2xl" />
-            <div className="h-32 bg-surface-container rounded-2xl" />
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 /* ── Not found ── */
-function NotFound() {
+function NotFound({ t }) {
   return (
     <main className="min-h-screen bg-surface flex items-center justify-center px-4 pt-20">
       <div className="text-center max-w-sm">
@@ -81,13 +57,13 @@ function NotFound() {
           <span className="material-symbols-outlined text-primary text-5xl">article</span>
         </div>
         {/* heading → Raleway ExtraBold */}
-        <h1 className="font-heading text-3xl sm:text-4xl text-primary mb-3">Article Not Found</h1>
+        <h1 className="font-heading text-3xl sm:text-4xl text-primary mb-3">{t.notFoundHeading}</h1>
         {/* body */}
-        <p className="text-on-surface-variant text-sm sm:text-base mb-8 leading-relaxed">This article may have been moved or does not exist.</p>
+        <p className="text-on-surface-variant text-sm sm:text-base mb-8 leading-relaxed">{t.notFoundBody}</p>
         {/* label-style button */}
         <Link to="/blog" className="inline-flex items-center gap-2 bg-primary text-on-primary px-6 py-3 rounded-md font-bold text-sm sm:text-base hover:bg-on-primary-fixed-variant transition-all shadow-lg shadow-primary/20">
           <span className="material-symbols-outlined text-base">arrow_back</span>
-          Back to all articles
+          {t.backToAllArticles}
         </Link>
       </div>
     </main>
@@ -96,32 +72,25 @@ function NotFound() {
 
 export default function BlogDetail() {
   const { slug } = useParams();
-  const { blog, loading, error } = useBlogBySlug(slug);
+  const { lang } = useLang();
+  const t = blogDetailTranslations[lang];
+  const blog = getBlogBySlug(slug, lang);
   const blogUrl = typeof window !== 'undefined' ? window.location.href : '';
+  const [heroImgErr, setHeroImgErr] = useState(false);
 
   useEffect(() => {
     if (!blog) return;
-    document.title = `${blog.title} — JP Neuro-Spine Hospital`;
+    document.title = `${blog.title} — JP Neuro Spine Hospital and Pain Management Centre Hospital`;
   }, [blog]);
 
-  if (loading) return <><ReadingProgress /><Skeleton /></>;
-  if (error === 'not_found' || (!loading && !blog)) return <NotFound />;
-  if (error) return (
-    <main className="bg-surface min-h-screen flex items-center justify-center px-4 pt-20">
-      <div className="text-center">
-        {/* body */}
-        <p className="text-sm sm:text-base text-error mb-4">Failed to load article. Please try again.</p>
-        <Link to="/blog" className="text-sm sm:text-base text-primary hover:underline font-semibold">Back to all articles</Link>
-      </div>
-    </main>
-  );
+  if (!blog) return <NotFound t={t} />;
 
   const cleanContent = DOMPurify.sanitize(blog.content, {
     ALLOWED_TAGS: ['p','br','strong','em','s','u','h1','h2','h3','h4','ul','ol','li','blockquote','a','img','figure','figcaption','code','pre','hr'],
     ALLOWED_ATTR: ['href','src','alt','class','target','rel'],
   });
 
-  const mins = readTime(blog.content);
+  const mins = readTime(blog.content, t.minRead);
 
   return (
     <>
@@ -130,9 +99,9 @@ export default function BlogDetail() {
       <main className="bg-surface text-on-surface font-body min-h-screen">
 
         {/* ══ HERO ══ */}
-        {blog.cover_image_url ? (
+        {blog.cover_image_url && !heroImgErr ? (
           <div className="relative w-full overflow-hidden pt-16 sm:pt-20" style={{ height: 'min(70vh, 560px)', minHeight: '300px' }}>
-            <img src={blog.cover_image_url} alt={blog.title} className="absolute inset-0 w-full h-full object-cover" />
+            <img src={blog.cover_image_url} alt={blog.title} onError={() => setHeroImgErr(true)} className="absolute inset-0 w-full h-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0a1050]/92 via-[#0a1050]/45 to-[#0a1050]/15" />
             <div className="absolute inset-0 bg-gradient-to-r from-[#0a1050]/25 to-transparent" />
 
@@ -141,7 +110,7 @@ export default function BlogDetail() {
               {/* label */}
               <Link to="/blog" className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white/15 backdrop-blur-md text-on-primary text-xs font-semibold rounded-md border border-white/25 hover:bg-white/25 transition-all">
                 <span className="material-symbols-outlined text-base">arrow_back</span>
-                All articles
+                {t.allArticles}
               </Link>
             </div>
 
@@ -152,10 +121,10 @@ export default function BlogDetail() {
                 <div className="flex flex-wrap items-center gap-2 mb-4">
                   <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-on-tertiary-container text-tertiary text-xs font-black uppercase tracking-wider rounded-full">
                     <span className="material-symbols-outlined text-sm">local_hospital</span>
-                    Health Article
+                    {t.healthArticleBadge}
                   </span>
                   <span className="text-white/50 text-xs">•</span>
-                  <span className="text-white/75 text-xs font-medium">{blog.author || 'JP Neuro-Spine'}</span>
+                  <span className="text-white/75 text-xs font-medium">{blog.author || 'JP Neuro Spine Hospital and Pain Management Centre'}</span>
                   <span className="text-white/40 text-xs">•</span>
                   <span className="text-white/60 text-xs">{formatDate(blog.created_at)}</span>
                   {mins && <>
@@ -179,15 +148,15 @@ export default function BlogDetail() {
             <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 pt-10 pb-16">
               {/* label */}
               <Link to="/blog" className="inline-flex items-center gap-1.5 text-primary-fixed/60 hover:text-primary-fixed text-xs font-medium transition-colors mb-8">
-                <span className="material-symbols-outlined text-base">arrow_back</span>All articles
+                <span className="material-symbols-outlined text-base">arrow_back</span>{t.allArticles}
               </Link>
               {/* label row */}
               <div className="flex flex-wrap items-center gap-2 mb-5">
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-on-tertiary-container text-tertiary text-xs font-black uppercase tracking-wider rounded-full">
-                  <span className="material-symbols-outlined text-sm">local_hospital</span>Health Article
+                  <span className="material-symbols-outlined text-sm">local_hospital</span>{t.healthArticleBadge}
                 </span>
                 <span className="text-primary-fixed/50 text-xs">•</span>
-                <span className="text-primary-fixed/80 text-xs font-medium">{blog.author || 'JP Neuro-Spine'}</span>
+                <span className="text-primary-fixed/80 text-xs font-medium">{blog.author || 'JP Neuro Spine Hospital and Pain Management Centre'}</span>
                 <span className="text-primary-fixed/40 text-xs">•</span>
                 <span className="text-primary-fixed/60 text-xs">{formatDate(blog.created_at)}</span>
                 {mins && <>
@@ -218,15 +187,15 @@ export default function BlogDetail() {
             <div className="min-w-0">
 
               {/* Back link (when cover image present) */}
-              {blog.cover_image_url && (
+              {blog.cover_image_url && !heroImgErr && (
                 <Link to="/blog" className="inline-flex items-center gap-1.5 text-xs text-on-surface-variant hover:text-primary transition-colors group font-medium mb-6">
                   <span className="material-symbols-outlined text-base group-hover:-translate-x-0.5 transition-transform">arrow_back</span>
-                  All articles
+                  {t.allArticles}
                 </Link>
               )}
 
               {/* Title + meta (cover image path) */}
-              {blog.cover_image_url && (
+              {blog.cover_image_url && !heroImgErr && (
                 <header className="mb-6">
                   {/* heading → Raleway ExtraBold */}
                   <h1 className="font-heading text-3xl sm:text-4xl lg:text-5xl text-primary leading-tight tracking-tight mb-4">
@@ -238,7 +207,7 @@ export default function BlogDetail() {
                       <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                         <span className="material-symbols-outlined text-primary text-sm">person</span>
                       </div>
-                      <span className="font-semibold text-on-surface text-xs">{blog.author || 'JP Neuro-Spine'}</span>
+                      <span className="font-semibold text-on-surface text-xs">{blog.author || 'JP Neuro Spine Hospital and Pain Management Centre'}</span>
                     </div>
                     <span className="w-1 h-1 rounded-full bg-outline-variant inline-block" />
                     <time dateTime={blog.created_at}>{formatDate(blog.created_at)}</time>
@@ -303,7 +272,7 @@ export default function BlogDetail() {
                   className="inline-flex items-center justify-center gap-2 bg-primary text-on-primary px-6 py-3 rounded-md font-bold text-sm sm:text-base hover:bg-on-primary-fixed-variant transition-all shadow-lg shadow-primary/20"
                 >
                   <span className="material-symbols-outlined text-base">call</span>
-                  Book a Consultation
+                  {t.bookConsultation}
                 </a>
               </div>
             </div>
@@ -317,21 +286,21 @@ export default function BlogDetail() {
                   <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none" />
                   <div className="relative">
                     {/* label */}
-                    <p className="text-xs font-black text-on-tertiary-container uppercase tracking-[0.18em] mb-3">Written by</p>
+                    <p className="text-xs font-black text-on-tertiary-container uppercase tracking-[0.18em] mb-3">{t.writtenBy}</p>
                     <div className="flex items-center gap-3 mb-3">
                       <div className="w-12 h-12 rounded-2xl bg-white/15 border border-white/20 flex items-center justify-center flex-shrink-0">
                         <span className="material-symbols-outlined text-on-primary text-2xl">person</span>
                       </div>
                       <div>
                         {/* subhead → Host Grotesk */}
-                        <p className="font-subheading text-xl sm:text-2xl text-on-primary">{blog.author || 'JP Neuro-Spine'}</p>
+                        <p className="font-subheading text-xl sm:text-2xl text-on-primary">{blog.author || 'JP Neuro Spine Hospital and Pain Management Centre'}</p>
                         {/* label */}
-                        {mins && <p className="text-primary-fixed/60 text-xs mt-0.5">{mins} read</p>}
+                        {mins && <p className="text-primary-fixed/60 text-xs mt-0.5">{mins}</p>}
                       </div>
                     </div>
                     {/* body */}
                     <p className="text-primary-fixed/60 text-sm sm:text-base leading-relaxed">
-                      JP Neuro-Spine Hospital — Expert healthcare for neurology &amp; spine conditions.
+                      {t.hospitalBio}
                     </p>
                   </div>
                 </div>
@@ -343,18 +312,18 @@ export default function BlogDetail() {
                       <span className="material-symbols-outlined text-primary text-xl">call</span>
                     </div>
                     {/* subhead → Host Grotesk */}
-                    <p className="font-subheading text-xl sm:text-2xl text-primary">Need a Consultation?</p>
+                    <p className="font-subheading text-xl sm:text-2xl text-primary">{t.needConsultation}</p>
                   </div>
                   {/* body */}
                   <p className="text-on-surface-variant text-sm sm:text-base leading-relaxed mb-5">
-                    Our specialists are available for expert guidance on neurology and spine conditions.
+                    {t.consultationBody}
                   </p>
                   <a
                     href="tel:04343239923"
                     className="flex items-center justify-center gap-2 w-full bg-primary text-on-primary px-5 py-3 rounded-md font-bold text-sm sm:text-base hover:bg-on-primary-fixed-variant transition-all"
                   >
                     <span className="material-symbols-outlined text-base">call</span>
-                    Call Now
+                    {t.callNow}
                   </a>
                 </div>
 
@@ -365,18 +334,18 @@ export default function BlogDetail() {
                       <span className="material-symbols-outlined text-error text-lg">emergency</span>
                     </div>
                     {/* body */}
-                    <p className="font-bold text-on-surface text-sm sm:text-base">Emergency Care</p>
+                    <p className="font-bold text-on-surface text-sm sm:text-base">{t.emergencyCare}</p>
                   </div>
                   {/* body */}
                   <p className="text-on-surface-variant text-sm sm:text-base leading-relaxed mb-4">
-                    24/7 emergency neurosurgical support available at JP Neuro-Spine Hospital.
+                    {t.emergencyBody}
                   </p>
                   <Link
                     to="/emergency"
                     className="flex items-center justify-center gap-2 w-full bg-error/10 text-error border border-error/20 px-4 py-2.5 rounded-md font-bold text-sm sm:text-base hover:bg-error/15 transition-all"
                   >
                     <span className="material-symbols-outlined text-base">call</span>
-                    Emergency 24/7
+                    {t.emergency247}
                   </Link>
                 </div>
 
@@ -386,56 +355,13 @@ export default function BlogDetail() {
                   className="flex items-center justify-center gap-2 w-full bg-surface-container-high text-primary border border-outline-variant/20 px-5 py-3 rounded-md font-bold text-sm sm:text-base hover:bg-surface-container-highest transition-all"
                 >
                   <span className="material-symbols-outlined text-base">arrow_back</span>
-                  All Articles
+                  {t.allArticlesBtn}
                 </Link>
 
               </div>
             </aside>
           </div>
         </div>
-
-        {/* ══ FULL-WIDTH CTA BANNER ══ */}
-        {/* <section className="relative w-full overflow-hidden bg-surface-container-low border-t border-outline-variant/15">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-16">
-            <div className="relative bg-gradient-to-br from-primary via-primary to-primary-container rounded-3xl overflow-hidden">
-              <div className="absolute inset-0 pointer-events-none">
-                <div className="absolute -top-16 -right-16 w-64 h-64 bg-white/5 rounded-full" />
-                <div className="absolute bottom-0 left-8 w-48 h-48 bg-on-tertiary-container/10 rounded-full blur-2xl" />
-                <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '24px 24px' }} />
-              </div>
-              <div className="relative z-10 flex flex-col lg:flex-row items-center gap-8 lg:gap-12 p-8 sm:p-12">
-                <div className="lg:flex-1 text-center lg:text-left">
-                  <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-white/10 border border-white/20 rounded-full text-on-tertiary-container text-xs font-black uppercase tracking-widest mb-4">
-                    <span className="w-1.5 h-1.5 rounded-full bg-on-tertiary-container animate-pulse" />
-                    Specialist Care Available
-                  </div>
-                  <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl text-on-primary mb-3 leading-tight">
-                    Need expert medical guidance?
-                  </h2>
-                  <p className="text-primary-fixed/70 text-sm sm:text-base leading-relaxed max-w-md">
-                    Our neurology &amp; spine specialists are ready to help. Get expert care tailored to your needs.
-                  </p>
-                </div>
-                <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0">
-                  <Link
-                    to="/book-appoinment"
-                    className="inline-flex items-center justify-center gap-2 bg-on-primary text-primary px-7 py-3.5 rounded-md font-bold text-sm sm:text-base hover:bg-primary-fixed transition-all shadow-xl"
-                  >
-                    Book Appointment
-                    <span className="material-symbols-outlined text-xl">calendar_today</span>
-                  </Link>
-                  <Link
-                    to="/blog"
-                    className="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm text-on-primary px-7 py-3.5 rounded-md font-bold text-sm sm:text-base border border-white/25 hover:bg-white/20 transition-all"
-                  >
-                    More Articles
-                    <span className="material-symbols-outlined text-xl">arrow_forward</span>
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section> */}
 
       </main>
     </>

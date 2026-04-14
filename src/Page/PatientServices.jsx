@@ -37,7 +37,7 @@ const PatientServices = () => {
                 style={ralewayBold}
               >
                 {t.hero.heading1} <br />
-                <span className="text-secondary">{t.hero.heading2}</span>
+                <span className="text-orange-500">{t.hero.heading2}</span>
               </h1>
 
               <p className={`${fontScale.body} text-on-surface-variant max-w-xl mb-10 sm:mb-12 leading-relaxed mx-auto lg:mx-0`}>
@@ -98,18 +98,19 @@ const PatientServices = () => {
                 <div className="px-5 sm:px-7 py-5 sm:py-6 flex flex-col gap-4 flex-1">
                   <div className="flex items-center justify-between py-3 px-3 sm:px-4 bg-surface-container-low rounded-xl">
                     <div className="flex items-center gap-2 text-on-surface-variant">
-                      <span className="material-symbols-outlined text-base">calendar_month</span>
-                      <span className={`${fontScale.label} font-medium`}>{t.opd.monSat}</span>
+                      <span className="material-symbols-outlined text-base">wb_sunny</span>
+                      <span className={`${fontScale.label} font-medium`}>{t.opd.monSat} (Morning)</span>
                     </div>
-                    <span className={`font-bold text-primary ${fontScale.label}`}>4 PM – 9 PM</span>
+                    <span className={`font-bold text-primary ${fontScale.label}`}>10 AM – 1 PM</span>
                   </div>
                   <div className="flex items-center justify-between py-3 px-3 sm:px-4 bg-surface-container-low rounded-xl">
                     <div className="flex items-center gap-2 text-on-surface-variant">
-                      <span className="material-symbols-outlined text-base">calendar_month</span>
-                      <span className={`${fontScale.label} font-medium`}>{t.opd.sunday}</span>
+                      <span className="material-symbols-outlined text-base">nights_stay</span>
+                      <span className={`${fontScale.label} font-medium`}>{t.opd.monSat} (Evening)</span>
                     </div>
-                    <span className={`font-bold text-primary ${fontScale.label}`}>9 AM – 1 PM</span>
+                    <span className={`font-bold text-primary ${fontScale.label}`}>4 PM – 9 PM</span>
                   </div>
+                  <p className={`${fontScale.label} text-on-surface-variant px-1 leading-relaxed`}>{t.opd.neuroDesc}</p>
                 </div>
               </div>
 
@@ -136,6 +137,7 @@ const PatientServices = () => {
                     </div>
                     <span className={`font-bold text-primary ${fontScale.label}`}>6:30 PM – 8 PM</span>
                   </div>
+                  <p className={`${fontScale.label} text-on-surface-variant px-1 leading-relaxed`}>{t.opd.painDesc}</p>
                 </div>
               </div>
 
@@ -153,10 +155,24 @@ const PatientServices = () => {
                 <div className="px-5 sm:px-7 py-5 sm:py-6 flex flex-col gap-4 flex-1">
                   <div className="flex items-center justify-between py-3 px-3 sm:px-4 bg-surface-container-low rounded-xl">
                     <div className="flex items-center gap-2 text-on-surface-variant">
-                      <span className="material-symbols-outlined text-base">calendar_month</span>
-                      <span className={`${fontScale.label} font-medium`}>{t.opd.dailySession}</span>
+                      <span className="material-symbols-outlined text-base">wb_sunny</span>
+                      <span className={`${fontScale.label} font-medium`}>{t.opd.monSat} (Morning)</span>
                     </div>
-                    <span className={`font-bold text-primary ${fontScale.label}`}>7 PM – 9 PM</span>
+                    <span className={`font-bold text-primary ${fontScale.label}`}>10 AM – 2 PM</span>
+                  </div>
+                  <div className="flex items-center justify-between py-3 px-3 sm:px-4 bg-surface-container-low rounded-xl">
+                    <div className="flex items-center gap-2 text-on-surface-variant">
+                      <span className="material-symbols-outlined text-base">nights_stay</span>
+                      <span className={`${fontScale.label} font-medium`}>{t.opd.monSat} (Evening)</span>
+                    </div>
+                    <span className={`font-bold text-primary ${fontScale.label}`}>5 PM – 9 PM</span>
+                  </div>
+                  <div className="flex items-center justify-between py-3 px-3 sm:px-4 bg-surface-container-low rounded-xl">
+                    <div className="flex items-center gap-2 text-on-surface-variant">
+                      <span className="material-symbols-outlined text-base">calendar_month</span>
+                      <span className={`${fontScale.label} font-medium`}>{t.opd.sunday}</span>
+                    </div>
+                    <span className={`font-bold text-primary ${fontScale.label}`}>10 AM – 2 PM</span>
                   </div>
                   <p className={`${fontScale.label} text-on-surface-variant px-1 leading-relaxed`}>{t.opd.physioDesc}</p>
                 </div>

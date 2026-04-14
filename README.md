@@ -1,4 +1,4 @@
-# JF Neuro-Spine Medical Website
+# JF Neuro Spine Medical Website
 
 A professional medical website built with React and Tailwind CSS, featuring a clean design for a neurosurgery and pain management center.
 
@@ -50,7 +50,7 @@ A professional medical website built with React and Tailwind CSS, featuring a cl
 ## 📁 Project Structure
 
 ```
-neuro-spine-website/
+neuro spine-website/
 ├── src/
 │   ├── App.jsx                  # Main App component
 │   ├── main.jsx                 # Entry point
