@@ -69,7 +69,7 @@ export default function Navbar() {
           {/* Right Side */}
           <div className="flex items-center gap-2 sm:gap-3">
             {/* Language Toggle */}
-            <div className="flex items-center bg-slate-100 rounded-lg p-0.5 text-sm font-bold">
+            {/* <div className="flex items-center bg-slate-100 rounded-lg p-0.5 text-sm font-bold">
               <button
                 onClick={() => setLang('en')}
                 className={`px-3 py-1.5 rounded-md transition-all ${lang === 'en' ? 'bg-[#142588] text-white shadow' : 'text-slate-500 hover:text-[#142588]'}`}
@@ -82,7 +82,7 @@ export default function Navbar() {
               >
                 த
               </button>
-            </div>
+            </div> */}
             <Link
               to="/emergency"
               title={emergency}

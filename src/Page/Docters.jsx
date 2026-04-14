@@ -193,7 +193,7 @@ const Docters = () => {
               {/* OPD + CTA */}
               <div className="flex flex-col sm:flex-row sm:items-center gap-3">
                 <div className="flex items-center gap-4 px-5 py-4 bg-surface-container-low rounded-xl border border-outline-variant/15 flex-1">
-                  <span className="material-symbols-outlined text-secondary text-xl" style={{ fontVariationSettings: "'FILL' 1" }}>calendar_today</span>
+                  <span className="material-symbols-outlined text-secondary text-xl" style={{ fontVariationSettings: "'FILL' 1" }}>wb_sunny</span>
                   <div>
                     <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-0.5">{pra.opdLabel}</p>
                     {pra.opdTimes.map((time) => (

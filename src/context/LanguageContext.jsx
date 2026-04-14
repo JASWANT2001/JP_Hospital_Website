@@ -678,7 +678,7 @@ export const doctorsTranslations = {
         { label: 'Asst. Professor', place: 'Cancer Institute, Adyar' },
       ],
       opdLabel: 'OPD Availability',
-      opdTimes: ['Mon – Fri · 10 AM – 1 PM'],
+      opdTimes: ['Mon – Fri (Morning) · 10 AM – 1 PM', 'Mon – Fri (Evening) · 6:30 PM – 8 PM'],
       bookBtn: 'Book Consultation',
       awardsTitle: 'Prestigious Awards',
       awards: [
@@ -737,7 +737,7 @@ export const doctorsTranslations = {
         { label: 'உதவி பேராசிரியர்', place: 'புற்றுநோய் நிறுவனம், அடையாறு' },
       ],
       opdLabel: 'OPD கிடைக்கும் நேரம்',
-      opdTimes: ['திங்கள் – வெள்ளி · காலை 10 – பகல் 1 மணி'],
+      opdTimes: ['திங்கள் – வெள்ளி (காலை) · 10 AM – 1 PM', 'திங்கள் – வெள்ளி (மாலை) · 6:30 PM – 8 PM'],
       bookBtn: 'ஆலோசனை பதிவு',
       awardsTitle: 'மதிப்புமிக்க விருதுகள்',
       awards: [
