@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Navbar from "../Component/Navbar";
 import { useLang, contactTranslations } from "../context/LanguageContext";
 
@@ -165,20 +166,28 @@ Requesting confirmation within 2 business hours.
                 </div>
               </div>
 
-              {/* Email */}
+              {/* Quick Links */}
               <div className="bg-surface-container-low p-7 sm:p-8 flex flex-col gap-4 group hover:bg-surface-container transition-colors">
                 <div className="w-11 h-11 rounded-xl bg-tertiary-fixed flex items-center justify-center group-hover:bg-tertiary group-hover:text-on-tertiary transition-colors">
-                  <span className="material-symbols-outlined text-tertiary group-hover:text-on-tertiary text-xl transition-colors">mail</span>
+                  <span className="material-symbols-outlined text-tertiary group-hover:text-on-tertiary text-xl transition-colors">open_in_new</span>
                 </div>
                 <div>
-                  <h3 className="font-subheading text-lg sm:text-xl text-primary mb-2">{t.cards.digitalTitle}</h3>
-                  <div className="space-y-1.5">
-                    <a href="mailto:info@jpneurospine.com" className="block text-sm sm:text-base text-on-surface-variant hover:text-primary transition-colors">
-                      info@jpneurospine.com
-                    </a>
-                    <a href="mailto:support@jpneurospine.com" className="block text-sm sm:text-base text-on-surface-variant hover:text-primary transition-colors">
-                      support@jpneurospine.com
-                    </a>
+                  <h3 className="font-subheading text-lg sm:text-xl text-primary mb-2">{t.cards.quickLinksTitle}</h3>
+                  <div className="space-y-2">
+                    <Link
+                      to="/patient-services"
+                      className="flex items-center gap-2 text-sm sm:text-base text-on-surface-variant hover:text-primary transition-colors"
+                    >
+                      <span className="material-symbols-outlined text-base">medical_services</span>
+                      {t.cards.patientServicesLabel}
+                    </Link>
+                    {/* <Link
+                      to="/book-appoinment"
+                      className="flex items-center gap-2 text-sm sm:text-base text-on-surface-variant hover:text-primary transition-colors"
+                    >
+                      <span className="material-symbols-outlined text-base">calendar_month</span>
+                      Book an Appointment
+                    </Link> */}
                   </div>
                 </div>
               </div>

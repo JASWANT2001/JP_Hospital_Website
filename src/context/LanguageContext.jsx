@@ -340,35 +340,39 @@ export const neurosurgeryTranslations = {
       body: 'Advanced surgical care for brain, spine, and nervous system conditions — delivered with precision, compassion, and cutting-edge technology.',
       call: 'Call Now',
     },
-    techSection: {
-      heading: 'Advanced Technology',
-      items: [
-        {
-          title: 'Neurosurgical Microscope',
-          desc: 'Provides high magnification and illumination for precise surgery on delicate brain and spinal structures. Enhances surgical safety by allowing accurate dissection and preservation of vital tissues.',
-        },
-        {
-          title: 'Neuro Electrical Drill System',
-          desc: 'High-speed drill system designed for precise bone cutting in neurosurgical procedures. Ensures efficiency and safety while minimizing trauma to surrounding tissues.',
-        },
-        {
-          title: 'Fluoroscopy',
-          desc: 'Real-time imaging guidance for minimally invasive procedures and accurate implant placement. Improves surgical precision while reducing complications and operative time.',
-        },
-        {
-          title: 'Advanced Anaesthesia Workstation',
-          desc: 'Delivers controlled and reliable anaesthesia tailored to complex neurosurgical procedures. Ensures patient safety with continuous monitoring and precise drug delivery.',
-        },
-        {
-          title: 'Invasive Hemodynamic Monitoring',
-          desc: 'Provides continuous, accurate measurement of cardiovascular parameters during surgery. Helps maintain optimal blood flow and prevents complications from fluid imbalance.',
-        },
-        {
-          title: 'Patient Warming Device',
-          desc: 'Maintains body temperature during surgery to prevent intra-operative hypothermia. Reduces complications, improves recovery, and enhances overall surgical outcomes.',
-        },
-      ],
+techSection: {
+  heading: "Advanced Technology",
+  items: [
+    {
+      title: "Electrodiagnostic Tests",
+      desc: "Includes Electroencephalogram (EEG), Electromyogram (EMG), Nerve Conduction Studies (NCS), Somatosensory Evoked Potential (SSEP), Visual Evoked Potential (VEP), Auditory Evoked Potential (AEP), and Autonomic Function Tests for comprehensive neurological evaluation.",
     },
+    {
+      title: "Neurosurgical Microscope",
+      desc: "High-magnification visualization for precise brain and spine surgery, enabling safe dissection and preservation of critical structures.",
+    },
+    {
+      title: "Neuro Electrical Drill System",
+      desc: "High-speed drill for accurate bone cutting in neurosurgical procedures with minimal tissue trauma.",
+    },
+    {
+      title: "Fluoroscopy",
+      desc: "Real-time imaging guidance for minimally invasive procedures and accurate implant placement.",
+    },
+    {
+      title: "Advanced Anaesthesia Workstation",
+      desc: "Delivers controlled anaesthesia with continuous monitoring for complex neurosurgical procedures.",
+    },
+    {
+      title: "Invasive Hemodynamic Monitoring",
+      desc: "Continuous monitoring of cardiovascular parameters to maintain optimal blood flow during surgery.",
+    },
+    {
+      title: "Patient Warming Device",
+      desc: "Maintains body temperature during surgery to prevent hypothermia and improve recovery outcomes.",
+    },
+  ],
+},
     services: [
       { icon: 'psychology',             title: 'Endoscopic Brain Surgery',   desc: 'Uses small openings and advanced endoscopes to access deep brain areas with minimal tissue disruption. Leads to faster recovery, less pain, and reduced hospital stay.' },
       { icon: 'vertical_align_center',  title: 'Endoscopic Spine Surgery',   desc: 'A keyhole approach to treat spine problems like disc herniation with minimal muscle damage. Offers quicker recovery, less postoperative pain, and early return to normal activities.' },
@@ -385,35 +389,39 @@ export const neurosurgeryTranslations = {
       body: 'மூளை, முதுகெலும்பு மற்றும் நரம்பு மண்டல நிலைமைகளுக்கான மேம்பட்ட அறுவை சிகிச்சை — துல்லியம், இரக்கம் மற்றும் நவீன தொழில்நுட்பத்துடன்.',
       call: 'இப்போது அழையுங்கள்',
     },
-    techSection: {
-      heading: 'மேம்பட்ட தொழில்நுட்பம்',
-      items: [
-        {
-          title: 'நரம்பியல் அறுவை நுண்ணோக்கி',
-          desc: 'மூளை மற்றும் முதுகெலும்பின் நுட்பமான அமைப்புகளில் துல்லியமான அறுவை சிகிச்சைக்கு உயர் உருப்பெருக்கம் மற்றும் ஒளி வழங்குகிறது. துணி பாதுகாப்பை மேம்படுத்துகிறது.',
-        },
-        {
-          title: 'நரம்பியல் மின் துரப்பணம்',
-          desc: 'நரம்பியல் அறுவை நடைமுறைகளில் துல்லியமான எலும்பு வெட்டுதலுக்கு வடிவமைக்கப்பட்ட அதிவேக துரப்பண அமைப்பு. சுற்றியுள்ள திசுக்களுக்கு காயம் குறைக்கிறது.',
-        },
-        {
-          title: 'ஃப்ளூரோஸ்கோபி',
-          desc: 'குறைந்தபட்ச ஆக்கிரமிப்பு நடைமுறைகள் மற்றும் துல்லியமான உள்வைப்பு வைப்பிற்கு நிகழ்நேர படிமக் கண்காணிப்பு. அறுவை சிகிச்சை துல்லியத்தை மேம்படுத்துகிறது.',
-        },
-        {
-          title: 'மேம்பட்ட மயக்க நிலையம்',
-          desc: 'சிக்கலான நரம்பியல் அறுவை நடைமுறைகளுக்கு ஏற்ற கட்டுப்படுத்தப்பட்ட மயக்கம் வழங்குகிறது. தொடர்ச்சியான கண்காணிப்புடன் நோயாளி பாதுகாப்பை உறுதி செய்கிறது.',
-        },
-        {
-          title: 'ஆக்கிரமிப்பு இரத்த ஓட்ட கண்காணிப்பு',
-          desc: 'அறுவை சிகிச்சையின் போது இருதயத் தன்மைகளை தொடர்ச்சியாகவும் துல்லியமாகவும் அளவிடுகிறது. உகந்த இரத்த ஓட்டத்தை பராமரிக்க உதவுகிறது.',
-        },
-        {
-          title: 'நோயாளி வெப்பமூட்டும் சாதனம்',
-          desc: 'அறுவை சிகிச்சையின் போது உடல் வெப்பநிலையை பராமரிக்கிறது. சிக்கல்களை குறைத்து, மீட்பை மேம்படுத்துகிறது.',
-        },
-      ],
+   techSection: {
+  heading: "மேம்பட்ட தொழில்நுட்பம்",
+  items: [
+    {
+      title: "மின்நரம்பியல் பரிசோதனைகள்",
+      desc: "EEG, EMG, NCS, SSEP, VEP, AEP மற்றும் Autonomic Function Tests போன்ற பரிசோதனைகள் மூலம் முழுமையான நரம்பியல் மதிப்பீட்டை வழங்குகிறது.",
     },
+    {
+      title: "நரம்பியல் அறுவை நுண்ணோக்கி",
+      desc: "மூளை மற்றும் முதுகெலும்பு அறுவை சிகிச்சைகளில் மிகத் துல்லியமான காட்சியளிப்பை வழங்கி, முக்கிய அமைப்புகளை பாதுகாத்து பாதுகாப்பான செயல்பாட்டை உறுதி செய்கிறது.",
+    },
+    {
+      title: "நரம்பியல் மின்சார துளையிடும் கருவி",
+      desc: "அதிவேக துளையிடும் கருவி, எலும்பு வெட்டுதலில் துல்லியத்தையும் குறைந்த திசு சேதத்தையும் வழங்குகிறது.",
+    },
+    {
+      title: "ஃப்ளூரோஸ்கோபி",
+      desc: "உடனடி (real-time) படமெடுப்பு வழிகாட்டுதல் மூலம் குறைந்த காயப்படுத்தும் முறைகளிலும் சரியான implant பொருத்தத்திலும் உதவுகிறது.",
+    },
+    {
+      title: "மேம்பட்ட மயக்க மருந்து இயந்திரம்",
+      desc: "சிக்கலான நரம்பியல் அறுவை சிகிச்சைகளின் போது தொடர்ந்து கண்காணிப்புடன் கட்டுப்படுத்தப்பட்ட மயக்கத்தை வழங்குகிறது.",
+    },
+    {
+      title: "உட்புகும் ஹீமோடைநாமிக் கண்காணிப்பு",
+      desc: "அறுவை சிகிச்சை காலத்தில் இரத்த ஓட்டத்தை சீராக வைத்திருக்க இதய-இரத்த ஓட்ட அளவுகளை தொடர்ந்து கண்காணிக்கிறது.",
+    },
+    {
+      title: "நோயாளி உடல் வெப்ப பராமரிப்பு கருவி",
+      desc: "அறுவை சிகிச்சையின் போது உடல் வெப்பநிலையை பராமரித்து hypothermia-வைத் தவிர்த்து, மீட்பு செயல்முறையை மேம்படுத்துகிறது.",
+    },
+  ],
+},
     services: [
       { icon: 'psychology',            title: 'எண்டோஸ்கோபிக் மூளை அறுவை',      desc: 'சிறிய திறப்புகள் மற்றும் மேம்பட்ட எண்டோஸ்கோப்கள் மூலம் ஆழமான மூளை பகுதிகளை குறைந்தபட்ச திசு இடையூறுடன் அணுகுகிறது. விரைவான மீட்பு மற்றும் குறைந்த வலி கிடைக்கும்.' },
       { icon: 'vertical_align_center', title: 'எண்டோஸ்கோபிக் முதுகெலும்பு அறுவை', desc: 'குறைந்தபட்ச தசை சேதத்துடன் முதுகெலும்பு பிரச்சினைகளை சிகிச்சையளிக்கும் சிறிய துவாரம் அணுகுமுறை. விரைவான மீட்பு மற்றும் சீக்கிரமான இயல்பு வாழ்க்கைக்கு திரும்புவது.' },
@@ -659,6 +667,15 @@ export const doctorsTranslations = {
       pastText: 'Assistant Professor at Institute of Neurosurgery, Madras Medical College',
       expertiseTitle: 'Areas of Expertise',
       expertise: ['Brain Tumour Surgery', 'Spine Surgery', 'Endoscopic Neurosurgery', 'Trauma Surgery', 'Peripheral Nerve Surgery'],
+      membershipsTitle: 'Memberships',
+      memberships: ['Neurological Society of India', 'Tamil Nadu Association of Neurological Surgeons'],
+      awardsTitle: 'Prestigious Awards',
+      awards: [
+        'Best Doctor Award at Dharmapuri Medical College.',
+        'Best Poster Presentation at NSI, INDSPN in 2018.',
+      ],
+      publicationsTitle: 'Conferences & Publications',
+      publications: 'Presented papers in various national and international conferences like TANS, NSICON and INDSPN.',
       opdLabel: 'OPD Availability',
       opdTimes: ['Mon – Sat · 10 AM – 1 PM', 'Mon – Sat · 4 PM – 9 PM'],
       bookBtn: 'Book Consultation',
@@ -673,6 +690,7 @@ export const doctorsTranslations = {
       goldMedalSub: 'MD (Anaesthesiology)',
       pastTitle: 'Past Employment',
       membershipsTitle: 'Memberships',
+      memberships: ['Indian Society of Study of Pain', 'European Pain Federation', 'Indian Society of Anesthesiologists', 'Society of Onco Anaesthesia and Perioperative Care'],
       pastItems: [
         { label: 'Senior Resident', place: 'AIIMS, New Delhi' },
         { label: 'Asst. Professor', place: 'Cancer Institute, Adyar' },
@@ -701,6 +719,7 @@ export const doctorsTranslations = {
         { num: '04', authors: 'Vanamail PV, Dash R, Balakrishnan K.', title: 'A retrospective analysis of the presentation, outcomes and determinants of severity of postoperative pneumonia in upper abdominal oncological surgeries.', journal: 'Indian J Respir Care 2020;9:52-7' },
         { num: '05', authors: 'Prasanna Vani Vanamail, Radhika Dash, Kalpana Balakrishnan, & Thendral Edwin. (2021).', title: 'Recurrent pulmonary thromboembolism during radical cystectomy: A case report.', journal: 'Indian Journal of Case Reports, 260-262.' },
         { num: '06', authors: 'Vanamail PV, Balakrishnan K, Prahlad S, Chockalingam P, Dash R, Soundararajan DK.', title: 'Ultrasonographic Assessment of Diaphragmatic Inspiratory Amplitude and Its Association with Postoperative Pulmonary Complications in Upper Abdominal Surgery: A Prospective, Longitudinal, Observational Study.', journal: 'Indian J Crit Care Med 2021; 25 (9):1031-1039.' },
+        { num: '07', authors: 'Vanamail, Prasanna Vani; Raj, Pritha; Balakrishnan, Kalpana; Ramasamy, Thendral; Gunasekaran, Praveen Kumar.', title: 'Effect of Perioperative Anaemia and Blood Transfusion on Overall Survival in Major Cancer Surgery: A Retrospective Analysis.', journal: 'Journal of Onco-Anaesthesiology and Perioperative Medicine 3(1):p 81-87, Jan–Apr 2026.' },
       ],
     },
   },
@@ -718,6 +737,15 @@ export const doctorsTranslations = {
       pastText: 'உதவி பேராசிரியர், நரம்பியல் அறுவை சிகிச்சை நிறுவனம், சென்னை மருத்துவக் கல்லூரி',
       expertiseTitle: 'நிபுணத்துவ துறைகள்',
       expertise: ['மூளை கட்டி அறுவை', 'முதுகெலும்பு அறுவை', 'எண்டோஸ்கோபிக் நரம்பியல் அறுவை', 'காயம் அறுவை', 'புற நரம்பு அறுவை'],
+      membershipsTitle: 'உறுப்பினர்கள்',
+      memberships: ['நரம்பியல் சமூகம் இந்தியா', 'தமிழ்நாடு நரம்பியல் அறுவை சிகிச்சையாளர்கள் சங்கம்'],
+      awardsTitle: 'மதிப்புமிக்க விருதுகள்',
+      awards: [
+        'தர்மபுரி மருத்துவக் கல்லூரியில் சிறந்த மருத்துவர் விருது.',
+        '2018-ல் NSI, INDSPN-ல் சிறந்த சுவரொட்டி வழங்கல் விருது.',
+      ],
+      publicationsTitle: 'மாநாடுகள் & வெளியீடுகள்',
+      publications: 'TANS, NSICON மற்றும் INDSPN போன்ற பல்வேறு தேசிய மற்றும் சர்வதேச மாநாடுகளில் கட்டுரைகள் வழங்கப்பட்டன.',
       opdLabel: 'OPD கிடைக்கும் நேரம்',
       opdTimes: ['திங்கள் – சனி · காலை 10 – பகல் 1 மணி', 'திங்கள் – சனி · மாலை 4 – 9 மணி'],
       bookBtn: 'ஆலோசனை பதிவு',
@@ -732,6 +760,7 @@ export const doctorsTranslations = {
       goldMedalSub: 'MD (மயக்கவியல்)',
       pastTitle: 'முந்தைய பணி',
       membershipsTitle: 'உறுப்பினர்கள்',
+      memberships: ['இந்திய வலி ஆய்வு சமூகம்', 'ஐரோப்பிய வலி கூட்டமைப்பு', 'இந்திய மயக்கவியல் சமூகம்', 'ஆன்கோ மயக்கவியல் மற்றும் பெரிஆபரேட்டிவ் கவலை சமூகம்'],
       pastItems: [
         { label: 'மூத்த குடியிருப்பாளர்', place: 'AIIMS, புது தில்லி' },
         { label: 'உதவி பேராசிரியர்', place: 'புற்றுநோய் நிறுவனம், அடையாறு' },
@@ -760,7 +789,138 @@ export const doctorsTranslations = {
         { num: '04', authors: 'Vanamail PV, Dash R, Balakrishnan K.', title: 'மேல் வயிற்று புற்றுநோய் அறுவைகளில் அறுவைக்கு பிந்தைய நிமோனியாவின் வழங்கல், முடிவுகள் மற்றும் தீவிரத்தின் தீர்மானிகள்: பின்நோக்கு பகுப்பாய்வு.', journal: 'Indian J Respir Care 2020;9:52-7' },
         { num: '05', authors: 'Prasanna Vani Vanamail, Radhika Dash, Kalpana Balakrishnan, & Thendral Edwin. (2021).', title: 'தீவிர சிஸ்டெக்டோமியின் போது மீண்டும் மீண்டும் நுரையீரல் இரத்த உறைவு: வழக்கு அறிக்கை.', journal: 'Indian Journal of Case Reports, 260-262.' },
         { num: '06', authors: 'Vanamail PV, Balakrishnan K, Prahlad S, Chockalingam P, Dash R, Soundararajan DK.', title: 'மேல் வயிற்று அறுவையில் உதரவிதான உத்வேக அலைப்பரப்பின் அல்ட்ராசோனிக் மதிப்பீடு மற்றும் அறுவைக்கு பிந்தைய நுரையீரல் சிக்கல்களுடன் தொடர்பு.', journal: 'Indian J Crit Care Med 2021; 25 (9):1031-1039.' },
+        { num: '07', authors: 'Vanamail, Prasanna Vani; Raj, Pritha; Balakrishnan, Kalpana; Ramasamy, Thendral; Gunasekaran, Praveen Kumar.', title: 'பெரிஆபரேட்டிவ் இரத்த சோகை மற்றும் இரத்தமாற்றம் மூலம் முக்கிய புற்றுநோய் அறுவையில் ஒட்டுமொத்த உயிர்வாழ்வில் விளைவு: ஒரு பின்நோக்கு பகுப்பாய்வு.', journal: 'Journal of Onco-Anaesthesiology and Perioperative Medicine 3(1):p 81-87, Jan–Apr 2026.' },
       ],
+    },
+  },
+};
+
+// ─── Emergency page translations ─────────────────────────────────────────────
+export const emergencyTranslations = {
+  en: {
+    hero: {
+      badge:    'Emergency Response — Active 24 / 7',
+      line1:    'Immediate',
+      line2:    'Neurological',
+      line3:    'Response.',
+      body:     'Every second counts in neuro-trauma. Our rapid response team is on standby around the clock for acute stroke, spinal emergencies, and critical head injuries.',
+      callLabel:    'Call Emergency',
+      directionsLabel: 'Get Directions',
+      scrollHint: 'Scroll for details',
+    },
+    strip: [
+      { label: 'Main Hospital Line',  value: '04343-239923',         sub: 'Available 24/7' },
+      { label: 'Hospital Address',    value: 'West Link Road (35A)', sub: 'Krishnagiri – 635001, TN' },
+      { label: 'Patient Services',    value: 'View All Services',    sub: 'Resources & care information' },
+    ],
+    channels: {
+      eyebrow: 'Reach Out',
+      heading: 'All Contact Channels',
+      cards: [
+        { title: 'Emergency Hotline', detail: '04343-239923',           sub: '24 / 7 — Trauma & Critical' },
+        { title: 'Visit Us',          detail: 'West Link Road (35A)',    sub: 'Krishnagiri – 635001, TN'   },
+        { title: 'Patient Services',  detail: 'Health & Care Resources', sub: 'Insurance, billing & guides' },
+        { title: 'Book Appointment',  detail: 'Schedule a Consultation', sub: 'OPD & specialist slots'      },
+      ],
+    },
+    critical: {
+      eyebrow: 'Always On',
+      heading: '24/7 Critical Services',
+      trauma: {
+        title: '24h Emergency Trauma Care & ICU',
+        body:  'Level-1 neuro-trauma stabilization and advanced intensive care monitoring with dedicated neuro-intensivists on call at all times.',
+        tags:  ['Always Open', 'Immediate Triage', 'Neuro-ICU'],
+      },
+      pharmacy: {
+        title: '24-hour Pharmacy',
+        body:  'Critical care medications and life-saving neurological drugs always in stock.',
+      },
+      stroke: {
+        title:  'Acute Stroke Care',
+        body:   'Rapid thrombolysis and endovascular intervention for ischemic events within the golden hour.',
+        cta:    'Call Now',
+      },
+      icu: {
+        title: 'Specialized Neuro ICU',
+        body:  'Our dedicated 3-bed Neuro ICU provides continuous round-the-clock monitoring for critical neurological and post-operative cases — with specialists always present and a response time under 5 minutes.',
+        stats: [
+          { label: 'Availability',   value: '24 / 7 / 365'  },
+          { label: 'ICU Beds',       value: '3 Beds'         },
+          { label: 'Specialists',    value: 'Always On-Call' },
+          { label: 'Response Time',  value: '< 5 Minutes'   },
+        ],
+      },
+    },
+    reach: {
+      eyebrow: 'Step-by-Step',
+      heading: 'How to Reach Us',
+      body:    'Follow these steps to reach our Emergency wing quickly and safely.',
+      addressLabel:   'Hospital Address',
+      mapsBtn:        'Open in Google Maps',
+      ambulanceBtn:   'Call for Ambulance',
+    },
+  },
+  ta: {
+    hero: {
+      badge:    'அவசர மறுமொழி — 24 / 7 இயங்குகிறது',
+      line1:    'உடனடி',
+      line2:    'நரம்பியல்',
+      line3:    'மறுமொழி.',
+      body:     'நரம்பு-காயத்தில் ஒவ்வொரு நொடியும் முக்கியம். கடுமையான பக்கவாதம், முதுகெலும்பு அவசரநிலை மற்றும் தலை காயங்களுக்கு எங்கள் விரைவு மறுமொழி குழு எப்போதும் தயாராக உள்ளது.',
+      callLabel:    'அவசரம் அழைக்க',
+      directionsLabel: 'வழி பெறுக',
+      scrollHint: 'விவரங்களுக்கு கீழே உருட்டவும்',
+    },
+    strip: [
+      { label: 'முதன்மை தொலைபேசி',   value: '04343-239923',           sub: '24/7 கிடைக்கும்' },
+      { label: 'மருத்துவமனை முகவரி',  value: 'வெஸ்ட் லிங்க் ரோடு (35A)', sub: 'கிருஷ்ணகிரி – 635001, TN' },
+      { label: 'நோயாளர் சேவை',        value: 'அனைத்து சேவைகளும்',      sub: 'வளங்கள் & சிகிச்சை தகவல்' },
+    ],
+    channels: {
+      eyebrow: 'தொடர்பு கொள்க',
+      heading: 'அனைத்து தொடர்பு வழிகள்',
+      cards: [
+        { title: 'அவசர தொலைபேசி',  detail: '04343-239923',                sub: '24 / 7 — காயம் & தீவிரம்'         },
+        { title: 'நேரில் வாருங்கள்', detail: 'வெஸ்ட் லிங்க் ரோடு (35A)',   sub: 'கிருஷ்ணகிரி – 635001, TN'          },
+        { title: 'நோயாளர் சேவை',    detail: 'சுகாதார & சிகிச்சை வளங்கள்', sub: 'காப்பீடு, பில்லிங் & வழிகாட்டிகள்' },
+        { title: 'சந்திப்பு பதிவு',  detail: 'ஆலோசனை திட்டமிடவும்',       sub: 'OPD & நிபுணர் நேரங்கள்'           },
+      ],
+    },
+    critical: {
+      eyebrow: 'எப்போதும் இயங்கும்',
+      heading: '24/7 தீவிர சேவைகள்',
+      trauma: {
+        title: '24 மணி அவசர காயம் சிகிச்சை & ICU',
+        body:  'முதல்நிலை நரம்பு-காயம் நிலைப்படுத்தல் மற்றும் மேம்பட்ட தீவிர சிகிச்சை கண்காணிப்பு, எப்போதும் நரம்பு-தீவிரவியல் நிபுணர்களுடன்.',
+        tags:  ['எப்போதும் திறந்தது', 'உடனடி தீர்வு', 'நரம்பு-ICU'],
+      },
+      pharmacy: {
+        title: '24 மணி மருந்தகம்',
+        body:  'தீவிர சிகிச்சை மருந்துகள் மற்றும் உயிர்காக்கும் நரம்பியல் மருந்துகள் எப்போதும் கையிருப்பில்.',
+      },
+      stroke: {
+        title:  'கடுமையான பக்கவாத சிகிச்சை',
+        body:   'தங்க நேரத்திற்குள் இஸ்கிமிக் நிகழ்வுகளுக்கு விரைவான த்ரோம்போலிசிஸ் மற்றும் எண்டோவாஸ்குலர் தலையீடு.',
+        cta:    'இப்போது அழைக்கவும்',
+      },
+      icu: {
+        title: 'சிறப்பு நரம்பு ICU',
+        body:  'எங்கள் அர்ப்பணிப்பான 3-படுக்கை நரம்பு ICU, முக்கியமான நரம்பியல் மற்றும் அறுவைசிகிச்சைக்கு பிந்தைய வழக்குகளுக்கு தொடர்ச்சியான கண்காணிப்பை வழங்குகிறது — நிபுணர்கள் எப்போதும் உள்ளனர், மறுமொழி நேரம் 5 நிமிடங்களுக்கும் குறைவாக.',
+        stats: [
+          { label: 'கிடைக்கும் நேரம்',  value: '24 / 7 / 365'    },
+          { label: 'ICU படுக்கைகள்',     value: '3 படுக்கைகள்'   },
+          { label: 'நிபுணர்கள்',          value: 'எப்போதும் தயார்' },
+          { label: 'மறுமொழி நேரம்',       value: '< 5 நிமிடங்கள்' },
+        ],
+      },
+    },
+    reach: {
+      eyebrow: 'படி படியாக',
+      heading: 'எங்களை எவ்வாறு அடைவது',
+      body:    'எங்கள் அவசர பிரிவை விரைவாக மற்றும் பாதுகாப்பாக அடைய இந்த படிகளை பின்பற்றுங்கள்.',
+      addressLabel:   'மருத்துவமனை முகவரி',
+      mapsBtn:        'Google Maps இல் திற',
+      ambulanceBtn:   'ஆம்புலன்ஸுக்கு அழைக்கவும்',
     },
   },
 };
@@ -787,6 +947,8 @@ export const contactTranslations = {
       phoneTitle: 'Direct Lines',
       phoneSub: 'Emergency: 24 / 7',
       digitalTitle: 'Digital Support',
+      quickLinksTitle: 'Quick Links',
+      patientServicesLabel: 'Patient Services',
     },
     hours: {
       heading: 'OPD Timings',
@@ -834,6 +996,8 @@ export const contactTranslations = {
       phoneTitle: 'நேரடி தொலைபேசி',
       phoneSub: 'அவசர சேவை: 24 / 7',
       digitalTitle: 'டிஜிட்டல் ஆதரவு',
+      quickLinksTitle: 'விரைவு இணைப்புகள்',
+      patientServicesLabel: 'நோயாளர் சேவை',
     },
     hours: {
       heading: 'OPD நேரங்கள்',

@@ -1,4 +1,27 @@
+import { useLang, emergencyTranslations } from '../context/LanguageContext';
+
 export default function Emergency() {
+  const { lang } = useLang();
+  const t = emergencyTranslations[lang];
+
+  // static data that never changes language (phone numbers, hrefs, icons, colours)
+  const stripHrefs = [
+    'tel:04343239923',
+    'https://maps.google.com/?q=JP+Neuro+Spine+Hospital+Krishnagiri',
+    '/patient-services',
+  ];
+  const stripIcons  = ['call', 'location_on', 'medical_services'];
+  const stripColors = ['text-tertiary-fixed', 'text-tertiary-fixed', 'text-secondary-container'];
+
+  const channelsMeta = [
+    { icon: 'call',          href: 'tel:04343239923',                                                   gradient: 'from-error/10 to-error/5',           border: 'border-error/20',     iconBg: 'bg-error',     iconColor: 'text-white' },
+    { icon: 'location_on',   href: 'https://maps.google.com/?q=JP+Neuro+Spine+Hospital+Krishnagiri',   gradient: 'from-primary/10 to-primary/5',        border: 'border-primary/20',   iconBg: 'bg-primary',   iconColor: 'text-white' },
+    { icon: 'medical_services', href: '/patient-services',                                              gradient: 'from-primary/10 to-primary/5',        border: 'border-primary/20',   iconBg: 'bg-primary',   iconColor: 'text-white' },
+    { icon: 'calendar_month',   href: '/book-appoinment',                                               gradient: 'from-secondary/10 to-secondary/5',    border: 'border-secondary/20', iconBg: 'bg-secondary', iconColor: 'text-white' },
+  ];
+
+  const icuStatIcons = ['schedule', 'bed', 'group', 'local_hospital'];
+
   return (
     <div className="bg-surface font-body text-on-surface">
 
@@ -28,19 +51,19 @@ export default function Emergency() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-error opacity-75" />
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-error" />
               </span>
-              Emergency Response — Active 24 / 7
+              {t.hero.badge}
             </div>
 
-            {/* hero heading — Raleway ExtraBold */}
+            {/* hero heading */}
             <h1 className="font-raleway text-4xl sm:text-5xl lg:text-7xl text-white leading-[1.05] tracking-tight mb-5 sm:mb-6">
-              Immediate<br />
-              Neurological<br />
-              <span className="text-tertiary-fixed">Response.</span>
+              {t.hero.line1}<br />
+              {t.hero.line2}<br />
+              <span className="text-tertiary-fixed">{t.hero.line3}</span>
             </h1>
 
             {/* body */}
             <p className="text-white/70 text-sm sm:text-base max-w-xl font-medium leading-relaxed mb-8 sm:mb-12">
-              Every second counts in neuro-trauma. Our rapid response team is on standby around the clock for acute stroke, spinal emergencies, and critical head injuries.
+              {t.hero.body}
             </p>
 
             {/* Primary CTAs */}
@@ -53,7 +76,7 @@ export default function Emergency() {
                   <span className="material-symbols-outlined text-xl sm:text-2xl" style={{ fontVariationSettings: "'FILL' 1" }}>call</span>
                 </div>
                 <div>
-                  <p className="text-xs text-outline font-bold uppercase tracking-widest">Call Emergency</p>
+                  <p className="text-xs text-outline font-bold uppercase tracking-widest">{t.hero.callLabel}</p>
                   <p className="font-raleway text-xl sm:text-2xl text-primary">04343-239923</p>
                 </div>
               </a>
@@ -68,7 +91,7 @@ export default function Emergency() {
                   <span className="material-symbols-outlined text-xl sm:text-2xl" style={{ fontVariationSettings: "'FILL' 1" }}>navigation</span>
                 </div>
                 <div>
-                  <p className="text-xs text-white/50 font-bold uppercase tracking-widest">Get Directions</p>
+                  <p className="text-xs text-white/50 font-bold uppercase tracking-widest">{t.hero.directionsLabel}</p>
                   <p className="font-raleway text-xl sm:text-2xl text-white">Krishnagiri, TN</p>
                 </div>
               </a>
@@ -78,7 +101,7 @@ export default function Emergency() {
 
         {/* Scroll hint */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/40 z-10">
-          <span className="text-xs font-bold uppercase tracking-widest hidden sm:block">Scroll for details</span>
+          <span className="text-xs font-bold uppercase tracking-widest hidden sm:block">{t.hero.scrollHint}</span>
           <span className="material-symbols-outlined animate-bounce text-lg">keyboard_arrow_down</span>
         </div>
       </section>
@@ -87,19 +110,15 @@ export default function Emergency() {
       <section className="bg-primary py-0">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-white/10">
-            {[
-              { icon: "call",  label: "Main Hospital Line",  value: "04343-239923",         sub: "Available 24/7",     href: "tel:04343239923",             color: "text-tertiary-fixed"        },
-              { icon: "location_on", label: "Hospital Address", value: "West Link Road (35A)", sub: "Krishnagiri – 635001, TN", href: "https://maps.google.com/?q=JP+Neuro+Spine+Hospital+Krishnagiri", color: "text-tertiary-fixed" },
-              { icon: "mail",  label: "Email Support",       value: "info@jpneurospine.com", sub: "Non-urgent queries", href: "mailto:info@jpneurospine.com", color: "text-secondary-container" },
-            ].map(({ icon, label, value, sub, href, color }) => (
+            {t.strip.map(({ label, value, sub }, i) => (
               <a
                 key={label}
-                href={href}
-                target={href.startsWith("http") ? "_blank" : undefined}
-                rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+                href={stripHrefs[i]}
+                target={stripHrefs[i].startsWith('http') ? '_blank' : undefined}
+                rel={stripHrefs[i].startsWith('http') ? 'noopener noreferrer' : undefined}
                 className="flex items-center gap-4 sm:gap-5 px-5 sm:px-8 py-5 sm:py-6 hover:bg-white/5 transition-colors group"
               >
-                <span className={`material-symbols-outlined text-2xl sm:text-3xl ${color}`} style={{ fontVariationSettings: "'FILL' 1" }}>{icon}</span>
+                <span className={`material-symbols-outlined text-2xl sm:text-3xl ${stripColors[i]}`} style={{ fontVariationSettings: "'FILL' 1" }}>{stripIcons[i]}</span>
                 <div className="min-w-0">
                   <p className="text-white/50 text-xs font-bold uppercase tracking-widest">{label}</p>
                   <p className="text-white font-bold text-sm sm:text-base group-hover:underline truncate">{value}</p>
@@ -111,40 +130,37 @@ export default function Emergency() {
         </div>
       </section>
 
-      {/* ── All Contact Methods ── */}
+      {/* ── All Contact Channels ── */}
       <section className="py-14 sm:py-20 bg-surface">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-8 sm:mb-12">
-            <span className="text-xs font-bold uppercase tracking-widest text-primary mb-2 block">Reach Out</span>
-            {/* heading — Raleway ExtraBold */}
-            <h2 className="font-raleway text-3xl sm:text-4xl lg:text-5xl text-on-surface">All Contact Channels</h2>
+            <span className="text-xs font-bold uppercase tracking-widest text-primary mb-2 block">{t.channels.eyebrow}</span>
+            <h2 className="font-raleway text-3xl sm:text-4xl lg:text-5xl text-on-surface">{t.channels.heading}</h2>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
-            {[
-              { icon: "call",          title: "Emergency Hotline", detail: "04343-239923",            sub: "24 / 7 — Trauma & Critical", href: "tel:04343239923",                  gradient: "from-error/10 to-error/5",           border: "border-error/20",     iconBg: "bg-error",     iconColor: "text-white" },
-              { icon: "location_on",   title: "Visit Us",          detail: "West Link Road (35A)",     sub: "Krishnagiri – 635001, TN",   href: "https://maps.google.com/?q=JP+Neuro+Spine+Hospital+Krishnagiri", gradient: "from-primary/10 to-primary/5",     border: "border-primary/20",   iconBg: "bg-primary",   iconColor: "text-white" },
-              { icon: "mail",          title: "General Email",     detail: "info@jpneurospine.com",    sub: "Appointments & queries",     href: "mailto:info@jpneurospine.com",      gradient: "from-primary/10 to-primary/5",      border: "border-primary/20",   iconBg: "bg-primary",   iconColor: "text-white" },
-              { icon: "support_agent", title: "Support Email",     detail: "support@jpneurospine.com", sub: "Patient support",            href: "mailto:support@jpneurospine.com",   gradient: "from-secondary/10 to-secondary/5", border: "border-secondary/20", iconBg: "bg-secondary", iconColor: "text-white" },
-            ].map(({ icon, title, detail, sub, href, gradient, border, iconBg, iconColor }) => (
-              <a
-                key={title}
-                href={href}
-                target={href.startsWith("http") ? "_blank" : undefined}
-                rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-                className={`group flex flex-col gap-4 sm:gap-5 p-5 sm:p-6 rounded-2xl bg-gradient-to-br ${gradient} border ${border} hover:shadow-lg transition-all`}
-              >
-                <div className={`w-10 h-10 sm:w-11 sm:h-11 rounded-xl ${iconBg} flex items-center justify-center`}>
-                  <span className={`material-symbols-outlined text-lg sm:text-xl ${iconColor}`} style={{ fontVariationSettings: "'FILL' 1" }}>{icon}</span>
-                </div>
-                <div className="min-w-0">
-                  <p className="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-1">{title}</p>
-                  <p className="font-host font-bold text-on-surface text-sm sm:text-base group-hover:underline break-all">{detail}</p>
-                  <p className="text-xs text-on-surface-variant mt-1">{sub}</p>
-                </div>
-                <span className="material-symbols-outlined text-on-surface-variant/30 group-hover:text-primary group-hover:translate-x-1 transition-all self-end">arrow_forward</span>
-              </a>
-            ))}
+            {t.channels.cards.map(({ title, detail, sub }, i) => {
+              const { icon, href, gradient, border, iconBg, iconColor } = channelsMeta[i];
+              return (
+                <a
+                  key={title}
+                  href={href}
+                  target={href.startsWith('http') ? '_blank' : undefined}
+                  rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                  className={`group flex flex-col gap-4 sm:gap-5 p-5 sm:p-6 rounded-2xl bg-gradient-to-br ${gradient} border ${border} hover:shadow-lg transition-all`}
+                >
+                  <div className={`w-10 h-10 sm:w-11 sm:h-11 rounded-xl ${iconBg} flex items-center justify-center`}>
+                    <span className={`material-symbols-outlined text-lg sm:text-xl ${iconColor}`} style={{ fontVariationSettings: "'FILL' 1" }}>{icon}</span>
+                  </div>
+                  <div className="min-w-0">
+                    <p className="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-1">{title}</p>
+                    <p className="font-host font-bold text-on-surface text-sm sm:text-base group-hover:underline break-all">{detail}</p>
+                    <p className="text-xs text-on-surface-variant mt-1">{sub}</p>
+                  </div>
+                  <span className="material-symbols-outlined text-on-surface-variant/30 group-hover:text-primary group-hover:translate-x-1 transition-all self-end">arrow_forward</span>
+                </a>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -153,9 +169,8 @@ export default function Emergency() {
       <section className="py-14 sm:py-20 bg-surface-container-low">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-8 sm:mb-12">
-            <span className="text-xs font-bold uppercase tracking-widest text-primary mb-2 block">Always On</span>
-            {/* heading — Raleway ExtraBold */}
-            <h2 className="font-raleway text-3xl sm:text-4xl lg:text-5xl text-on-surface">24/7 Critical Services</h2>
+            <span className="text-xs font-bold uppercase tracking-widest text-primary mb-2 block">{t.critical.eyebrow}</span>
+            <h2 className="font-raleway text-3xl sm:text-4xl lg:text-5xl text-on-surface">{t.critical.heading}</h2>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-4 sm:gap-5">
@@ -165,17 +180,17 @@ export default function Emergency() {
                 <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-error/10 flex items-center justify-center mb-4 sm:mb-5">
                   <span className="material-symbols-outlined text-xl sm:text-2xl text-error" style={{ fontVariationSettings: "'FILL' 1" }}>emergency</span>
                 </div>
-                {/* subheading — Host Grotesk Regular */}
-                <h3 className="font-host text-xl sm:text-2xl text-on-surface mb-2">24h Emergency Trauma Care & ICU</h3>
-                {/* body */}
+                <h3 className="font-host text-xl sm:text-2xl text-on-surface mb-2">{t.critical.trauma.title}</h3>
                 <p className="text-on-surface-variant max-w-md text-sm sm:text-base leading-relaxed">
-                  Level-1 neuro-trauma stabilization and advanced intensive care monitoring with dedicated neuro-intensivists on call at all times.
+                  {t.critical.trauma.body}
                 </p>
               </div>
               <div className="mt-5 sm:mt-6 flex gap-2 flex-wrap">
-                <span className="px-3 py-1 rounded-full bg-error/10 text-error text-xs font-bold">Always Open</span>
-                <span className="px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed-variant text-xs font-bold">Immediate Triage</span>
-                <span className="px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container text-xs font-bold">Neuro-ICU</span>
+                {t.critical.trauma.tags.map((tag) => (
+                  <span key={tag} className="px-3 py-1 rounded-full bg-error/10 text-error text-xs font-bold first:bg-error/10 first:text-error [&:nth-child(2)]:bg-primary-fixed [&:nth-child(2)]:text-on-primary-fixed-variant [&:nth-child(3)]:bg-secondary-container [&:nth-child(3)]:text-on-secondary-container">
+                    {tag}
+                  </span>
+                ))}
               </div>
             </div>
 
@@ -184,9 +199,8 @@ export default function Emergency() {
               <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-tertiary/10 flex items-center justify-center mb-3 sm:mb-4">
                 <span className="material-symbols-outlined text-2xl sm:text-3xl text-tertiary" style={{ fontVariationSettings: "'FILL' 1" }}>medication</span>
               </div>
-              {/* subheading — Host Grotesk Regular */}
-              <h3 className="font-host text-xl sm:text-2xl text-on-surface">24-hour Pharmacy</h3>
-              <p className="text-sm sm:text-base text-on-surface-variant mt-2 leading-relaxed">Critical care medications and life-saving neurological drugs always in stock.</p>
+              <h3 className="font-host text-xl sm:text-2xl text-on-surface">{t.critical.pharmacy.title}</h3>
+              <p className="text-sm sm:text-base text-on-surface-variant mt-2 leading-relaxed">{t.critical.pharmacy.body}</p>
             </div>
 
             {/* Stroke Care */}
@@ -195,12 +209,11 @@ export default function Emergency() {
                 <span className="material-symbols-outlined text-xl sm:text-2xl text-tertiary-fixed" style={{ fontVariationSettings: "'FILL' 1" }}>neurology</span>
               </div>
               <div>
-                {/* subheading — Host Grotesk Regular */}
-                <h3 className="font-host text-xl sm:text-2xl text-white mb-2">Acute Stroke Care</h3>
-                <p className="text-white/60 text-sm sm:text-base leading-relaxed">Rapid thrombolysis and endovascular intervention for ischemic events within the golden hour.</p>
+                <h3 className="font-host text-xl sm:text-2xl text-white mb-2">{t.critical.stroke.title}</h3>
+                <p className="text-white/60 text-sm sm:text-base leading-relaxed">{t.critical.stroke.body}</p>
               </div>
               <a href="tel:04343239923" className="mt-4 text-tertiary-fixed font-bold text-sm sm:text-base flex items-center gap-2 group w-fit">
-                Call Now
+                {t.critical.stroke.cta}
                 <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform text-base">chevron_right</span>
               </a>
             </div>
@@ -211,20 +224,15 @@ export default function Emergency() {
                 <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 sm:mb-5">
                   <span className="material-symbols-outlined text-xl sm:text-2xl text-primary" style={{ fontVariationSettings: "'FILL' 1" }}>monitor_heart</span>
                 </div>
-                <h3 className="font-host text-xl sm:text-2xl text-on-surface mb-2">Specialized Neuro ICU</h3>
+                <h3 className="font-host text-xl sm:text-2xl text-on-surface mb-2">{t.critical.icu.title}</h3>
                 <p className="text-on-surface-variant text-sm sm:text-base leading-relaxed w-full">
-                  Our dedicated 3-bed Neuro ICU provides continuous round-the-clock monitoring for critical neurological and post-operative cases — with specialists always present and a response time under 5 minutes.
+                  {t.critical.icu.body}
                 </p>
               </div>
               <div className="mt-5 sm:mt-6 grid grid-cols-2 sm:grid-cols-4 gap-3">
-                {[
-                  { icon: "schedule",       label: "Availability",        value: "24 / 7 / 365" },
-                  { icon: "bed",            label: "ICU Beds",            value: "3 Beds"        },
-                  { icon: "group",          label: "Specialists",         value: "Always On-Call"},
-                  { icon: "local_hospital", label: "Response Time",       value: "< 5 Minutes"  },
-                ].map(({ icon, label, value }) => (
+                {t.critical.icu.stats.map(({ label, value }, i) => (
                   <div key={label} className="flex flex-col items-center text-center bg-primary/5 border border-primary/10 rounded-xl px-3 py-3 gap-1">
-                    <span className="material-symbols-outlined text-primary text-lg" style={{ fontVariationSettings: "'FILL' 1" }}>{icon}</span>
+                    <span className="material-symbols-outlined text-primary text-lg" style={{ fontVariationSettings: "'FILL' 1" }}>{icuStatIcons[i]}</span>
                     <span className="text-xs font-black text-primary">{value}</span>
                     <span className="text-[10px] text-on-surface-variant uppercase tracking-wide">{label}</span>
                   </div>
@@ -240,10 +248,9 @@ export default function Emergency() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
 
           <div className="mb-8 sm:mb-12">
-            <span className="text-xs font-bold uppercase tracking-widest text-primary mb-2 block">Step-by-Step</span>
-            {/* heading — Raleway ExtraBold */}
-            <h2 className="font-raleway text-3xl sm:text-4xl lg:text-5xl text-on-surface">How to Reach Us</h2>
-            <p className="text-on-surface-variant mt-2 max-w-xl text-sm sm:text-base">Follow these steps to reach our Emergency wing quickly and safely.</p>
+            <span className="text-xs font-bold uppercase tracking-widest text-primary mb-2 block">{t.reach.eyebrow}</span>
+            <h2 className="font-raleway text-3xl sm:text-4xl lg:text-5xl text-on-surface">{t.reach.heading}</h2>
+            <p className="text-on-surface-variant mt-2 max-w-xl text-sm sm:text-base">{t.reach.body}</p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 sm:gap-6 mb-5 sm:mb-6">
@@ -254,8 +261,7 @@ export default function Emergency() {
                 <span className="material-symbols-outlined text-primary" style={{ fontVariationSettings: "'FILL' 1" }}>location_on</span>
               </div>
               <div>
-                {/* subheading — Host Grotesk Regular */}
-                <p className="font-host text-primary mb-2 text-sm sm:text-base">Hospital Address</p>
+                <p className="font-host text-primary mb-2 text-sm sm:text-base">{t.reach.addressLabel}</p>
                 <address className="not-italic text-on-surface-variant leading-relaxed text-sm sm:text-base">
                   9/1 colony, West Link Road (35A),<br />
                   Co-operative colony,<br />
@@ -270,14 +276,14 @@ export default function Emergency() {
                   className="flex items-center justify-center gap-2 bg-primary text-white px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl font-bold text-sm sm:text-base hover:bg-on-primary-fixed-variant transition-all"
                 >
                   <span className="material-symbols-outlined text-base">navigation</span>
-                  Open in Google Maps
+                  {t.reach.mapsBtn}
                 </a>
                 <a
                   href="tel:04343239923"
                   className="flex items-center justify-center gap-2 bg-error/10 text-error px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl font-bold text-sm sm:text-base hover:bg-error hover:text-white transition-all border border-error/20"
                 >
                   <span className="material-symbols-outlined text-base" style={{ fontVariationSettings: "'FILL' 1" }}>call</span>
-                  Call for Ambulance
+                  {t.reach.ambulanceBtn}
                 </a>
               </div>
             </div>

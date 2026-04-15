@@ -86,10 +86,10 @@ export default function PrivacyPolicy() {
               <span className="material-symbols-outlined text-[#ff9800]" style={{ fontSize: "16px" }}>call</span>
               04343-239923
             </a>
-            <a href="mailto:contact@jpneuro.com" className={`flex items-center gap-2.5 ${fontScale.label} text-gray-500 hover:text-[#0d1d6e] transition-colors`}>
+            {/* <a href="mailto:contact@jpneuro.com" className={`flex items-center gap-2.5 ${fontScale.label} text-gray-500 hover:text-[#0d1d6e] transition-colors`}>
               <span className="material-symbols-outlined text-[#ff9800]" style={{ fontSize: "16px" }}>mail</span>
               contact@jpneuro.com
-            </a>
+            </a> */}
             <Link
               to="/contact-us"
               className={`mt-1 text-center ${fontScale.label} font-semibold text-white bg-[#0d1d6e] hover:bg-[#142588] rounded-lg py-2 px-3 transition-colors`}
@@ -153,12 +153,12 @@ export default function PrivacyPolicy() {
                       04343-239923
                     </a>
                   </div>
-                  <div className="flex items-center gap-3">
+                  {/* <div className="flex items-center gap-3">
                     <span className="material-symbols-outlined text-[#ff9800] shrink-0" style={{ fontSize: "18px" }}>mail</span>
                     <a href="mailto:contact@jpneuro.com" className={`${fontScale.label} text-white/70 hover:text-white transition-colors`}>
                       contact@jpneuro.com
                     </a>
-                  </div>
+                  </div> */}
                 </div>
               )}
             </div>

@@ -131,12 +131,12 @@ export default function Footer() {
                 04343-239923
               </a>
             </li>
-            <li className="flex items-center gap-3">
+            {/* <li className="flex items-center gap-3">
               <span className="material-symbols-outlined text-[#ff9800] shrink-0" style={{ fontSize: "16px" }}>mail</span>
               <a href="mailto:contact@jpneuro.com" className="text-[0.82rem] text-white/50 hover:text-white transition-colors">
                 contact@jpneuro.com
               </a>
-            </li>
+            </li> */}
             <li className="flex items-center gap-3">
               <span className="material-symbols-outlined text-[#ff9800] shrink-0" style={{ fontSize: "16px" }}>schedule</span>
               <span className="text-[0.82rem] text-white/50">{t.contact.emergency}</span>

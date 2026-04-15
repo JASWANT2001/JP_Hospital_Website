@@ -110,6 +110,49 @@ const Docters = () => {
                   {jay.bookBtn}
                 </a>
               </div>
+
+              {/* Memberships */}
+              <div className="p-5 bg-surface-container-low rounded-2xl border border-outline-variant/10 shadow-sm">
+                <h3 className="font-subheading text-xl sm:text-2xl text-primary mb-3 flex items-center gap-3">
+                  <span className="material-symbols-outlined text-xl">groups</span>
+                  {jay.membershipsTitle}
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {jay.memberships.map((m) => (
+                    <span key={m} className="px-3 py-1.5 bg-primary-fixed/40 text-primary rounded-lg text-xs font-bold border border-primary/10">
+                      {m}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Awards */}
+       <div className="p-5 bg-[#fffcf8] rounded-2xl border border-[#ffdcc6]/50 shadow-sm">
+  <h3 className="font-subheading text-xl sm:text-2xl text-tertiary mb-4 flex items-center gap-2">
+                  <span className="material-symbols-outlined text-xl">military_tech</span>
+                  {jay.awardsTitle}
+                </h3>
+                <ul className="space-y-2 list-disc list-outside pl-5">
+                  {jay.awards.map((award, i) => (
+                    <li key={i} className="text-sm sm:text-base text-on-surface-variant leading-snug">{award}</li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Publications */}
+              <div className="p-5 bg-surface-container-low rounded-2xl border border-outline-variant/10 shadow-sm">
+            <h3 className="font-subheading text-xl sm:text-2xl text-primary mb-3 flex items-center gap-3">
+                  <span className="material-symbols-outlined text-xl">library_books</span>
+                  {jay.publicationsTitle}
+                </h3>
+ <ol className="list-decimal pl-5 space-y-2">
+  {jay.publications.split('\n').map((item, i) => (
+    <li key={i} className="text-sm sm:text-base text-on-surface leading-relaxed">
+      {item}
+    </li>
+  ))}
+</ol>
+              </div>
             </div>
           </section>
 
@@ -181,7 +224,7 @@ const Docters = () => {
                     {pra.membershipsTitle}
                   </h4>
                   <div className="flex flex-wrap gap-2">
-                    {["ISSP", "ISA", "SOPC"].map((m) => (
+                    {pra.memberships.map((m) => (
                       <span key={m} className="px-3 py-1 bg-white rounded-md text-xs font-bold text-primary border border-outline-variant/20 shadow-sm">
                         {m}
                       </span>
