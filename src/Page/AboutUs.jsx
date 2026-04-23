@@ -15,7 +15,7 @@ function HeroSection({ t }) {
     <section className="relative overflow-hidden lg:min-h-screen lg:flex lg:items-stretch">
 
       {/* ── Mobile image banner (hidden on lg+) ── */}
-      <div className="relative block lg:hidden w-full h-96 sm:h-[460px] -mt-16">
+      <div className="relative block lg:hidden w-full h-96 sm:h-[460px] -mt-20 sm:-mt-24">
         <img
           src="https://lh3.googleusercontent.com/aida-public/AB6AXuB51NW5dOii2daegXTXX9Hn6W4MopXwHQp3VI9NyxupsOTme8i4bIR5tgI2HXwy3jryDuT03Tcb6btoArK_U30_A_hF-o1Ywbtz2W6H9cTgA1FQ27NQ-qeL7WrOQVGqlL5Gf2ATig8O9eaafk0kUusJvZzysJzzOCuYdO-_KkRbgMEj70p6PVAaXR82mqtB9MfA2qXxfd77-i7vqcP6JBlCPXVB-e55IYgdXNhf9sM8_szaEkifxvdqBncVJM_42XfbqCZXZOazHCE"
           alt="Hospital"
@@ -72,8 +72,7 @@ function VisionMissionSection({ t }) {
         {/* Stats Banner */}
         <div className="mb-6 bg-primary p-7 sm:p-10 rounded-xl flex items-center justify-between text-on-primary relative overflow-hidden">
           <div className="z-10">
-            <h3 className="font-heading text-3xl sm:text-4xl lg:text-5xl mb-1">10+</h3>
-            <p className="text-primary-fixed text-sm sm:text-base font-semibold">{t.statsLabel}</p>
+            <p className="font-heading text-2xl sm:text-3xl lg:text-4xl text-primary-fixed font-extrabold">{t.statsLabel}</p>
           </div>
           <div className="hidden sm:block z-10">
             <span className="material-symbols-outlined text-4xl sm:text-5xl opacity-50">clinical_notes</span>
@@ -199,7 +198,7 @@ export default function AboutUs() {
   const t = aboutTranslations[lang];
 
   return (
-    <main className="pt-16 sm:pt-20 bg-surface text-on-surface font-body">
+    <main className="pt-20 sm:pt-24 bg-surface text-on-surface font-body">
       <FontStyle />
       <HeroSection t={t.hero} />
       <VisionMissionSection t={t.visionMission} />

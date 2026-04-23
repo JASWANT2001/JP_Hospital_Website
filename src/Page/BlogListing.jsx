@@ -188,7 +188,7 @@ export default function BlogListing() {
   const rest = blogs.slice(1);
 
   return (
-    <main className="bg-surface text-on-surface font-body min-h-screen pt-16 sm:pt-20">
+    <main className="bg-surface text-on-surface font-body min-h-screen pt-20 sm:pt-24">
       <FontStyle />
 
       {/* ── Hero Banner ── */}

@@ -61,7 +61,7 @@ export default function Neurosurgery() {
         </div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex justify-start lg:justify-end">
           <div className="w-full lg:max-w-xl">
-            <span className="text-secondary font-bold tracking-widest uppercase text-xs">
+            <span className="text-orange-500 font-bold tracking-widest uppercase text-xs">
               {t.hero.eyebrow}
             </span>
             <h1 className="font-heading text-4xl sm:text-5xl lg:text-7xl text-primary mt-2 mb-4 sm:mb-6 tracking-tight">

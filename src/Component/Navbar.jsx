@@ -30,32 +30,32 @@ export default function Navbar() {
       `}</style>
 
       <nav className="fixed top-0 w-full z-50 bg-[#f7f9fc] bg-opacity-90 backdrop-blur-md shadow-sm">
-        <div className="flex justify-between items-center h-24 sm:h-24 px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-20 sm:h-24 px-4 sm:px-6 lg:px-8">
 
           {/* Logo */}
-          <Link to="/" className="flex items-center min-w-0 overflow-hidden">
+          <Link to="/" className="flex items-center gap-1.5 shrink-0">
             <img
               src={logoSrc}
               alt="JP Neuro Spine logo"
-              className="h-16 w-auto sm:h-20 object-contain shrink-0 flex-none"
+              className="h-11 w-auto sm:h-12 lg:h-14 object-contain flex-none"
             />
-            <div className="flex flex-col min-w-0 overflow-hidden -ml-5">
-              <span className={`font-raleway text-[#142588] tracking-tight leading-tight font-extrabold text-[11px] lg:text-base ${lang === 'ta' ? 'sm:text-[13px]' : 'sm:text-sm'}`}>
+            <div className="flex flex-col">
+              <span className="font-raleway text-[#142588] tracking-tight leading-tight font-extrabold whitespace-nowrap text-[12px] sm:text-[11px] lg:text-sm">
                 JP Neuro Spine Hospital and
               </span>
-              <span className={`font-raleway text-[#142588] tracking-tight leading-tight font-extrabold text-[11px] lg:text-base ${lang === 'ta' ? 'sm:text-[13px]' : 'sm:text-sm'}`}>
+              <span className="font-raleway text-[#142588] tracking-tight leading-tight font-extrabold whitespace-nowrap text-[12px] sm:text-[11px] lg:text-sm">
                 Pain Management Centre
               </span>
             </div>
           </Link>
 
           {/* Desktop Nav Links */}
-          <div className={`hidden lg:flex items-center ${lang === 'ta' ? 'space-x-3 xl:space-x-4' : 'space-x-4 xl:space-x-6'}`}>
+          <div className={`hidden xl:flex items-center ${lang === 'ta' ? 'space-x-4 2xl:space-x-6' : 'space-x-5 2xl:space-x-7'}`}>
             {navLinks.map(({ to, label }) => (
               <Link
                 key={to}
                 to={to}
-                className={`font-manrope tracking-tight font-semibold pb-1 transition-colors whitespace-nowrap ${lang === 'ta' ? 'text-xs xl:text-sm' : 'text-base'} ${
+                className={`font-manrope tracking-tight font-semibold pb-1 transition-colors whitespace-nowrap text-[15px] ${
                   isActive(to)
                     ? 'text-[#142588] border-b-2 border-[#142588]'
                     : 'text-slate-600 hover:text-[#142588] border-b-2 border-transparent'
@@ -102,7 +102,7 @@ export default function Navbar() {
               onClick={() => setMenuOpen((prev) => !prev)}
               aria-label={menuOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={menuOpen}
-              className="lg:hidden flex flex-col justify-center items-center w-10 h-10 rounded-md hover:bg-slate-100 transition-colors gap-[5px] shrink-0"
+              className="xl:hidden flex flex-col justify-center items-center w-10 h-10 rounded-md hover:bg-slate-100 transition-colors gap-[5px] shrink-0"
             >
               <span className={`block h-0.5 w-6 bg-[#142588] rounded transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-[7px]' : ''}`} />
               <span className={`block h-0.5 w-6 bg-[#142588] rounded transition-all duration-300 ${menuOpen ? 'opacity-0 scale-x-0' : ''}`} />
@@ -114,7 +114,7 @@ export default function Navbar() {
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`fixed inset-0 z-40 lg:hidden transition-opacity duration-300 ${
+        className={`fixed inset-0 z-40 xl:hidden transition-opacity duration-300 ${
           menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
       >

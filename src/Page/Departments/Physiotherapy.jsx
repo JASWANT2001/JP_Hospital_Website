@@ -20,7 +20,7 @@ export default function Physiotherapy() {
         </div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex justify-start lg:justify-end">
           <div className="w-full lg:max-w-xl">
-            <span className="text-secondary font-bold tracking-widest uppercase text-xs">
+            <span className="text-orange-500 font-bold tracking-widest uppercase text-xs">
               {t.hero.eyebrow}
             </span>
             <h1

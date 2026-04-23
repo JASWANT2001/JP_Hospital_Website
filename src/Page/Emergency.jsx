@@ -154,7 +154,7 @@ export default function Emergency() {
                   </div>
                   <div className="min-w-0">
                     <p className="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-1">{title}</p>
-                    <p className="font-host font-bold text-on-surface text-sm sm:text-base group-hover:underline break-all">{detail}</p>
+                    <p className={`font-host font-bold text-on-surface group-hover:underline break-all ${i === 1 ? 'text-xs sm:text-sm' : 'text-sm sm:text-base'}`}>{detail}</p>
                     <p className="text-xs text-on-surface-variant mt-1">{sub}</p>
                   </div>
                   <span className="material-symbols-outlined text-on-surface-variant/30 group-hover:text-primary group-hover:translate-x-1 transition-all self-end">arrow_forward</span>
@@ -263,9 +263,9 @@ export default function Emergency() {
               <div>
                 <p className="font-host text-primary mb-2 text-sm sm:text-base">{t.reach.addressLabel}</p>
                 <address className="not-italic text-on-surface-variant leading-relaxed text-sm sm:text-base">
-                  9/1 colony, West Link Road (35A),<br />
-                  Co-operative colony,<br />
-                  Krishnagiri – 635001, Tamil Nadu
+                  9/1, West Link Road, Co-operative Colony,<br />
+                  via K Theatre Road, Near ICICI Bank,<br />
+                  Krishnagiri-635001, Tamilnadu
                 </address>
               </div>
               <div className="flex flex-col gap-2 mt-auto pt-4 border-t border-outline-variant/10">
@@ -277,13 +277,6 @@ export default function Emergency() {
                 >
                   <span className="material-symbols-outlined text-base">navigation</span>
                   {t.reach.mapsBtn}
-                </a>
-                <a
-                  href="tel:04343239923"
-                  className="flex items-center justify-center gap-2 bg-error/10 text-error px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl font-bold text-sm sm:text-base hover:bg-error hover:text-white transition-all border border-error/20"
-                >
-                  <span className="material-symbols-outlined text-base" style={{ fontVariationSettings: "'FILL' 1" }}>call</span>
-                  {t.reach.ambulanceBtn}
                 </a>
               </div>
             </div>

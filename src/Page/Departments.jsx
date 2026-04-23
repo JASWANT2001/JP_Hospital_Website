@@ -162,7 +162,7 @@ export default function Departments() {
         <section className="space-y-8 sm:space-y-12" id="neurosurgery">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 sm:gap-6 border-b border-outline-variant/20 pb-6 sm:pb-8">
             <div>
-              <span className="text-secondary font-bold tracking-widest uppercase text-xs sm:text-sm">
+              <span className="text-orange-500 font-bold tracking-widest uppercase text-xs sm:text-sm">
                 Department 01
               </span>
               <h2 className="font-headline text-2xl sm:text-3xl lg:text-4xl font-bold text-primary mt-2">
@@ -243,7 +243,7 @@ export default function Departments() {
         <section className="space-y-8 sm:space-y-12" id="pain-medicine">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 sm:gap-6 border-b border-outline-variant/20 pb-6 sm:pb-8">
             <div>
-              <span className="text-on-tertiary-container font-bold tracking-widest uppercase text-xs sm:text-sm">
+              <span className="text-orange-500 font-bold tracking-widest uppercase text-xs sm:text-sm">
                 Department 02
               </span>
               <h2 className="font-headline text-2xl sm:text-3xl lg:text-4xl font-bold text-primary mt-2">
@@ -308,7 +308,7 @@ export default function Departments() {
           {/* Department 3: Critical Care */}
           <section className="flex flex-col h-full" id="critical-care">
             <div className="border-b border-outline-variant/20 pb-3 sm:pb-4 mb-5 sm:mb-6">
-              <span className="text-secondary font-bold tracking-widest uppercase text-[10px] sm:text-xs">
+              <span className="text-orange-500 font-bold tracking-widest uppercase text-[10px] sm:text-xs">
                 Department 03
               </span>
               <h2 className="font-headline text-2xl sm:text-3xl font-bold text-primary mt-1">
@@ -376,7 +376,7 @@ export default function Departments() {
           {/* Department 4: Physiotherapy */}
           <section className="flex flex-col h-full" id="physiotherapy">
             <div className="border-b border-outline-variant/20 pb-3 sm:pb-4 mb-5 sm:mb-6">
-              <span className="text-secondary font-bold tracking-widest uppercase text-[10px] sm:text-xs">
+              <span className="text-orange-500 font-bold tracking-widest uppercase text-[10px] sm:text-xs">
                 Department 04
               </span>
               <h2 className="font-headline text-2xl sm:text-3xl font-bold text-primary mt-1">

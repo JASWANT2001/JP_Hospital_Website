@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Navbar from "../Component/Navbar";
 import { useLang, contactTranslations } from "../context/LanguageContext";
 
 // ─── Font Scale ────────────────────────────────────────────────────────────────
@@ -70,8 +69,6 @@ Requesting confirmation within 2 business hours.
 
   return (
     <div className="bg-surface text-on-surface font-body selection:bg-primary-fixed selection:text-primary">
-      <Navbar />
-
       <main>
 
         {/* ══════════════════════════════════════════════════════════════

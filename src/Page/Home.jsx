@@ -538,7 +538,7 @@ export default function Home() {
   const t = homeTranslations[lang];
 
   return (
-    <main className="pt-16 sm:pt-20 bg-surface text-on-surface font-body">
+    <main className="pt-20 sm:pt-24 bg-surface text-on-surface font-body">
       <FontStyle />
       <HeroSection t={t.hero} />
       <CoreValuesCarousel values={t.hero.values} />

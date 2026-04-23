@@ -1,5 +1,3 @@
-import Navbar from "../Component/Navbar";
-import Footer from "../Component/Footer";
 import { useLang, doctorsTranslations } from "../context/LanguageContext";
 
 const Docters = () => {
@@ -10,8 +8,6 @@ const Docters = () => {
 
   return (
     <div className="bg-surface text-on-surface font-body selection:bg-primary-fixed selection:text-primary scroll-smooth">
-      <Navbar />
-
       <main className="pt-24 sm:pt-28 lg:pt-32 pb-16 sm:pb-20 lg:pb-24 px-4 sm:px-6 lg:px-8 container mx-auto">
 
         {/* ── Side-by-Side Specialists Grid ── */}

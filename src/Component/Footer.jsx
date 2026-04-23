@@ -120,9 +120,9 @@ export default function Footer() {
             <li className="flex items-start gap-3">
               <span className="material-symbols-outlined text-[#ff9800] shrink-0 mt-0.5" style={{ fontSize: "16px" }}>location_on</span>
               <span className="text-[0.82rem] text-white/50 leading-[1.75]">
-                9/1 Colony, West Link Road (35A),<br />
-                Co-operative Colony,<br />
-                Krishnagiri – 635 001, TN
+                9/1, West Link Road,<br />
+                Co-operative Colony, via K Theatre Road,<br />
+                Near ICICI Bank, Krishnagiri – 635001, Tamil Nadu
               </span>
             </li>
             <li className="flex items-center gap-3">
@@ -143,7 +143,7 @@ export default function Footer() {
             </li>
           </ul>
           <a
-            href="https://www.google.com/maps/search/?api=1&query=9%2F1+colony%2C+West+Link+Road+(35A)%2C+Co-operative+colony%2C+Krishnagiri-635001"
+            href="https://www.google.com/maps/search/?api=1&query=9%2F1+West+Link+Road%2C+Co-operative+Colony%2C+via+K+Theatre+Road%2C+near+ICICI+Bank%2C+Krishnagiri-635001"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 text-[0.75rem] font-semibold text-[#ff9800] hover:text-orange-300 transition-colors"

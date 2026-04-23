@@ -1,6 +1,4 @@
 import { Link } from "react-router-dom";
-import Navbar from "../Component/Navbar";
-import Footer from "../Component/Footer";
 import { useLang, patientServicesTranslations } from "../context/LanguageContext";
 
 const fontScale = {
@@ -21,9 +19,6 @@ const PatientServices = () => {
 
   return (
     <div className="bg-surface text-on-surface font-body selection:bg-tertiary-fixed selection:text-tertiary">
-
-      {/* Top Navigation Bar */}
-      <Navbar />
 
       <main className="pt-20 sm:pt-24">
 
@@ -109,6 +104,13 @@ const PatientServices = () => {
                       <span className={`${fontScale.label} font-medium`}>{t.opd.monSat} (Evening)</span>
                     </div>
                     <span className={`font-bold text-primary ${fontScale.label}`}>4 PM – 9 PM</span>
+                  </div>
+                  <div className="flex items-center justify-between py-3 px-3 sm:px-4 bg-surface-container-low rounded-xl">
+                    <div className="flex items-center gap-2 text-on-surface-variant">
+                      <span className="material-symbols-outlined text-base">calendar_month</span>
+                      <span className={`${fontScale.label} font-medium`}>{t.opd.sunday}</span>
+                    </div>
+                    <span className={`font-bold text-primary ${fontScale.label}`}>10 AM – 1 PM</span>
                   </div>
                   <p className={`${fontScale.label} text-on-surface-variant px-1 leading-relaxed`}>{t.opd.neuroDesc}</p>
                 </div>
@@ -325,10 +327,6 @@ const PatientServices = () => {
                     <span className={`${fontScale.label} text-on-surface-variant mt-1 leading-snug`}>{test.desc}</span>
                   </div>
                 ))}
-                <div className="flex flex-col items-center text-center p-3 sm:p-4 bg-secondary rounded-xl">
-                  <span className="material-symbols-outlined text-on-secondary text-lg sm:text-xl mb-1">hub</span>
-                  <span className={`font-bold ${fontScale.label} text-on-secondary leading-snug`}>{t.diagnostics.advancedLabel}</span>
-                </div>
               </div>
             </div>
           </div>

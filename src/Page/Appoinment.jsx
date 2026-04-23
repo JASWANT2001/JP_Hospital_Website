@@ -148,7 +148,7 @@ ${formData.reason || 'Not provided'}
   };
 
   return (
-    <div className="bg-surface text-on-surface font-body min-h-screen flex flex-col mt-16 sm:mt-20">
+    <div className="bg-surface text-on-surface font-body min-h-screen flex flex-col mt-20 sm:mt-24">
 
       {/* ── Google Fonts ── */}
       <style>{`

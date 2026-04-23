@@ -64,7 +64,7 @@ export const footerTranslations = {
         { label: 'Departments', to: '/department-services' },
         { label: 'Our Doctors', to: '/doctors' },
         { label: 'Patient Services', to: '/patient-services' },
-        { label: 'Patient Education', to: '/patient-education' },
+        // { label: 'Patient Education', to: '/patient-education' },
         { label: 'Contact Us', to: '/contact-us' },
       ],
     },
@@ -102,7 +102,7 @@ export const footerTranslations = {
         { label: 'துறைகள்', to: '/department-services' },
         { label: 'எங்கள் மருத்துவர்கள்', to: '/doctors' },
         { label: 'நோயாளர் சேவைகள்', to: '/patient-services' },
-        { label: 'நோயாளர் கல்வி', to: '/patient-education' },
+        // { label: 'நோயாளர் கல்வி', to: '/patient-education' },
         { label: 'தொடர்பு கொள்ளுங்கள்', to: '/contact-us' },
       ],
     },
@@ -445,9 +445,9 @@ export const aboutTranslations = {
       quoteCaption: 'Guiding every patient interaction.',
     },
     visionMission: {
-      statsLabel: 'Years of Clinical Excellence',
+      statsLabel: 'Doctors with 10+ Years of Experience',
       visionTitle: 'Our Vision',
-      visionBody: 'Restoring lives through excellence in Neuro Spine and pain care.',
+      visionBody: 'Restoring lives through excellence in Neuro Spine and Pain care.',
       missionTitle: 'Our Mission',
       missionItems: [
         { icon: 'clinical_notes',      title: 'Clinical Excellence',  desc: 'We uphold the highest standards of medical practice through evidence-based treatment, continuous learning, and outcome-driven care.' },
@@ -467,7 +467,7 @@ export const aboutTranslations = {
         },
         {
           name: 'Dr. Prasanna Vani V',
-          role: 'Head of Pain Management & Critical Care',
+          role: 'Head of Pain Management and Anesthesiology',
           bio: 'Dr. Prasanna Vani specializes in holistic pain relief and interventional pain medicine, ensuring our patients find lasting comfort through personalized rehabilitation pathways.',
           image: 'https://ik.imagekit.io/glvwzrukg/JP%20Webiste/dr.prasanna%20vani%20.jpeg',
         },
@@ -496,7 +496,7 @@ export const aboutTranslations = {
       quoteCaption: 'ஒவ்வொரு நோயாளி தொடர்பையும் வழிநடத்துகிறது.',
     },
     visionMission: {
-      statsLabel: 'ஆண்டுகள் மருத்துவ சிறப்பு',
+      statsLabel: '10+ ஆண்டுகள் அனுபவமுள்ள மருத்துவர்கள்',
       visionTitle: 'எங்கள் தொலைநோக்கு',
       visionBody: 'நரம்பு-முதுகெலும்பு மற்றும் வலி சிகிச்சையில் சிறப்பின் மூலம் உயிர்களை மீட்டெடுத்தல்.',
       missionTitle: 'எங்கள் நோக்கம்',
@@ -591,8 +591,8 @@ export const patientServicesTranslations = {
         { label: 'NCS',  desc: 'Nerve Conduction' },
         { label: 'BERA', desc: 'Brainstem Response' },
         { label: 'VEP',  desc: 'Visual Evoked Potential' },
+        { label: 'AFT',  desc: 'Autonomic Function Tests' },
       ],
-      advancedLabel: 'Advanced Mapping',
     },
   },
   ta: {
@@ -645,8 +645,8 @@ export const patientServicesTranslations = {
         { label: 'NCS',  desc: 'நரம்பு கடத்தல்' },
         { label: 'BERA', desc: 'மூளைத்தண்டு மறுமொழி' },
         { label: 'VEP',  desc: 'காட்சி மறுமொழி' },
+        { label: 'AFT',  desc: 'தன்னியக்க செயல்பாட்டு சோதனைகள்' },
       ],
-      advancedLabel: 'மேம்பட்ட வரைபடம்',
     },
   },
 };
@@ -681,9 +681,9 @@ export const doctorsTranslations = {
       bookBtn: 'Book Consultation',
     },
     prasanna: {
-      specialty: 'Pain Medicine & Critical Care',
+      specialty: 'Pain Medicine & Anesthesiology',
       name: 'Dr. Prasanna Vani V',
-      quals: 'M.B.B.S., M.D.( Anaesthesiology, critical care and Pain), C.C.E.P.C., F.I.P.M, E.D.P.M.',
+      quals: 'M.B.B.S., M.D.( Anaesthesiology, critical care and Pain), C.C.E.P.C., F.I.P.M, E.D.P.M (1).',
       yearsLabel: 'Years of\nExperience',
       academicLabel: 'Academic Merit',
       goldMedal: 'Gold Medalist',
@@ -751,9 +751,9 @@ export const doctorsTranslations = {
       bookBtn: 'ஆலோசனை பதிவு',
     },
     prasanna: {
-      specialty: 'வலி மருத்துவம் & தீவிர சிகிச்சை',
+      specialty: 'வலி மருத்துவம் & அனஸ்தீசியாலஜி',
       name: 'டாக்டர் பிரசன்ன வாணி வி',
-      quals: 'M.B.B.S., M.D. (மயக்கவியல், தீவிர சிகிச்சை மற்றும் வலி), C.C.E.P.C., F.I.P.M, E.D.P.M.',
+      quals: 'M.B.B.S., M.D.( Anaesthesiology, critical care and Pain), C.C.E.P.C., F.I.P.M, E.D.P.M (1).',
       yearsLabel: 'ஆண்டுகள்\nஅனுபவம்',
       academicLabel: 'கல்வி சிறப்பு',
       goldMedal: 'தங்கப் பதக்கவிதர்',
@@ -810,7 +810,7 @@ export const emergencyTranslations = {
     },
     strip: [
       { label: 'Main Hospital Line',  value: '04343-239923',         sub: 'Available 24/7' },
-      { label: 'Hospital Address',    value: 'West Link Road (35A)', sub: 'Krishnagiri – 635001, TN' },
+      { label: 'Hospital Address',    value: '9/1, West Link Road, Co-operative Colony', sub: 'via K Theatre Road, Near ICICI Bank, Krishnagiri-635001, Tamilnadu' },
       { label: 'Patient Services',    value: 'View All Services',    sub: 'Resources & care information' },
     ],
     channels: {
@@ -818,7 +818,7 @@ export const emergencyTranslations = {
       heading: 'All Contact Channels',
       cards: [
         { title: 'Emergency Hotline', detail: '04343-239923',           sub: '24 / 7 — Trauma & Critical' },
-        { title: 'Visit Us',          detail: 'West Link Road (35A)',    sub: 'Krishnagiri – 635001, TN'   },
+        { title: 'Visit Us',          detail: '9/1, West Link Road, Co-operative Colony', sub: 'via K Theatre Road, Near ICICI Bank, Krishnagiri-635001, Tamilnadu' },
         { title: 'Patient Services',  detail: 'Health & Care Resources', sub: 'Insurance, billing & guides' },
         { title: 'Book Appointment',  detail: 'Schedule a Consultation', sub: 'OPD & specialist slots'      },
       ],
@@ -837,7 +837,7 @@ export const emergencyTranslations = {
       },
       stroke: {
         title:  'Acute Stroke Care',
-        body:   'Rapid thrombolysis and endovascular intervention for ischemic events within the golden hour.',
+        body:   'Rapid thrombolysis for ischemic events within the golden hour.',
         cta:    'Call Now',
       },
       icu: {
@@ -873,7 +873,7 @@ export const emergencyTranslations = {
     },
     strip: [
       { label: 'முதன்மை தொலைபேசி',   value: '04343-239923',           sub: '24/7 கிடைக்கும்' },
-      { label: 'மருத்துவமனை முகவரி',  value: 'வெஸ்ட் லிங்க் ரோடு (35A)', sub: 'கிருஷ்ணகிரி – 635001, TN' },
+      { label: 'மருத்துவமனை முகவரி',  value: '9/1, West Link Road, Co-operative Colony', sub: 'via K Theatre Road, Near ICICI Bank, Krishnagiri-635001, Tamilnadu' },
       { label: 'நோயாளர் சேவை',        value: 'அனைத்து சேவைகளும்',      sub: 'வளங்கள் & சிகிச்சை தகவல்' },
     ],
     channels: {
@@ -881,7 +881,7 @@ export const emergencyTranslations = {
       heading: 'அனைத்து தொடர்பு வழிகள்',
       cards: [
         { title: 'அவசர தொலைபேசி',  detail: '04343-239923',                sub: '24 / 7 — காயம் & தீவிரம்'         },
-        { title: 'நேரில் வாருங்கள்', detail: 'வெஸ்ட் லிங்க் ரோடு (35A)',   sub: 'கிருஷ்ணகிரி – 635001, TN'          },
+        { title: 'நேரில் வாருங்கள்', detail: '9/1, West Link Road, Co-operative Colony', sub: 'via K Theatre Road, Near ICICI Bank, Krishnagiri-635001, Tamilnadu' },
         { title: 'நோயாளர் சேவை',    detail: 'சுகாதார & சிகிச்சை வளங்கள்', sub: 'காப்பீடு, பில்லிங் & வழிகாட்டிகள்' },
         { title: 'சந்திப்பு பதிவு',  detail: 'ஆலோசனை திட்டமிடவும்',       sub: 'OPD & நிபுணர் நேரங்கள்'           },
       ],
@@ -900,7 +900,7 @@ export const emergencyTranslations = {
       },
       stroke: {
         title:  'கடுமையான பக்கவாத சிகிச்சை',
-        body:   'தங்க நேரத்திற்குள் இஸ்கிமிக் நிகழ்வுகளுக்கு விரைவான த்ரோம்போலிசிஸ் மற்றும் எண்டோவாஸ்குலர் தலையீடு.',
+        body:   'தங்க நேரத்திற்குள் இஸ்கிமிக் நிகழ்வுகளுக்கு விரைவான த்ரோம்போலிசிஸ்.',
         cta:    'இப்போது அழைக்கவும்',
       },
       icu: {
@@ -943,7 +943,7 @@ export const contactTranslations = {
     },
     cards: {
       locationTitle: 'Location',
-      locationAddress: '9/1 Colony, West Link Road (35A), Co-operative Colony, Krishnagiri – 635001',
+      locationAddress: '9/1, West Link Road, Co-operative Colony, via K Theatre Road, Near ICICI Bank, Krishnagiri – 635001, Tamil Nadu',
       phoneTitle: 'Direct Lines',
       phoneSub: 'Emergency: 24 / 7',
       digitalTitle: 'Digital Support',
@@ -959,7 +959,7 @@ export const contactTranslations = {
           slots: [
             { days: 'Mon – Sat', time: '10 AM – 1 PM' },
             { days: 'Mon – Sat', time: '4 PM – 9 PM'  },
-            { days: 'Sunday',    time: '9 AM – 1 PM'  },
+            { days: 'Sunday',    time: '10 AM – 1 PM'  },
           ],
         },
         {
@@ -992,7 +992,7 @@ export const contactTranslations = {
     },
     cards: {
       locationTitle: 'இடம்',
-      locationAddress: '9/1 காலனி, வெஸ்ட் லிங்க் ரோடு (35A), கோ-ஆபரேட்டிவ் காலனி, கிருஷ்ணகிரி – 635001',
+      locationAddress: '9/1, வெஸ்ட் லிங்க் ரோடு, கோ-ஆபரேட்டிவ் காலனி, K தியேட்டர் ரோடு வழியாக, ICICI வங்கி அருகில், கிருஷ்ணகிரி – 635001, தமிழ்நாடு',
       phoneTitle: 'நேரடி தொலைபேசி',
       phoneSub: 'அவசர சேவை: 24 / 7',
       digitalTitle: 'டிஜிட்டல் ஆதரவு',
@@ -1008,7 +1008,7 @@ export const contactTranslations = {
           slots: [
             { days: 'திங்கள் – சனி', time: 'காலை 10 – பகல் 1'  },
             { days: 'திங்கள் – சனி', time: 'மாலை 4 – இரவு 9'   },
-            { days: 'ஞாயிறு',        time: 'காலை 9 – பகல் 1'   },
+            { days: 'ஞாயிறு',        time: 'காலை 10 – பகல் 1'  },
           ],
         },
         {
@@ -1033,7 +1033,7 @@ export const homeTranslations = {
     hero: {
       eyebrow: 'JP Neuro Spine Hospital & Pain Management Centre',
       visionLabel: 'Our Vision',
-      vision: 'Restoring lives through excellence in Neuro Spine and pain care',
+      vision: 'Restoring lives through excellence in Neuro Spine and Pain care',
       missionLabel: 'Our Mission',
       mission: 'To deliver ethical, evidence-based, and patient-centric Neuro Spine and pain management services through clinical excellence, advanced technology, and compassionate care.',
       cta: 'Call to Book Appointment',
@@ -1118,7 +1118,7 @@ export const homeTranslations = {
       badgeSub: 'HOSPITAL REGISTRATION',
       heading: 'Recognized Clinical Excellence',
       body: 'JP Neuro Spine Hospital and Pain Management Centre is a Clinical Establishment Act (CEA) licensed hospital. This license is our commitment to maintaining the highest standards of medical ethics, safety protocols, and patient care infrastructure.',
-      badges: ['NABH Standards', 'Surgical Safety Protocol', 'Infection Control Excellence'],
+      badges: ['Surgical Safety Protocol', 'Infection Control Excellence'],
     },
   },
 
@@ -1211,7 +1211,7 @@ export const homeTranslations = {
       badgeSub: 'மருத்துவமனை பதிவு',
       heading: 'அங்கீகரிக்கப்பட்ட மருத்துவ சிறப்பு',
       body: 'JP Neuro Spine Hospital and Pain Management Centre Clinical Establishment Act (CEA) உரிமம் பெற்ற மருத்துவமனை. இந்த உரிமம் மருத்துவ நெறிமுறைகள், பாதுகாப்பு நெறிமுறைகள் மற்றும் நோயாளி சிகிச்சை உள்கட்டமைப்பில் உயர்ந்த தரத்தை பராமரிப்பதற்கான எங்கள் அர்ப்பணிப்பு ஆகும்.',
-      badges: ['NABH தரநிலைகள்', 'அறுவை சிகிச்சை பாதுகாப்பு நெறிமுறை', 'தொற்று கட்டுப்பாடு சிறப்பு'],
+      badges: ['அறுவை சிகிச்சை பாதுகாப்பு நெறிமுறை', 'தொற்று கட்டுப்பாடு சிறப்பு'],
     },
   },
 };

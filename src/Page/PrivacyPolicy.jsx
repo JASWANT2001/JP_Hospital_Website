@@ -14,7 +14,7 @@ export default function PrivacyPolicy() {
   const t = privacyPolicyTranslations[lang];
 
   return (
-    <div className="bg-white min-h-screen font-inter pt-16 sm:pt-20">
+    <div className="bg-white min-h-screen font-inter pt-20 sm:pt-24">
 
       {/* Hero — full width */}
       <div className="bg-[#0d1d6e] w-full px-10 xl:px-20 py-16 sm:py-20">
@@ -142,9 +142,9 @@ export default function PrivacyPolicy() {
                   <div className="flex items-start gap-3">
                     <span className="material-symbols-outlined text-[#ff9800] shrink-0 mt-0.5" style={{ fontSize: "18px" }}>location_on</span>
                     <p className={`${fontScale.label} text-white/70 leading-relaxed`}>
-                      9/1 Colony, West Link Road (35A),<br />
-                      Co-operative Colony,<br />
-                      Krishnagiri – 635 001, TN
+                      9/1, West Link Road,<br />
+                      Co-operative Colony, via K Theatre Road,<br />
+                      Near ICICI Bank, Krishnagiri – 635001, Tamil Nadu
                     </p>
                   </div>
                   <div className="flex items-center gap-3">
