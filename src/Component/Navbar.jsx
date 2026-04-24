@@ -40,11 +40,11 @@ export default function Navbar() {
               className="h-10 xl:h-11 2xl:h-14 w-auto object-contain flex-none"
             />
             <div className="flex flex-col">
-              <span className="font-raleway text-[#142588] tracking-tight leading-tight font-extrabold whitespace-nowrap text-[9px] sm:text-[10px] xl:text-[12px] 2xl:text-[14px]">
-                {hospitalLine1}
+              <span className="font-raleway text-[#142588] tracking-tight leading-tight font-extrabold whitespace-nowrap text-[11px] sm:text-[12px] xl:text-[13px] 2xl:text-[15px]">
+                JP Neuro Spine Hospital and
               </span>
-              <span className="font-raleway text-[#142588] tracking-tight leading-tight font-extrabold whitespace-nowrap text-[9px] sm:text-[10px] xl:text-[12px] 2xl:text-[14px]">
-                {hospitalLine2}
+              <span className="font-raleway text-[#142588] tracking-tight leading-tight font-extrabold whitespace-nowrap text-[11px] sm:text-[12px] xl:text-[13px] 2xl:text-[15px]">
+                Pain Management Centre
               </span>
             </div>
           </Link>
@@ -68,16 +68,16 @@ export default function Navbar() {
 
           {/* Right Side */}
           <div className="flex items-center gap-2">
-            <div className="flex items-center bg-slate-100 rounded-lg p-0.5 text-sm font-bold">
+            <div className="flex items-center bg-slate-100 rounded-md p-0.5 text-xs font-bold">
               <button
                 onClick={() => setLang('en')}
-                className={`px-3 py-1.5 rounded-md transition-all ${lang === 'en' ? 'bg-[#142588] text-white shadow' : 'text-slate-500 hover:text-[#142588]'}`}
+                className={`px-2 py-1 rounded transition-all ${lang === 'en' ? 'bg-[#142588] text-white shadow' : 'text-slate-500 hover:text-[#142588]'}`}
               >
                 EN
               </button>
               <button
                 onClick={() => setLang('ta')}
-                className={`px-3 py-1.5 rounded-md transition-all ${lang === 'ta' ? 'bg-[#142588] text-white shadow' : 'text-slate-500 hover:text-[#142588]'}`}
+                className={`px-2 py-1 rounded transition-all ${lang === 'ta' ? 'bg-[#142588] text-white shadow' : 'text-slate-500 hover:text-[#142588]'}`}
               >
                 த
               </button>

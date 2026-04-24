@@ -36,8 +36,8 @@ export const navTranslations = {
     bookAppointment: 'Book Appointment',
   },
   ta: {
-    hospitalLine1: 'JP நரம்பியல் மற்றும் முதுகெலும்பு மருத்துவமனை',
-    hospitalLine2: 'மற்றும் வலி நிவாரண மையம்',
+    hospitalLine1: 'JP நரம்பியல் மற்றும் முதுகெலும்பு',
+    hospitalLine2: 'மருத்துவமனை மற்றும் வலி நிவாரண மையம்',
     links: [
       { to: '/', label: 'முகப்பு' },
       { to: '/about-us', label: 'எங்களை பற்றி' },
@@ -101,8 +101,8 @@ export const footerTranslations = {
     },
   },
   ta: {
-    hospitalLine1: 'JP நரம்பியல் மற்றும் முதுகெலும்பு மருத்துவமனை',
-    hospitalLine2: 'மற்றும் வலி நிவாரண மையம்',
+    hospitalLine1: 'JP நரம்பியல் மற்றும் முதுகெலும்பு',
+    hospitalLine2: 'மருத்துவமனை மற்றும் வலி நிவாரண மையம்',
     tagline: 'பரிவு மற்றும் துல்லியத்துடன் உயர்தர மருத்துவச் சேவையை வழங்கும் — தமிழ்நாட்டின் மேம்பட்ட நரம்பியல் மற்றும் முதுகெலும்பு சிகிச்சைகளுக்கான ஒரு நம்பிக்கைக்குரிய மையம்.',
     followUs: 'எங்களை பின்தொடரவும்',
     quickLinks: {
