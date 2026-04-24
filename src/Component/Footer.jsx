@@ -58,10 +58,10 @@ export default function Footer() {
         <div className="flex flex-col gap-5">
           <div>
             <span className="font-raleway text-base text-white tracking-tight leading-snug font-extrabold block">
-              JP Neuro Spine Hospital and
+              {t.hospitalLine1}
             </span>
             <span className="font-raleway text-base text-white tracking-tight leading-snug font-extrabold block">
-              Pain Management Centre
+              {t.hospitalLine2}
             </span>
           </div>
           <div className="w-8 h-0.5 bg-[#ff9800]/60" />
@@ -120,9 +120,9 @@ export default function Footer() {
             <li className="flex items-start gap-3">
               <span className="material-symbols-outlined text-[#ff9800] shrink-0 mt-0.5" style={{ fontSize: "16px" }}>location_on</span>
               <span className="text-[0.82rem] text-white/50 leading-[1.75]">
-                9/1, West Link Road,<br />
-                Co-operative Colony, via K Theatre Road,<br />
-                Near ICICI Bank, Krishnagiri – 635001, Tamil Nadu
+                {t.contact.addressLine1}<br />
+                {t.contact.addressLine2}<br />
+                {t.contact.addressLine3}
               </span>
             </li>
             <li className="flex items-center gap-3">
@@ -142,15 +142,6 @@ export default function Footer() {
               <span className="text-[0.82rem] text-white/50">{t.contact.emergency}</span>
             </li>
           </ul>
-          <a
-            href="https://www.google.com/maps/search/?api=1&query=9%2F1+West+Link+Road%2C+Co-operative+Colony%2C+via+K+Theatre+Road%2C+near+ICICI+Bank%2C+Krishnagiri-635001"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-[0.75rem] font-semibold text-[#ff9800] hover:text-orange-300 transition-colors"
-          >
-            <span className="material-symbols-outlined" style={{ fontSize: "14px" }}>open_in_new</span>
-            {t.contact.viewMap}
-          </a>
         </div>
       </div>
 

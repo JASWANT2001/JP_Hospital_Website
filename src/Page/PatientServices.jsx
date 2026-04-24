@@ -85,7 +85,7 @@ const PatientServices = () => {
                   <div className="flex items-center gap-3">
                     <span className="material-symbols-outlined text-on-primary text-xl sm:text-2xl">neurology</span>
                     <h3 className={`${fontScale.subheading} text-on-primary`} style={hostGrotesk}>
-                      Neurosurgery
+                      {t.opd.neurosurgery}
                     </h3>
                   </div>
                   <span className={`bg-white/20 text-white px-2 sm:px-3 py-1 rounded-full ${fontScale.label} font-bold`}>{t.opd.specialized}</span>
@@ -121,7 +121,7 @@ const PatientServices = () => {
                 <div className="px-5 sm:px-7 py-4 sm:py-5 flex items-center gap-3" style={{ background: "#763800" }}>
                   <span className="material-symbols-outlined text-white text-xl sm:text-2xl">medication</span>
                   <h3 className={`${fontScale.subheading} text-white`} style={hostGrotesk}>
-                    Pain Medicine
+                    {t.opd.painMedicine}
                   </h3>
                 </div>
                 <div className="px-5 sm:px-7 py-5 sm:py-6 flex flex-col gap-4 flex-1">
@@ -149,7 +149,7 @@ const PatientServices = () => {
                   <div className="flex items-center gap-3">
                     <span className="material-symbols-outlined text-on-secondary text-xl sm:text-2xl">exercise</span>
                     <h3 className={`${fontScale.subheading} text-on-secondary`} style={hostGrotesk}>
-                      Physiotherapy
+                      {t.opd.physiotherapy}
                     </h3>
                   </div>
                   <span className={`bg-white/20 text-white px-2 sm:px-3 py-1 rounded-full ${fontScale.label} font-bold`}>{t.opd.daily}</span>

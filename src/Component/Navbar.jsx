@@ -8,7 +8,7 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const { lang, setLang } = useLang();
 
-  const { links: navLinks, emergency, bookAppointment } = navTranslations[lang];
+  const { links: navLinks, emergency, bookAppointment, hospitalLine1, hospitalLine2 } = navTranslations[lang];
 
   const isActive = (to) =>
     to === '/' ? pathname === '/' : pathname.startsWith(to);
@@ -30,32 +30,32 @@ export default function Navbar() {
       `}</style>
 
       <nav className="fixed top-0 w-full z-50 bg-[#f7f9fc] bg-opacity-90 backdrop-blur-md shadow-sm">
-        <div className="flex justify-between items-center h-20 sm:h-24 px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-20 px-4 sm:px-6 xl:px-8">
 
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-1.5 shrink-0">
+          <Link to="/" className="flex items-center gap-2 shrink-0">
             <img
               src={logoSrc}
               alt="JP Neuro Spine logo"
-              className="h-11 w-auto sm:h-12 lg:h-14 object-contain flex-none"
+              className="h-10 xl:h-11 2xl:h-14 w-auto object-contain flex-none"
             />
             <div className="flex flex-col">
-              <span className="font-raleway text-[#142588] tracking-tight leading-tight font-extrabold whitespace-nowrap text-[12px] sm:text-[11px] lg:text-sm">
-                JP Neuro Spine Hospital and
+              <span className="font-raleway text-[#142588] tracking-tight leading-tight font-extrabold whitespace-nowrap text-[9px] sm:text-[10px] xl:text-[12px] 2xl:text-[14px]">
+                {hospitalLine1}
               </span>
-              <span className="font-raleway text-[#142588] tracking-tight leading-tight font-extrabold whitespace-nowrap text-[12px] sm:text-[11px] lg:text-sm">
-                Pain Management Centre
+              <span className="font-raleway text-[#142588] tracking-tight leading-tight font-extrabold whitespace-nowrap text-[9px] sm:text-[10px] xl:text-[12px] 2xl:text-[14px]">
+                {hospitalLine2}
               </span>
             </div>
           </Link>
 
-          {/* Desktop Nav Links */}
-          <div className={`hidden xl:flex items-center ${lang === 'ta' ? 'space-x-4 2xl:space-x-6' : 'space-x-5 2xl:space-x-7'}`}>
+          {/* Desktop Nav Links — visible from xl */}
+          <div className="hidden xl:flex items-center gap-3 2xl:gap-6">
             {navLinks.map(({ to, label }) => (
               <Link
                 key={to}
                 to={to}
-                className={`font-manrope tracking-tight font-semibold pb-1 transition-colors whitespace-nowrap text-[15px] ${
+                className={`font-manrope tracking-tight font-semibold pb-1 transition-colors whitespace-nowrap text-[13px] 2xl:text-[15px] ${
                   isActive(to)
                     ? 'text-[#142588] border-b-2 border-[#142588]'
                     : 'text-slate-600 hover:text-[#142588] border-b-2 border-transparent'
@@ -67,9 +67,8 @@ export default function Navbar() {
           </div>
 
           {/* Right Side */}
-          <div className="flex items-center gap-2 sm:gap-3">
-         
-            {/* <div className="flex items-center bg-slate-100 rounded-lg p-0.5 text-sm font-bold">
+          <div className="flex items-center gap-2">
+            <div className="flex items-center bg-slate-100 rounded-lg p-0.5 text-sm font-bold">
               <button
                 onClick={() => setLang('en')}
                 className={`px-3 py-1.5 rounded-md transition-all ${lang === 'en' ? 'bg-[#142588] text-white shadow' : 'text-slate-500 hover:text-[#142588]'}`}
@@ -82,7 +81,7 @@ export default function Navbar() {
               >
                 த
               </button>
-            </div> */}
+            </div>
             <Link
               to="/emergency"
               title={emergency}
@@ -90,14 +89,8 @@ export default function Navbar() {
             >
               <span className="material-symbols-outlined text-xl">sos</span>
             </Link>
-            {/* <Link
-              to="/book-appoinment"
-              className="hidden sm:inline-flex bg-primary text-on-primary px-4 lg:px-6 py-2 sm:py-2.5 rounded-md font-semibold text-base hover:bg-on-primary-fixed-variant transition-all duration-200 ease-in-out whitespace-nowrap"
-            >
-              Book Appointment
-            </Link> */}
 
-            {/* Hamburger */}
+            {/* Hamburger — visible below xl */}
             <button
               onClick={() => setMenuOpen((prev) => !prev)}
               aria-label={menuOpen ? 'Close menu' : 'Open menu'}
@@ -126,18 +119,9 @@ export default function Navbar() {
           }`}
         >
           {/* Drawer Header */}
-          <div className="flex items-center justify-between px-6 h-16 sm:h-20 border-b border-slate-100 shrink-0">
-            <div className="flex items-center gap-2">
+          <div className="flex items-center justify-between px-4 py-3 border-b border-slate-100 shrink-0 min-h-[56px]">
+            <div className="flex items-center gap-2 min-w-0 flex-1 mr-2">
               <img src="/logo.png" alt="JP Neuro Spine logo" className="h-8 w-auto object-contain shrink-0" />
-              {/* Main heading — Raleway ExtraBold */}
-              <div className="flex flex-col">
-                <span className="font-raleway text-sm text-[#142588] tracking-tight leading-tight font-extrabold">
-                  JP Neuro Spine Hospital and
-                </span>
-                <span className="font-raleway text-sm text-[#142588] tracking-tight leading-tight font-extrabold">
-                  Pain Management Centre
-                </span>
-              </div>
             </div>
             <button
               onClick={() => setMenuOpen(false)}

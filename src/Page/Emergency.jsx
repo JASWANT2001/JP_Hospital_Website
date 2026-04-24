@@ -92,7 +92,7 @@ export default function Emergency() {
                 </div>
                 <div>
                   <p className="text-xs text-white/50 font-bold uppercase tracking-widest">{t.hero.directionsLabel}</p>
-                  <p className="font-raleway text-xl sm:text-2xl text-white">Krishnagiri, TN</p>
+                  <p className="font-raleway text-xl sm:text-2xl text-white">{t.hero.locationText}</p>
                 </div>
               </a>
             </div>
@@ -263,9 +263,9 @@ export default function Emergency() {
               <div>
                 <p className="font-host text-primary mb-2 text-sm sm:text-base">{t.reach.addressLabel}</p>
                 <address className="not-italic text-on-surface-variant leading-relaxed text-sm sm:text-base">
-                  9/1, West Link Road, Co-operative Colony,<br />
-                  via K Theatre Road, Near ICICI Bank,<br />
-                  Krishnagiri-635001, Tamilnadu
+                  {t.reach.addressLine1}<br />
+                  {t.reach.addressLine2}<br />
+                  {t.reach.addressLine3}
                 </address>
               </div>
               <div className="flex flex-col gap-2 mt-auto pt-4 border-t border-outline-variant/10">
