@@ -27,9 +27,9 @@ export default function NeuroSpineWebsite() {
                 <div className="font-semibold">EMERGENCY 24/7</div>
                 <div className="text-blue-900 font-bold">+62492 73910212</div>
               </div>
-              <button className="bg-blue-900 text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-blue-800 transition-colors shadow-md">
-                Book Appointment
-              </button>
+              <a href="tel:04343239923" className="bg-blue-900 text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-blue-800 transition-colors shadow-md">
+                Call Now
+              </a>
             </div>
           </div>
         </div>
@@ -59,10 +59,9 @@ export default function NeuroSpineWebsite() {
               </p>
               
               <div className="flex items-center space-x-4 pt-4">
-                <button className="bg-blue-900 text-white px-8 py-3.5 rounded-lg font-semibold hover:bg-blue-800 transition-all shadow-lg hover:shadow-xl flex items-center space-x-2">
-                  <Calendar className="w-5 h-5" />
-                  <span>Book Appointment</span>
-                </button>
+                <a href="tel:04343239923" className="bg-blue-900 text-white px-8 py-3.5 rounded-lg font-semibold hover:bg-blue-800 transition-all shadow-lg hover:shadow-xl flex items-center space-x-2">
+                  <span>Call Now</span>
+                </a>
                 <button className="text-blue-900 px-6 py-3.5 rounded-lg font-semibold hover:bg-blue-50 transition-colors flex items-center space-x-2">
                   <span>Our Services</span>
                   <span className="text-xl">→</span>

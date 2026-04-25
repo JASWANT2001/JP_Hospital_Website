@@ -33,7 +33,7 @@ export const navTranslations = {
       { to: '/contact-us', label: 'Contact' },
     ],
     emergency: 'Emergency',
-    bookAppointment: 'Book Appointment',
+    bookAppointment: 'Call Now',
   },
   ta: {
     hospitalLine1: 'JP நரம்பியல் மற்றும் முதுகெலும்பு',
@@ -51,7 +51,7 @@ export const navTranslations = {
       { to: '/contact-us', label: 'தொடர்பு' },
     ],
     emergency: '24/7 அவசர சேவைகள்',
-    bookAppointment: 'சந்திப்பு பதிவு செய்க',
+    bookAppointment: 'இப்போதே அழையுங்கள்',
   },
 };
 
@@ -703,7 +703,7 @@ export const doctorsTranslations = {
       publications: 'Presented papers in various national and international conferences like TANS, NSICON and INDSPN.',
       opdLabel: 'OPD Availability',
       opdTimes: ['Mon – Sat · 10 AM – 1 PM', 'Mon – Sat · 4 PM – 9 PM'],
-      bookBtn: 'Book Consultation',
+      bookBtn: 'Call Now',
     },
     prasanna: {
       specialty: 'Pain Medicine & Anesthesiology',
@@ -722,7 +722,7 @@ export const doctorsTranslations = {
       ],
       opdLabel: 'OPD Availability',
       opdTimes: ['Mon – Fri (Morning) · 10 AM – 1 PM', 'Mon – Fri (Evening) · 6:30 PM – 8 PM'],
-      bookBtn: 'Book Consultation',
+      bookBtn: 'Call Now',
       awardsTitle: 'Prestigious Awards',
       awards: [
         'Gold Medalist at M.D. Anaesthesia examinations conducted by Tamilnadu Dr. M.G.R. Medical University in 2014.',
@@ -773,7 +773,7 @@ export const doctorsTranslations = {
       publications: 'TANS, NSICON மற்றும் INDSPN போன்ற பல்வேறு தேசிய மற்றும் சர்வதேச கருத்தரங்குகளில் ஆய்வுக் கட்டுரைகளை சமர்ப்பித்துள்ளார்.',
       opdLabel: 'வெளிநோயாளிகள் பிரிவு (OPD) நேரம்',
       opdTimes: ['திங்கள் – சனி · காலை 10 மணி – மதியம் 1 மணி வரை', 'திங்கள் – சனி · மாலை 4 மணி – இரவு 9 மணி வரை'],
-      bookBtn: 'ஆலோசனைக்கு முன்பதிவு செய்யவும்',
+      bookBtn: 'இப்போதே அழையுங்கள்',
     },
     prasanna: {
       specialty: 'வலி மருத்துவம் & மயக்கவியல்',
@@ -792,7 +792,7 @@ export const doctorsTranslations = {
       ],
       opdLabel: 'வெளிநோயாளிகள் பிரிவு (OPD) நேரம்',
       opdTimes: ['திங்கள் – வெள்ளி (காலை) · 10 AM – 1 PM', 'திங்கள் – வெள்ளி (மாலை) · 6:30 PM – 8 PM'],
-      bookBtn: 'ஆலோசனைக்கு முன்பதிவு செய்யவும்',
+      bookBtn: 'இப்போதே அழையுங்கள்',
       awardsTitle: 'சிறப்புமிக்க விருதுகள்',
       awards: [
         '2014-ஆம் ஆண்டு தமிழ்நாடு டாக்டர் எம்.ஜி.ஆர். மருத்துவப் பல்கலைக்கழகம் நடத்திய M.D. (மயக்கவியல்) தேர்வுகளில் தங்கப் பதக்கம் வென்றவர்.',
@@ -1069,7 +1069,7 @@ export const homeTranslations = {
       vision: 'Restoring lives through excellence in Neuro Spine and Pain care',
       missionLabel: 'Our Mission',
       mission: 'To deliver ethical, evidence-based, and patient-centric Neuro Spine and pain management services through clinical excellence, advanced technology, and compassionate care.',
-      cta: 'Call to Book Appointment',
+      cta: 'Call Now',
       cta2: 'Our Services',
       quote: '"Excellence in every incision, compassion in every interaction."',
       facilities: [
@@ -1162,7 +1162,7 @@ export const homeTranslations = {
       vision: 'நரம்பு, முதுகுத்தண்டு மற்றும் வலி சிகிச்சையில் சிறப்பின் மூலம் வாழ்வை மீட்டெடுத்தல்.',
       missionLabel: 'எங்கள் குறிக்கோள்',
       mission: 'மருத்துவச் சிறப்பு, மேம்பட்ட தொழில்நுட்பம் மற்றும் கருணைமிக்க கவனிப்பு ஆகியவற்றின் வாயிலாக, நெறிசார்ந்த, அறிவியல் சான்றுகள் சார்ந்த மற்றும் நோயாளி மையப்படுத்திய நரம்பு, முதுகுத்தண்டு மற்றும் வலி நிவாரணச் சேவைகளை வழங்குதல்.',
-      cta: 'மருத்துவர் சந்திப்பை முன்பதிவு செய்ய அழைக்கவும்',
+      cta: 'இப்போதே அழையுங்கள்',
       cta2: 'எங்கள் சேவைகள்',
       quote: '"ஒவ்வொரு அறுவையிலும் சிறப்பு, ஒவ்வொரு தொடர்பிலும் இரக்கம்."',
       facilities: [
@@ -1316,7 +1316,7 @@ export const blogDetailTranslations = {
     notFoundBody: 'This article may have been moved or does not exist.',
     backToAllArticles: 'Back to all articles',
     errorMsg: 'Failed to load article. Please try again.',
-    bookConsultation: 'Book a Consultation',
+    bookConsultation: 'Call Now',
     writtenBy: 'Written by',
     minRead: 'min read',
     hospitalBio: 'JP Neuro Spine Hospital and Pain Management Centre — Expert healthcare for neurology & spine conditions.',
@@ -1335,7 +1335,7 @@ export const blogDetailTranslations = {
     notFoundBody: 'இந்த கட்டுரை நகர்த்தப்பட்டிருக்கலாம் அல்லது இல்லாமல் இருக்கலாம்.',
     backToAllArticles: 'அனைத்து கட்டுரைகளுக்கு திரும்பு',
     errorMsg: 'கட்டுரையை ஏற்றுவதில் தோல்வி. மீண்டும் முயற்சிக்கவும்.',
-    bookConsultation: 'ஆலோசனை பதிவு',
+    bookConsultation: 'இப்போதே அழையுங்கள்',
     writtenBy: 'எழுதியவர்',
     minRead: 'நிமிட வாசிப்பு',
     hospitalBio: 'JP Neuro Spine Hospital and Pain Management Centre — நரம்பியல் & முதுகெலும்பு நிலைமைகளுக்கான நிபுணர் சுகாதாரம்.',

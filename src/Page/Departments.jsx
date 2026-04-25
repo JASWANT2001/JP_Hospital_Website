@@ -141,13 +141,13 @@ export default function Departments() {
               delivered by world-class specialists using precision technology.
             </p>
             <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
-              <Link
-                to="/book-appoinment"
+              <a
+                href="tel:04343239923"
                 className="bg-tertiary-fixed text-on-tertiary-fixed px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold hover:brightness-95 transition-all flex items-center justify-center gap-2 text-sm sm:text-base"
               >
-                <span className="material-symbols-outlined">calendar_today</span>
-                Book Appointment
-              </Link>
+                <span className="material-symbols-outlined">call</span>
+                Call Now
+              </a>
               <a href="tel:04343239923" className="border-2 border-primary text-primary px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold hover:bg-primary/5 transition-all flex items-center justify-center gap-2 text-sm sm:text-base">
                 <span className="material-symbols-outlined">call</span>
                 Call Now
