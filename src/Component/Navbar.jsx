@@ -121,7 +121,7 @@ export default function Navbar() {
           {/* Drawer Header */}
           <div className="flex items-center justify-between px-4 py-3 border-b border-slate-100 shrink-0 min-h-[56px]">
             <div className="flex items-center gap-2 min-w-0 flex-1 mr-2">
-              <img src="/logo.png" alt="JP Neuro Spine logo" className="h-8 w-auto object-contain shrink-0" />
+              <img src={logoSrc} alt="JP Neuro Spine logo" className="h-8 w-auto object-contain shrink-0" />
             </div>
             <button
               onClick={() => setMenuOpen(false)}
