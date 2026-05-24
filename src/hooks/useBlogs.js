@@ -24,6 +24,7 @@ export function usePublishedBlogs() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    if (!supabase) { setLoading(false); return; }
     async function fetch() {
       const { data, error } = await supabase
         .from('blogs')
@@ -49,6 +50,7 @@ export function useBlogBySlug(slug) {
 
   useEffect(() => {
     if (!slug) return;
+    if (!supabase) { setLoading(false); return; }
     async function fetch() {
       const { data, error } = await supabase
         .from('blogs')
