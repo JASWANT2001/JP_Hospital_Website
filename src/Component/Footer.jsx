@@ -68,6 +68,7 @@ export default function Footer() {
           <p className="text-[0.82rem] text-white/50 leading-[1.8]">
             {t.tagline}
           </p>
+
         </div>
 
         {/* Quick Links */}

@@ -119,7 +119,7 @@ export default function PainMedicine() {
           </div>
         </div>
 
-        <AppointmentBanner />
+        <AppointmentBanner instagram="pain" />
       </main>
     </div>
   );

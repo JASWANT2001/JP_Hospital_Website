@@ -113,7 +113,7 @@ export default function Neurosurgery() {
           </div>
         </div>
 
-        <AppointmentBanner />
+        <AppointmentBanner instagram="neurospine" />
       </main>
     </div>
   );
